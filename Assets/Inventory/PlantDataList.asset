@@ -1,0 +1,141 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57d5785612501fc4db18d3f2ec6d1bfa, type: 3}
+  m_Name: PlantDataList
+  m_EditorClassIdentifier: 
+  plantDataList:
+  - seedId: 1030
+    growthPeriod: 7
+    canHarvestPeriod: 7
+    growthSprite:
+    - {fileID: 1288941236, guid: fa99babd0e26c6c46adaa8cbaddb349c, type: 3}
+    - {fileID: 1288941236, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
+    - {fileID: 1521407085, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
+    - {fileID: 677538192, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
+    - {fileID: 677538192, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
+    deathSpite: {fileID: -1059748352, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
+    onceGrothHour: 25
+    bestSeason: 0000000002000000
+    bestTile:
+      currentHarvestPeriod: 0
+      NVaule: 0
+      PVaule: 0
+      KVaule: 0
+      waterVaule: 0
+      bugValue: 0
+    harvestTool: 0
+    canHarvestPlants:
+    - sprites:
+      - {fileID: -1507650266, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
+      - {fileID: -181416458, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
+      fruitID: 1002
+      amountMax: 1
+      amountMin: 2
+    - sprites:
+      - {fileID: -1507650266, guid: 6ed15348d7dc0a34289fcc108b950b41, type: 3}
+      - {fileID: -181416458, guid: 6ed15348d7dc0a34289fcc108b950b41, type: 3}
+      fruitID: 1002
+      amountMax: 2
+      amountMin: 3
+    - sprites:
+      - {fileID: -1507650266, guid: f60ee1565afe6384eb79de207c77d2da, type: 3}
+      - {fileID: -181416458, guid: f60ee1565afe6384eb79de207c77d2da, type: 3}
+      fruitID: 1002
+      amountMax: 3
+      amountMin: 4
+    canTwiceHavest: 1
+    afterHavest: 4
+    needPillar: 0
+  - seedId: 1031
+    growthPeriod: 6
+    canHarvestPeriod: 6
+    growthSprite:
+    - {fileID: 1288941236, guid: fa99babd0e26c6c46adaa8cbaddb349c, type: 3}
+    - {fileID: 1288941236, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
+    - {fileID: 1521407085, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
+    - {fileID: 677538192, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
+    - {fileID: 677538192, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
+    deathSpite: {fileID: -1059748352, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
+    onceGrothHour: 25
+    bestSeason: 01000000
+    bestTile:
+      currentHarvestPeriod: 0
+      NVaule: 0
+      PVaule: 0
+      KVaule: 0
+      waterVaule: 0
+      bugValue: 0
+    harvestTool: 0
+    canHarvestPlants:
+    - sprites:
+      - {fileID: -1507650266, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
+      - {fileID: 1237433482, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
+      fruitID: 1001
+      amountMax: 1
+      amountMin: 2
+    - sprites:
+      - {fileID: -1507650266, guid: 6ed15348d7dc0a34289fcc108b950b41, type: 3}
+      - {fileID: 1237433482, guid: 6ed15348d7dc0a34289fcc108b950b41, type: 3}
+      fruitID: 1001
+      amountMax: 2
+      amountMin: 3
+    - sprites:
+      - {fileID: -1507650266, guid: f60ee1565afe6384eb79de207c77d2da, type: 3}
+      - {fileID: 1237433482, guid: f60ee1565afe6384eb79de207c77d2da, type: 3}
+      fruitID: 1001
+      amountMax: 3
+      amountMin: 4
+    canTwiceHavest: 1
+    afterHavest: 4
+    needPillar: 0
+  - seedId: 1032
+    growthPeriod: 6
+    canHarvestPeriod: 6
+    growthSprite:
+    - {fileID: 1288941236, guid: fa99babd0e26c6c46adaa8cbaddb349c, type: 3}
+    - {fileID: 1288941236, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
+    - {fileID: 1521407085, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
+    - {fileID: 677538192, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
+    - {fileID: 677538192, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
+    deathSpite: {fileID: -1059748352, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
+    onceGrothHour: 25
+    bestSeason: 03000000
+    bestTile:
+      currentHarvestPeriod: 0
+      NVaule: 0
+      PVaule: 0
+      KVaule: 0
+      waterVaule: 0
+      bugValue: 0
+    harvestTool: 0
+    canHarvestPlants:
+    - sprites:
+      - {fileID: -1507650266, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
+      - {fileID: 57940158, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
+      fruitID: 1003
+      amountMax: 1
+      amountMin: 2
+    - sprites:
+      - {fileID: -1507650266, guid: 6ed15348d7dc0a34289fcc108b950b41, type: 3}
+      - {fileID: 57940158, guid: 6ed15348d7dc0a34289fcc108b950b41, type: 3}
+      fruitID: 1003
+      amountMax: 2
+      amountMin: 3
+    - sprites:
+      - {fileID: -1507650266, guid: f60ee1565afe6384eb79de207c77d2da, type: 3}
+      - {fileID: 57940158, guid: f60ee1565afe6384eb79de207c77d2da, type: 3}
+      fruitID: 1003
+      amountMax: 3
+      amountMin: 4
+    canTwiceHavest: 1
+    afterHavest: 4
+    needPillar: 0
