@@ -28,6 +28,68 @@ public class SerializableVector3
     {
         return new Vector2Int((int)this.x, (int)this.y);
     }
+    public Vector2 ToVector2()
+    {
+        return new Vector2(this.x, this.y);
+    }
+    public static implicit operator SerializableVector3(Vector3 pos)
+    {
+        return new SerializableVector3(pos.x, pos.y, pos.z);
+    }
+}
+[Serializable]
+public class SerializableVector2
+{
+    public float x;
+    public float y;
+    public float z;
+    public SerializableVector2(Vector2 pos)
+    {
+        this.x = pos.x;
+        this.y = pos.y;
+    }
+    public SerializableVector2(float x, float y)
+    {
+        this.x = x;
+        this.y = y;
+    }
+    public static SerializableVector2 operator +(SerializableVector2 vector2, Vector2 pos)
+    {
+        return new SerializableVector2(vector2.x + pos.x, vector2.y + pos.y);
+    }
+    public static implicit operator SerializableVector2(Vector3 pos)
+    {
+        return new SerializableVector2(pos.x, pos.y);
+    }
+
+}
+[Serializable]
+public class SerializableVector2Int
+{
+    public int x;
+    public int y;
+    public SerializableVector2Int(Vector3Int pos)
+    {
+        this.x = pos.x;
+        this.y = pos.y;
+    }
+    public SerializableVector2Int(int x, int y)
+    {
+        this.x = x;
+        this.y = y;
+    }
+    public Vector2Int ToVector2Int()
+    {
+        return new Vector2Int(this.x, this.y);
+    }
+    public Vector3Int ToVector3Int()
+    {
+        return new Vector3Int(this.x, (int)this.y, 0);
+    }
+    public Vector3 ToVector3()
+    {
+        return new Vector3(this.x, (int)this.y, 0);
+    }
 }
 [Serializable]
 public class PlantState
@@ -53,7 +115,7 @@ public class PlantState
 public class TileDetails
 {
     public bool haveTop;
-    public int seedID;
+    public int seedID = -1;
     public SerializableVector3 position;
     public float NVaule;
     public float PVaule;
@@ -95,7 +157,7 @@ public class ItemDetails
 {
     public int itemID;
     public string itemName;
-    public ItemType itemType;
+    public ItemType[] itemType;
     public Sprite itemIcon;
     public Sprite itemOnWorldSprite;
     public string itemdDescription;
@@ -112,4 +174,10 @@ public struct InventoryItem
 {
     public int itemID;
     public int itemAmount;
+}
+[Serializable]
+public class MapItem
+{
+    public SerializableVector2 position;
+    public InventoryItem item;
 }

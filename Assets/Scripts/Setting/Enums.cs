@@ -12,7 +12,7 @@ public enum DayShift
 }
 public enum ItemType
 {
-    Tool, Seed, Buleprint, Floor, Material, Food, Commodidy
+    Tool, Seed, Buleprint, Floor, Material, Food, Commodidy, Lawn
 }
 public enum ToolType
 {
@@ -21,4 +21,8 @@ public enum ToolType
 public enum SceneType
 {
     PlantHuose, AnimalHuose, Field, PeopleHome, MyHuose
+}
+public enum SlotType
+{
+    Bag, Box, Store, Handheld,
 }

@@ -25,13 +25,13 @@ public class ButtomTileMap : MonoBehaviour
 
     private void OnDisable()
     {
-        if (!Application.IsPlaying(this))
-        {
-            currentTilemap = GetComponent<Tilemap>();
+        // if (!Application.IsPlaying(this))
+        // {
+        //     currentTilemap = GetComponent<Tilemap>();
 
-            if (dataList != null)
-                dataList.gameTileDataList = null;
-        }
+        //     if (dataList != null)
+        //         dataList.gameTileDataList = null;
+        // }
 
     }
 
@@ -49,7 +49,7 @@ public class ButtomTileMap : MonoBehaviour
         Vector3Int endPos = currentTilemap.cellBounds.max;
         dataList.endPos = endPos;
         dataList.gameTileDataList = new TileList[endPos.x - startPos.x];
-        middleTileList.tilePos = new List<Vector2Int>();
+        middleTileList.tilePos = new List<SerializableVector2Int>();
         for (int x = startPos.x; x < endPos.x; x++)
         {
             TileList tileList = new TileList();
@@ -63,7 +63,7 @@ public class ButtomTileMap : MonoBehaviour
                 }
                 else
                 {
-                    middleTileList.tilePos.Add(new Vector2Int(x, y));
+                    middleTileList.tilePos.Add(new SerializableVector2Int(x, y));
                     tileList.tiles[y - startPos.y] = new TileDetails(true);
 
                 }

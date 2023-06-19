@@ -14,6 +14,13 @@ public class TileDetailsDataList : ScriptableObject
 public class TileList
 {
     public TileDetails[] tiles;
+    public int Length
+    {
+        get
+        {
+            return tiles.Length;
+        }
+    }
     public TileDetails this[int index]
     {
         get

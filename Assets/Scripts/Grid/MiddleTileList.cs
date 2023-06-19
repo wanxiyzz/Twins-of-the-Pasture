@@ -6,5 +6,5 @@ using UnityEngine;
 public class MiddleTileList : ScriptableObject
 {
     public string sceneName;
-    public List<Vector2Int> tilePos;
+    public List<SerializableVector2Int> tilePos;
 }

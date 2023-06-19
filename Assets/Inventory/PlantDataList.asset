@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlantDataList
   m_EditorClassIdentifier: 
   plantDataList:
-  - seedId: 1030
+  - seedId: 1029
     growthPeriod: 7
     canHarvestPeriod: 7
     growthSprite:
@@ -26,7 +26,12 @@ MonoBehaviour:
     onceGrothHour: 25
     bestSeason: 0000000002000000
     bestTile:
-      currentHarvestPeriod: 0
+      haveTop: 0
+      seedID: 0
+      position:
+        x: 0
+        y: 0
+        z: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0
@@ -55,9 +60,9 @@ MonoBehaviour:
     canTwiceHavest: 1
     afterHavest: 4
     needPillar: 0
-  - seedId: 1031
-    growthPeriod: 6
-    canHarvestPeriod: 6
+  - seedId: 1030
+    growthPeriod: 7
+    canHarvestPeriod: 7
     growthSprite:
     - {fileID: 1288941236, guid: fa99babd0e26c6c46adaa8cbaddb349c, type: 3}
     - {fileID: 1288941236, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
@@ -68,7 +73,12 @@ MonoBehaviour:
     onceGrothHour: 25
     bestSeason: 01000000
     bestTile:
-      currentHarvestPeriod: 0
+      haveTop: 0
+      seedID: 0
+      position:
+        x: 0
+        y: 0
+        z: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0
@@ -97,9 +107,9 @@ MonoBehaviour:
     canTwiceHavest: 1
     afterHavest: 4
     needPillar: 0
-  - seedId: 1032
-    growthPeriod: 6
-    canHarvestPeriod: 6
+  - seedId: 1031
+    growthPeriod: 7
+    canHarvestPeriod: 7
     growthSprite:
     - {fileID: 1288941236, guid: fa99babd0e26c6c46adaa8cbaddb349c, type: 3}
     - {fileID: 1288941236, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
@@ -110,7 +120,12 @@ MonoBehaviour:
     onceGrothHour: 25
     bestSeason: 03000000
     bestTile:
-      currentHarvestPeriod: 0
+      haveTop: 0
+      seedID: 0
+      position:
+        x: 0
+        y: 0
+        z: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0

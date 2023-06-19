@@ -12,10 +12,12 @@ public class TransitionManager : Singleton<TransitionManager>
     public SceneType sceneType;
     Color fadeIn = new Color(0.1f, 0.1f, 0.1f, 1);
     Color fadeOut = new Color(0.1f, 0.1f, 0.1f, 0);
+    private bool inFade;
     protected override void Awake()
     {
         base.Awake();
         StartCoroutine(LoadSceneSetActive("01.Field"));
+
     }
     private void OnEnable()
     {
@@ -49,7 +51,7 @@ public class TransitionManager : Singleton<TransitionManager>
         Scene newScene = SceneManager.GetSceneAt(SceneManager.sceneCount - 1);
         SceneManager.SetActiveScene(newScene);
         currentSceneName = newScene.name;
-        EventHandler.CallAfterSceneLoadEvent();
+        EventHandler.CallAfterSceneLoadEvent(sceneType, sceneName);
     }
     /// <summary>
     /// 场景切换
@@ -62,11 +64,10 @@ public class TransitionManager : Singleton<TransitionManager>
         yield return FadeIn();
         EventHandler.CallBeforeSceneLoadEvent();
         yield return SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        Debug.Log("加载了" + sceneName);
         yield return SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName));
         currentSceneName = sceneName;
-        EventHandler.CallAfterSceneLoadEvent();
-        EventHandler.CallMoveToPosition(pos);
         //WORKFLOW:添加场景时添加
         sceneType = sceneName switch
         {
@@ -75,6 +76,10 @@ public class TransitionManager : Singleton<TransitionManager>
             _ => SceneType.Field,
 
         };
+        EventHandler.CallAfterSceneLoadEvent(sceneType, sceneName);
+        EventHandler.CallMoveToPosition(pos);
+        yield return new WaitForSeconds(0.3f);
+
         yield return FadeOut();
     }
     /// <summary>
@@ -83,7 +88,12 @@ public class TransitionManager : Singleton<TransitionManager>
     /// <returns></returns>
     IEnumerator FadeIn()
     {
-        CursorManager.Instance.inTransition = true;
+        while (inFade)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+        CursorManager.Instance.cursorEnable = false;
+        inFade = true;
         CursorManager.Instance.checkImage.gameObject.SetActive(false);
         GameManager.Instance.player.playerInput = false;
         while (true)
@@ -109,6 +119,8 @@ public class TransitionManager : Singleton<TransitionManager>
             yield return new WaitForFixedUpdate();
         }
         GameManager.Instance.player.playerInput = true;
+        CursorManager.Instance.checkImage.gameObject.SetActive(true);
+        inFade = false;
     }
     public void GameLoadingAnim(Action a)
     {
@@ -121,6 +133,7 @@ public class TransitionManager : Singleton<TransitionManager>
     {
         yield return FadeIn();
         a();
+        yield return new WaitForSeconds(0.3f);
         yield return FadeOut();
     }
 

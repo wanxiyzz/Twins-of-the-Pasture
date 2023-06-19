@@ -18,6 +18,7 @@ public class GridMap : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             EventHandler.CallSeasonChange((Season)num);
+            TimeManager.Instance.season = (Season)num;
             num++;
             if (num > 3)
             {
@@ -37,18 +38,12 @@ public class GridMap : MonoBehaviour
     /// 切换季节草坪
     /// </summary>
     /// <param name="tile"></param>
-    public void ChangeAllTiles(RuleTile tile)
+    public void ChangeAllTiles(RuleTile tile, MiddleTileList list)
     {
-        for (int i = bottomLeft.x; i <= topRight.x; i++)
+        middle.ClearAllTiles();
+        foreach (var item in list.tilePos)
         {
-            for (int j = bottomLeft.y; j <= topRight.y; j++)
-            {
-                Vector3Int pos = new Vector3Int(i, j, 0);
-                if (middle.GetTile(pos) != null)
-                {
-                    middle.SetTile(pos, tile);
-                }
-            }
+            middle.SetTile(item.ToVector3Int(), tile);
         }
     }
 

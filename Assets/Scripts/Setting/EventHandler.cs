@@ -25,10 +25,10 @@ public class EventHandler
     {
         transitionEvent?.Invoke(sceneToGO, tartgetPos);
     }
-    public static event Action afterSceneLoadEvent;
-    public static void CallAfterSceneLoadEvent()
+    public static event Action<SceneType, string> afterSceneLoadEvent;
+    public static void CallAfterSceneLoadEvent(SceneType sceneType, string sceneName)
     {
-        afterSceneLoadEvent?.Invoke();
+        afterSceneLoadEvent?.Invoke(sceneType, sceneName);
     }
     public static event Action beforeSceneLoadEvent;
     public static void CallBeforeSceneLoadEvent()
@@ -44,6 +44,21 @@ public class EventHandler
     public static void CallPlanUpdate()
     {
         planUpdate?.Invoke();
+    }
+    public static event Action<Vector3, ItemDetails> useItemEvent;
+    public static void CallUseItemEvent(Vector3 pos, ItemDetails itemDetails)
+    {
+        useItemEvent?.Invoke(pos, itemDetails);
+    }
+    public static event Action<Vector3Int, int> plantAPlant;
+    public static void CallPlantAPlant(Vector3Int pos, int seedID)
+    {
+        plantAPlant?.Invoke(pos, seedID);
+    }
+    public static event Action<ItemDetails, bool> SelectItemEvent;
+    public static void CallSelectItemEvent(ItemDetails item, bool isSelected)
+    {
+        SelectItemEvent?.Invoke(item, isSelected);
     }
 
 }

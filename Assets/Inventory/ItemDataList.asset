@@ -15,7 +15,7 @@ MonoBehaviour:
   itemDataList:
   - itemID: 1001
     itemName: "\u7EA2\u897F\u7EA2\u67FF"
-    itemType: 5
+    itemType: 05000000
     itemIcon: {fileID: 1159720526, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: -1792624802, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u7EA2\u8272\u897F\u7EA2\u67FF "
@@ -28,7 +28,7 @@ MonoBehaviour:
     addPhysical: 0
   - itemID: 1002
     itemName: "\u7EFF\u897F\u7EA2\u67FF"
-    itemType: 5
+    itemType: 05000000
     itemIcon: {fileID: 1890372939, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: 1534532835, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u7EFF\u8272\u897F\u7EA2\u67FF "
@@ -41,7 +41,7 @@ MonoBehaviour:
     addPhysical: 0
   - itemID: 1003
     itemName: "\u84DD\u8272\u897F\u7EA2\u67FF"
-    itemType: 5
+    itemType: 05000000
     itemIcon: {fileID: -1186802179, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: -926246565, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u84DD\u8272\u897F\u7EA2\u67FF"
@@ -54,7 +54,7 @@ MonoBehaviour:
     addPhysical: 0
   - itemID: 1004
     itemName: "\u7EFF\u841D\u535C"
-    itemType: 5
+    itemType: 0100000005000000
     itemIcon: {fileID: -232972419, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: -1116262299, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u7EFF\u8272\u841D\u535C"
@@ -67,7 +67,7 @@ MonoBehaviour:
     addPhysical: 0
   - itemID: 1005
     itemName: "\u7EA2\u841D\u535C"
-    itemType: 5
+    itemType: 0100000005000000
     itemIcon: {fileID: 588661858, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: 167406587, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u7EA2\u8272\u841D\u535C"
@@ -80,7 +80,7 @@ MonoBehaviour:
     addPhysical: 0
   - itemID: 1006
     itemName: "\u7EFF\u8FA3\u6912"
-    itemType: 5
+    itemType: 05000000
     itemIcon: {fileID: 2432995, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: -1643863750, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u7EFF\u8272\u8FA3\u6912"
@@ -93,7 +93,7 @@ MonoBehaviour:
     addPhysical: 0
   - itemID: 1007
     itemName: "\u7EFF\u8FA3\u6912"
-    itemType: 5
+    itemType: 05000000
     itemIcon: {fileID: -1814245255, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: -1435858833, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u7EA2\u8272\u8FA3\u6912"
@@ -106,7 +106,7 @@ MonoBehaviour:
     addPhysical: 0
   - itemID: 1008
     itemName: "\u767D\u6D0B\u8471"
-    itemType: 5
+    itemType: 05000000
     itemIcon: {fileID: 1006554630, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: -2103291644, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u767D\u8272\u6D0B\u8471"
@@ -119,7 +119,7 @@ MonoBehaviour:
     addPhysical: 10
   - itemID: 1009
     itemName: "\u7D2B\u6D0B\u8471"
-    itemType: 5
+    itemType: 05000000
     itemIcon: {fileID: -97361961, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: 1139025594, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u7D2B\u8272\u6D0B\u8471"
@@ -132,7 +132,7 @@ MonoBehaviour:
     addPhysical: 10
   - itemID: 1010
     itemName: "\u5C0F\u5357\u74DC"
-    itemType: 5
+    itemType: 05000000
     itemIcon: {fileID: -1432422298, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: 1152461843, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u5C0F\u5357\u74DC"
@@ -145,7 +145,7 @@ MonoBehaviour:
     addPhysical: 0
   - itemID: 1011
     itemName: "\u4E2D\u5357\u74DC"
-    itemType: 5
+    itemType: 05000000
     itemIcon: {fileID: -212473364, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: 1938247558, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u7D2B\u8272\u6D0B\u8471"
@@ -158,7 +158,7 @@ MonoBehaviour:
     addPhysical: 0
   - itemID: 1012
     itemName: "\u5927\u5357\u74DC"
-    itemType: 5
+    itemType: 05000000
     itemIcon: {fileID: -722178346, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: -1133850826, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u7D2B\u8272\u6D0B\u8471"
@@ -171,7 +171,7 @@ MonoBehaviour:
     addPhysical: 0
   - itemID: 1013
     itemName: "\u5AE9\u9EA6\u7A57"
-    itemType: 5
+    itemType: 05000000
     itemIcon: {fileID: 727485364, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: -1208210712, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u5AE9\u9EA6\u7A57"
@@ -184,7 +184,7 @@ MonoBehaviour:
     addPhysical: 0
   - itemID: 1014
     itemName: "\u6210\u719F\u9EA6\u7A57"
-    itemType: 6
+    itemType: 0100000005000000
     itemIcon: {fileID: 1504980333, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: -768586371, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u6210\u719F\u9EA6\u7A57"
@@ -197,7 +197,7 @@ MonoBehaviour:
     addPhysical: 0
   - itemID: 1015
     itemName: "\u8001\u9EA6\u7A57"
-    itemType: 6
+    itemType: 05000000
     itemIcon: {fileID: -901859708, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: 2103072976, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u8001\u9EA6\u7A57"
@@ -210,9 +210,9 @@ MonoBehaviour:
     addPhysical: 0
   - itemID: 1016
     itemName: "\u5AE9\u7389\u7C73"
-    itemType: 5
-    itemIcon: {fileID: -901859708, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
-    itemOnWorldSprite: {fileID: 2103072976, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
+    itemType: 05000000
+    itemIcon: {fileID: 680948780, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
+    itemOnWorldSprite: {fileID: 722717250, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u5AE9\u7389\u7C73"
     canDropped: 1
     canCarried: 0
@@ -223,9 +223,9 @@ MonoBehaviour:
     addPhysical: 0
   - itemID: 1017
     itemName: "\u6210\u719F\u7389\u7C73"
-    itemType: 5
-    itemIcon: {fileID: -901859708, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
-    itemOnWorldSprite: {fileID: 2103072976, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
+    itemType: 05000000
+    itemIcon: {fileID: 1972718236, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
+    itemOnWorldSprite: {fileID: -413336686, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u6210\u719F\u7389\u7C73"
     canDropped: 1
     canCarried: 0
@@ -236,7 +236,7 @@ MonoBehaviour:
     addPhysical: 0
   - itemID: 1018
     itemName: "\u751C\u83DC\u6839"
-    itemType: 5
+    itemType: 0500000001000000
     itemIcon: {fileID: 381856362, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemOnWorldSprite: {fileID: 74759057, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u751C\u83DC\u6839"
@@ -249,7 +249,7 @@ MonoBehaviour:
     addPhysical: 0
   - itemID: 1019
     itemName: "\u672A\u77E5\u690D\u7269"
-    itemType: 5
+    itemType: 05000000
     itemIcon: {fileID: 381856362, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemOnWorldSprite: {fileID: 74759057, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemdDescription: "\u6211\u771F\u77E5\u9053\u4ED6\u53EB\u5565\uFF0C\u641C\u4E5F\u641C\u4E0D\u5230"
@@ -262,7 +262,7 @@ MonoBehaviour:
     addPhysical: 0
   - itemID: 1020
     itemName: "\u571F\u8C46"
-    itemType: 5
+    itemType: 0100000005000000
     itemIcon: {fileID: 450654173, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemOnWorldSprite: {fileID: -1820003221, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u571F\u8C46"
@@ -275,7 +275,7 @@ MonoBehaviour:
     addPhysical: 0
   - itemID: 1021
     itemName: "\u5377\u5FC3\u83DC"
-    itemType: 5
+    itemType: 05000000
     itemIcon: {fileID: 1850991179, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemOnWorldSprite: {fileID: -1970177232, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u5377\u5FC3\u83DC"
@@ -288,7 +288,7 @@ MonoBehaviour:
     addPhysical: 0
   - itemID: 1022
     itemName: "\u83DC\u82B1"
-    itemType: 5
+    itemType: 05000000
     itemIcon: {fileID: 566225417, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemOnWorldSprite: {fileID: -235498848, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u83DC\u82B1"
@@ -301,7 +301,7 @@ MonoBehaviour:
     addPhysical: 0
   - itemID: 1023
     itemName: "\u83B2\u85D5"
-    itemType: 5
+    itemType: 05000000
     itemIcon: {fileID: 1850991179, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemOnWorldSprite: {fileID: -1970177232, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u83B2\u85D5"
@@ -314,7 +314,7 @@ MonoBehaviour:
     addPhysical: 0
   - itemID: 1024
     itemName: "\u82B9\u83DC"
-    itemType: 5
+    itemType: 05000000
     itemIcon: {fileID: 1583554999, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemOnWorldSprite: {fileID: -654480819, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u628A\u82B9\u83DC"
@@ -327,10 +327,10 @@ MonoBehaviour:
     addPhysical: 0
   - itemID: 1025
     itemName: "\u5C0F\u756A\u8304"
-    itemType: 5
+    itemType: 05000000
     itemIcon: {fileID: -1653370260, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemOnWorldSprite: {fileID: 1428152127, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
-    itemdDescription: "\u8FD9\u662F\u4E00\u628A\u82B9\u83DC"
+    itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u5C0F\u756A\u8304"
     canDropped: 1
     canCarried: 0
     itemPrice: 15
@@ -340,7 +340,7 @@ MonoBehaviour:
     addPhysical: 0
   - itemID: 1026
     itemName: "\u8461\u8404"
-    itemType: 5
+    itemType: 05000000
     itemIcon: {fileID: 1418216478, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemOnWorldSprite: {fileID: -1814606354, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E32\u8461\u8404"
@@ -353,7 +353,7 @@ MonoBehaviour:
     addPhysical: 0
   - itemID: 1027
     itemName: "\u63D0\u5B50"
-    itemType: 5
+    itemType: 05000000
     itemIcon: {fileID: 1892463712, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemOnWorldSprite: {fileID: -1961759894, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E32\u8461\u8404"
@@ -366,7 +366,7 @@ MonoBehaviour:
     addPhysical: 0
   - itemID: 1028
     itemName: "\u5927\u8471"
-    itemType: 5
+    itemType: 05000000
     itemIcon: {fileID: -471131208, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemOnWorldSprite: {fileID: -1685836335, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E2A\u5927\u8471"
@@ -376,10 +376,10 @@ MonoBehaviour:
     canEat: 1
     addHungry: 5
     addMental: -5
-    addPhysical: 5
+    addPhysical: 10
   - itemID: 1029
     itemName: "\u7EFF\u897F\u7EA2\u67FF\u79CD\u5B50"
-    itemType: 1
+    itemType: 01000000
     itemIcon: {fileID: 1288941236, guid: fa99babd0e26c6c46adaa8cbaddb349c, type: 3}
     itemOnWorldSprite: {fileID: 1288941236, guid: 22b60b9db0d31f648ba49e74e390aecc, type: 3}
     itemdDescription: "\u53EF\u4EE5\u79CD\u51FA\u7EFF\u8272\u7684\u897F\u7EA2\u67FF\u54E6"
@@ -392,10 +392,10 @@ MonoBehaviour:
     addPhysical: 0
   - itemID: 1030
     itemName: "\u7EA2\u897F\u7EA2\u67FF\u79CD\u5B50"
-    itemType: 1
+    itemType: 01000000
     itemIcon: {fileID: 1288941236, guid: fa99babd0e26c6c46adaa8cbaddb349c, type: 3}
     itemOnWorldSprite: {fileID: 1288941236, guid: 22b60b9db0d31f648ba49e74e390aecc, type: 3}
-    itemdDescription: "\u53EF\u4EE5\u79CD\u51FA\u7EA2\u8272\u7684\u7684\u897F\u7EA2\u67FF\u54E6"
+    itemdDescription: "\u53EF\u4EE5\u79CD\u51FA\u7EA2\u8272\u7684\u897F\u7EA2\u67FF\u54E6"
     canDropped: 1
     canCarried: 0
     itemPrice: 15
@@ -405,7 +405,7 @@ MonoBehaviour:
     addPhysical: 0
   - itemID: 1031
     itemName: "\u84DD\u897F\u7EA2\u67FF\u79CD\u5B50"
-    itemType: 1
+    itemType: 01000000
     itemIcon: {fileID: 1288941236, guid: fa99babd0e26c6c46adaa8cbaddb349c, type: 3}
     itemOnWorldSprite: {fileID: 1288941236, guid: 22b60b9db0d31f648ba49e74e390aecc, type: 3}
     itemdDescription: "\u53EF\u4EE5\u79CD\u51FA\u84DD\u8272\u7684\u7684\u897F\u7EA2\u67FF\u54E6"

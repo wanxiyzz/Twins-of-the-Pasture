@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &67528440
 Transform:
   m_ObjectHideFlags: 0
@@ -131,10 +131,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9199819d43422aa4aa6f3a464782de0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plantDetails:
-    seedId: 0
+  shadow: {fileID: 67528439}
+  plantState:
+    seedID: -1
+    position:
+      x: 0
+      y: 0
+      z: 0
+    deathPrecent: 0
+    goodPrecent: 0
     grouthHuornum: 0
     currentPeriod: 0
+    currentHarvestPeriod: 0
+    plantingTime: 0
+  plantDetails:
+    seedId: 0
     growthPeriod: 0
     canHarvestPeriod: 0
     growthSprite: []
@@ -142,17 +153,19 @@ MonoBehaviour:
     onceGrothHour: 0
     bestSeason: 
     bestTile:
+      haveTop: 0
+      seedID: -1
+      position:
+        x: 0
+        y: 0
+        z: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0
       waterVaule: 0
       bugValue: 0
-      seedID: -1
-    deathPrecent: 0
     harvestTool: 0
     canHarvestPlants: []
-    plantingTime: 0
-    currentHarvestPeriod: 0
     canTwiceHavest: 0
     afterHavest: 0
     needPillar: 0

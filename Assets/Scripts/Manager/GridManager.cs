@@ -6,37 +6,35 @@ public class GridManager : Singleton<GridManager>
     public GridMap gridMap;
     public Season currentSeason;
     public RuleTile[] ruleTiles;
+    SceneType sceneType;
     private void OnEnable()
     {
         EventHandler.seasonChange += OnSeasonChange;
-        EventHandler.afterSceneLoadEvent += OnAfterSceneLoadEvent;
     }
     private void OnDisable()
     {
         EventHandler.seasonChange -= OnSeasonChange;
-        EventHandler.afterSceneLoadEvent -= OnAfterSceneLoadEvent;
     }
 
     private void OnSeasonChange(Season season)
     {
         currentSeason = season;
-        gridMap.ChangeAllTiles(ruleTiles[(int)season]);
-    }
-
-    private void OnAfterSceneLoadEvent()
-    {
-        gridMap = FindObjectOfType<GridMap>();
-        if (currentSeason != Season.春)
+        if (sceneType == SceneType.Field)
         {
-            gridMap.ChangeAllTiles(ruleTiles[(int)currentSeason]);
+            TransitionManager.Instance.GameLoadingAnim(() =>
+            {
+                ChangeSceneMiddleTiles(sceneType, TileManager.Instance.currentSceneMiddleTiles);
+            });
         }
-
     }
-    public bool CheckMiddleTile(Vector3Int pos)
+
+    public void ChangeSceneMiddleTiles(SceneType sceneType, MiddleTileList list)
     {
-        if (gridMap.middle != null && gridMap.middle.GetTile(pos) != null)
-            return false;
-        return true;
+        currentSeason = TimeManager.Instance.season;
+        this.sceneType = sceneType;
+        gridMap = FindObjectOfType<GridMap>();
+        if (sceneType == SceneType.Field)
+            gridMap.ChangeAllTiles(ruleTiles[(int)currentSeason], list);
     }
 }
 

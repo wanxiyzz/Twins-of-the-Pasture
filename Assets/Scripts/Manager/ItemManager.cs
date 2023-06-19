@@ -4,16 +4,58 @@ using UnityEngine;
 
 public class ItemManager : Singleton<ItemManager>
 {
-    public ItemDataList itemDataList;
-    public ItemDetails FindItemDetails(int ID)
+    //STORED 地图掉落物品
+    public Dictionary<string, List<MapItem>> DictMapItem = new Dictionary<string, List<MapItem>>();
+
+    public List<MapItem> currentSceneMapItem;
+
+    public Transform ItemParent;
+    [SerializeField] private GameObject MapItemPrafab;
+
+    private void OnEnable()
     {
-        foreach (var item in itemDataList.itemDataList)
+        EventHandler.afterSceneLoadEvent += OnAfterSceneLoadEvent;
+    }
+
+    private void OnDisable()
+    {
+        EventHandler.afterSceneLoadEvent -= OnAfterSceneLoadEvent;
+    }
+
+    protected override void Awake()
+    {
+        base.Awake();
+    }
+
+    private void OnAfterSceneLoadEvent(SceneType type, string sceneName)
+    {
+        ItemParent = GameObject.FindGameObjectWithTag("ItemParent").transform;
+        if (DictMapItem.ContainsKey(sceneName))
         {
-            if (item.itemID == ID)
+            currentSceneMapItem = DictMapItem[sceneName];
+            for (int i = 0; i < currentSceneMapItem.Count; i++)
             {
-                return item;
+                var item = Instantiate(MapItemPrafab, ItemParent);
+                item.GetComponent<ItemOnMap>().Init(currentSceneMapItem[i], currentSceneMapItem[i].position);
             }
         }
-        return null;
+        else
+        {
+            DictMapItem.Add(sceneName, new List<MapItem>());
+            currentSceneMapItem = DictMapItem[sceneName];
+        }
+    }
+    public void ThrownItem(InventoryItem inventoryItem, SerializableVector2 pos)
+    {
+        var mapItem = Instantiate(MapItemPrafab, ItemParent);
+        var itemOnMap = mapItem.GetComponent<ItemOnMap>();
+        MapItem currentItem = new MapItem()
+        {
+            item = inventoryItem,
+            position = pos + Vector2.right,
+        };
+        currentSceneMapItem.Add(currentItem);
+        itemOnMap.ItemThrown(currentItem, pos);
+        itemOnMap.indexInCurrentScene = currentSceneMapItem.Count - 1;
     }
 }
