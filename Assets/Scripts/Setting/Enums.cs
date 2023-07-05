@@ -12,7 +12,7 @@ public enum DayShift
 }
 public enum ItemType
 {
-    Tool, Seed, Buleprint, Floor, Material, Food, Commodidy, Lawn
+    Tool, Seed, Buleprint, Floor, Material, Food, Commodidy, Lawn, Sign
 }
 public enum ToolType
 {
@@ -25,4 +25,13 @@ public enum SceneType
 public enum SlotType
 {
     Bag, Box, Store, Handheld,
+}
+public enum WeatherType
+{
+    Sunny,
+    Cloudy,
+    Overcast,
+    LightRain,
+    HeavyRain,
+    Thunderstorm,
 }

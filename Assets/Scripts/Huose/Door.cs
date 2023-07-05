@@ -11,11 +11,11 @@ public class Door : MonoBehaviour
     }
     private void OnEnable()
     {
-        EventHandler.dayChange += OndayChange;
+        EventHandler.DayChange += OndayChange;
     }
     private void OnDisable()
     {
-        EventHandler.dayChange -= OndayChange;
+        EventHandler.DayChange -= OndayChange;
     }
     private void OndayChange(DayShift shift)
     {

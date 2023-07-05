@@ -13,15 +13,15 @@ public class HouseSprite : MonoBehaviour
     }
     private void OnEnable()
     {
-        EventHandler.seasonChange += OnSeasonChange;
-        EventHandler.dayChange += OndayChange;
-        EventHandler.afterSceneLoadEvent += OnAfterSceneLoadEvent;
+        EventHandler.SeasonChange += OnSeasonChange;
+        EventHandler.DayChange += OndayChange;
+        EventHandler.AfterSceneLoadEvent += OnAfterSceneLoadEvent;
     }
     private void OnDisable()
     {
-        EventHandler.seasonChange -= OnSeasonChange;
-        EventHandler.dayChange -= OndayChange;
-        EventHandler.afterSceneLoadEvent -= OnAfterSceneLoadEvent;
+        EventHandler.SeasonChange -= OnSeasonChange;
+        EventHandler.DayChange -= OndayChange;
+        EventHandler.AfterSceneLoadEvent -= OnAfterSceneLoadEvent;
     }
 
     private void OnAfterSceneLoadEvent(SceneType sceneType, string sceneName)
@@ -38,15 +38,14 @@ public class HouseSprite : MonoBehaviour
     }
     private void OnSeasonChange(Season season)
     {
-        Debug.Log((int)season);
         StartCoroutine(ChangeImage(season, TimeManager.Instance.dayShift));
     }
     IEnumerator ChangeImage(Season season, DayShift dayShift)
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.35f);
         if (dayShift == DayShift.Day)
-            spriteRenderer.sprite = openLightSprites[(int)season];
-        else
             spriteRenderer.sprite = closeLightSprites[(int)season];
+        else
+            spriteRenderer.sprite = openLightSprites[(int)season];
     }
 }

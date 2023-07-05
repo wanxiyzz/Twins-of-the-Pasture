@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6404801066343331957}
   - component: {fileID: 6404801066343331947}
   - component: {fileID: 6404801066343331946}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MapItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,6 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5e414f2db3164b45abe8351e5098ac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indexInCurrentScene: 0
 --- !u!95 &6404801066343331946
 Animator:
   serializedVersion: 4
@@ -104,7 +105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6404801066808564347}
   - component: {fileID: 6404801066808564346}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +189,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6404801067342269470}
   - component: {fileID: 6404801067342269469}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

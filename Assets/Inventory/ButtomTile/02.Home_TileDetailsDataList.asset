@@ -28,6 +28,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -39,6 +40,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -50,6 +52,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -61,6 +64,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -72,6 +76,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
   - tiles:
     - haveTop: 1
       seedID: -1
@@ -84,6 +89,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -95,6 +101,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -106,6 +113,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -117,6 +125,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -128,6 +137,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
   - tiles:
     - haveTop: 1
       seedID: -1
@@ -140,6 +150,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -151,6 +162,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -162,6 +174,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -173,6 +186,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -184,6 +198,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
   - tiles:
     - haveTop: 1
       seedID: -1
@@ -196,6 +211,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -207,6 +223,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -218,6 +235,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -229,6 +247,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -240,6 +259,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
   - tiles:
     - haveTop: 1
       seedID: -1
@@ -252,6 +272,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -263,6 +284,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -274,6 +296,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -285,6 +308,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -296,6 +320,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
   - tiles:
     - haveTop: 1
       seedID: -1
@@ -308,6 +333,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -319,6 +345,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -330,6 +357,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -341,6 +369,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -352,6 +381,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
   - tiles:
     - haveTop: 1
       seedID: -1
@@ -364,6 +394,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -375,6 +406,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -386,6 +418,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -397,6 +430,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -408,6 +442,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
   - tiles:
     - haveTop: 1
       seedID: -1
@@ -420,6 +455,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -431,6 +467,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -442,6 +479,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -453,6 +491,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -464,6 +503,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
   - tiles:
     - haveTop: 1
       seedID: -1
@@ -476,6 +516,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -487,6 +528,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -498,6 +540,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -509,6 +552,7 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0
     - haveTop: 1
       seedID: -1
       position:
@@ -520,3 +564,4 @@ MonoBehaviour:
       KVaule: 0
       waterVaule: 0
       bugValue: 0
+      decompose: 0

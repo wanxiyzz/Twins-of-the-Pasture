@@ -1,4 +1,3 @@
-using System.Net.Sockets;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -53,8 +52,10 @@ public class SlotManager : Singleton<SlotManager>
             currenIndex = index;
             return;
         }
+        //选中的是工具一栏
         if (index < 0)
         {
+            EventHandler.CallSelectItemEvent(null, false);
             bagSlot[currenIndex].isSelected = false;
             currenIndex = index;
             return;
@@ -82,6 +83,7 @@ public class SlotManager : Singleton<SlotManager>
     /// </summary>
     public void SwapItem(int currenIndex, int targetIndex)
     {
+        if (currenIndex == targetIndex) return;
         if (bagSlot[targetIndex].itemAmount == 0)
         {
             bagSlot[targetIndex].UpdateSlot(bagSlot[currenIndex].itemDetails, bagSlot[currenIndex].itemAmount);

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -47,7 +45,7 @@ public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
         itemAmount = amount;
         amountText.enabled = true;
         amountText.text = amount.ToString();
-
+        if (slotType == SlotType.Handheld) return;
         button.interactable = true;
     }
     public void UpdateSlotEmpty()
@@ -118,6 +116,7 @@ public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     public void TrownItem()
     {
         if (itemAmount == 0) return;
+        EventHandler.CallSelectItemEvent(null, false);
         DataManager.Instance.TrownItem(slotIndex, slotType);
         InventoryItem inventoryItem = new InventoryItem()
         {

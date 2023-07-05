@@ -2026,7 +2026,7 @@ GameObject:
   - component: {fileID: 1312045324}
   - component: {fileID: 1312045325}
   - component: {fileID: 1312045326}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Transition
   m_TagString: Untagged
   m_Icon: {fileID: 0}

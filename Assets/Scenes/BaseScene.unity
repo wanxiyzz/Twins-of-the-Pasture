@@ -391,6 +391,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 340007716}
   m_CullTransparentMesh: 1
+--- !u!1 &438201337
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 438201339}
+  - component: {fileID: 438201338}
+  m_Layer: 0
+  m_Name: GrassManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &438201338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438201337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 726e2a671ca0fd048902120b9c4e7d62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grassPrefabs: {fileID: 3571129945599964731, guid: 7e647eacf2e1df2449efcdf933195dd7, type: 3}
+  smallGarssSprite:
+  - {fileID: -1948214203, guid: e7361a20405bee74d8b6bb2e2c7ebcd0, type: 3}
+  - {fileID: 1636529621, guid: e7361a20405bee74d8b6bb2e2c7ebcd0, type: 3}
+  - {fileID: -952038663, guid: e7361a20405bee74d8b6bb2e2c7ebcd0, type: 3}
+  - {fileID: 1461947338, guid: e7361a20405bee74d8b6bb2e2c7ebcd0, type: 3}
+  bigGarssSprite:
+  - {fileID: 839823640, guid: e7361a20405bee74d8b6bb2e2c7ebcd0, type: 3}
+  - {fileID: 386014658, guid: e7361a20405bee74d8b6bb2e2c7ebcd0, type: 3}
+  - {fileID: -2010610114, guid: e7361a20405bee74d8b6bb2e2c7ebcd0, type: 3}
+  - {fileID: 22727431, guid: e7361a20405bee74d8b6bb2e2c7ebcd0, type: 3}
+  tileMap: {fileID: 0}
+  currentSceneName: 
+--- !u!4 &438201339
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438201337}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 572084137}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,6 +639,7 @@ Transform:
   - {fileID: 1972221318}
   - {fileID: 1233244101}
   - {fileID: 589307289}
+  - {fileID: 438201339}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

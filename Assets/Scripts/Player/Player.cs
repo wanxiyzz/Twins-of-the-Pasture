@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 public class Player : MonoBehaviour
 {
@@ -23,13 +24,25 @@ public class Player : MonoBehaviour
 
 
     [Header("三维")]
-    public float currentHungry;//饥饿值
+    /// <summary>
+    /// 当前饥饿值
+    /// </summary>
+    public float currentHungry;
     private float hungry;
+
+    /// <summary>
+    /// 当前精神值
+    /// </summary>
     public float currentMental;//精神值
     private float mental;
+
+    /// <summary>
+    /// 当前体力
+    /// </summary>
     public float currentPhysical;
     private float physical;
 
+    private int noSleepyTime;
 
     private void Start()
     {
@@ -39,15 +52,19 @@ public class Player : MonoBehaviour
     }
     private void OnEnable()
     {
-        EventHandler.moveToPosition += OnMoveToPosition;
-        EventHandler.beforeSceneLoadEvent += OnBeforeSceneLoadEvent;
+        EventHandler.MoveToPosition += OnMoveToPosition;
+        EventHandler.BeforeSceneLoadEvent += OnBeforeSceneLoadEvent;
+        EventHandler.HourUpdate += OnhourUpdate;
     }
 
     private void OnDisable()
     {
-        EventHandler.moveToPosition -= OnMoveToPosition;
-        EventHandler.beforeSceneLoadEvent -= OnBeforeSceneLoadEvent;
+        EventHandler.MoveToPosition -= OnMoveToPosition;
+        EventHandler.BeforeSceneLoadEvent -= OnBeforeSceneLoadEvent;
+        EventHandler.HourUpdate -= OnhourUpdate;
     }
+
+
 
     private void OnMoveToPosition(Vector3 pos)
     {
@@ -110,7 +127,35 @@ public class Player : MonoBehaviour
         movementInput = new Vector2(0, 0);
         isMoving = false;
     }
-
+    private void OnhourUpdate()
+    {
+        noSleepyTime += 1;
+        if (noSleepyTime < 6)
+        {
+            currentHungry -= 5;
+            currentMental -= 5;
+            currentPhysical -= 5;
+        }
+        else
+        {
+            currentHungry -= 10;
+            currentMental -= 10;
+            currentPhysical -= 10;
+        }
+        //TODO:三维低的时候应该的反馈
+    }
+    /// <summary>
+    /// 角色休息
+    /// </summary>
+    private void Sleepy()
+    {
+        if (currentHungry <= 45)
+        {
+            return;
+        }
+        noSleepyTime = 0;
+        currentHungry -= 40;
+    }
 
 
 }

@@ -1,64 +1,67 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
 
 public class EventHandler
 {
-    public static event Action<Season> seasonChange;
+    public static event Action<Season> SeasonChange;
     public static void CallSeasonChange(Season season)
     {
-        seasonChange?.Invoke(season);
+        SeasonChange?.Invoke(season);
     }
-    public static event Action<DayShift> dayChange;
+    public static event Action<DayShift> DayChange;
     public static void CallDayChenge(DayShift shift)
     {
-        dayChange?.Invoke(shift);
+        DayChange?.Invoke(shift);
     }
-    public static event Action<Vector3> moveToPosition;
+    public static event Action<Vector3> MoveToPosition;
     public static void CallMoveToPosition(Vector3 targetPos)
     {
-        moveToPosition?.Invoke(targetPos);
+        MoveToPosition?.Invoke(targetPos);
     }
-    public static event Action<string, Vector3> transitionEvent;
+    public static event Action<string, Vector3> TransitionEvent;
     public static void CallTransitionEvent(string sceneToGO, Vector3 tartgetPos)
     {
-        transitionEvent?.Invoke(sceneToGO, tartgetPos);
+        TransitionEvent?.Invoke(sceneToGO, tartgetPos);
     }
-    public static event Action<SceneType, string> afterSceneLoadEvent;
+    public static event Action<SceneType, string> AfterSceneLoadEvent;
     public static void CallAfterSceneLoadEvent(SceneType sceneType, string sceneName)
     {
-        afterSceneLoadEvent?.Invoke(sceneType, sceneName);
+        AfterSceneLoadEvent?.Invoke(sceneType, sceneName);
     }
-    public static event Action beforeSceneLoadEvent;
+    public static event Action BeforeSceneLoadEvent;
     public static void CallBeforeSceneLoadEvent()
     {
-        beforeSceneLoadEvent?.Invoke();
+        BeforeSceneLoadEvent?.Invoke();
     }
-    public static event Action hourUpdate;
+    public static event Action HourUpdate;
     public static void CallHuorUpdate()
     {
-        hourUpdate?.Invoke();
+        HourUpdate?.Invoke();
     }
-    public static event Action planUpdate;
+    public static event Action PlanUpdate;
     public static void CallPlanUpdate()
     {
-        planUpdate?.Invoke();
+        PlanUpdate?.Invoke();
     }
-    public static event Action<Vector3, ItemDetails> useItemEvent;
+    public static event Action<Vector3, ItemDetails> UseItemEvent;
     public static void CallUseItemEvent(Vector3 pos, ItemDetails itemDetails)
     {
-        useItemEvent?.Invoke(pos, itemDetails);
+        UseItemEvent?.Invoke(pos, itemDetails);
     }
-    public static event Action<Vector3Int, int> plantAPlant;
+    public static event Action<Vector3Int, int> PlantAPlant;
     public static void CallPlantAPlant(Vector3Int pos, int seedID)
     {
-        plantAPlant?.Invoke(pos, seedID);
+        PlantAPlant?.Invoke(pos, seedID);
     }
     public static event Action<ItemDetails, bool> SelectItemEvent;
     public static void CallSelectItemEvent(ItemDetails item, bool isSelected)
     {
         SelectItemEvent?.Invoke(item, isSelected);
+    }
+    public static event Action<WeatherType> WeatherChange;
+    public static void CallWeatherChange(WeatherType weather)
+    {
+        WeatherChange?.Invoke(weather);
     }
 
 }

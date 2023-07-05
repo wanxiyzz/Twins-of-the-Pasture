@@ -19,17 +19,17 @@ public class PlantManager : Singleton<PlantManager>
     public GameObject plantPrafab;
     private void OnEnable()
     {
-        EventHandler.hourUpdate += OnHourUpdate;
-        EventHandler.beforeSceneLoadEvent += OnBeforeSceneLoadEvent;
-        EventHandler.afterSceneLoadEvent += OnAfterSceneLoadEvent;
-        EventHandler.plantAPlant += OnPlantAPlant;
+        EventHandler.HourUpdate += OnHourUpdate;
+        EventHandler.BeforeSceneLoadEvent += OnBeforeSceneLoadEvent;
+        EventHandler.AfterSceneLoadEvent += OnAfterSceneLoadEvent;
+        EventHandler.PlantAPlant += OnPlantAPlant;
     }
     private void OnDisable()
     {
-        EventHandler.hourUpdate -= OnHourUpdate;
-        EventHandler.beforeSceneLoadEvent -= OnBeforeSceneLoadEvent;
-        EventHandler.afterSceneLoadEvent -= OnAfterSceneLoadEvent;
-        EventHandler.plantAPlant -= OnPlantAPlant;
+        EventHandler.HourUpdate -= OnHourUpdate;
+        EventHandler.BeforeSceneLoadEvent -= OnBeforeSceneLoadEvent;
+        EventHandler.AfterSceneLoadEvent -= OnAfterSceneLoadEvent;
+        EventHandler.PlantAPlant -= OnPlantAPlant;
     }
 
     private void OnPlantAPlant(Vector3Int pos, int ID)

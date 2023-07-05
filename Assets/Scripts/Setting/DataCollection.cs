@@ -1,3 +1,4 @@
+using System.Dynamic;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -78,17 +79,38 @@ public class SerializableVector2Int
         this.x = x;
         this.y = y;
     }
+    public static implicit operator SerializableVector2Int(Vector2Int pos)
+    {
+        return new SerializableVector2Int(pos.x, pos.y);
+    }
     public Vector2Int ToVector2Int()
     {
         return new Vector2Int(this.x, this.y);
     }
     public Vector3Int ToVector3Int()
     {
-        return new Vector3Int(this.x, (int)this.y, 0);
+        return new Vector3Int(this.x, this.y, 0);
     }
     public Vector3 ToVector3()
     {
-        return new Vector3(this.x, (int)this.y, 0);
+        return new Vector3(this.x, this.y, 0);
+    }
+    public override bool Equals(object obj)
+    {
+        if (obj == null || GetType() != obj.GetType())
+            return false;
+        SerializableVector2Int other = (SerializableVector2Int)obj;
+        return this.x == other.x && this.y == other.y;
+    }
+    public override int GetHashCode()
+    {
+        unchecked
+        {
+            int hash = 33;
+            hash = hash * 17 + x.GetHashCode();
+            hash = hash * 23 + y.GetHashCode();
+            return hash;
+        }
     }
 }
 [Serializable]
@@ -122,6 +144,7 @@ public class TileDetails
     public float KVaule;
     public int waterVaule;
     public int bugValue;
+    public int decompose;
     public TileDetails(bool haveTop)
     {
         this.haveTop = haveTop;
@@ -180,4 +203,10 @@ public class MapItem
 {
     public SerializableVector2 position;
     public InventoryItem item;
+}
+[Serializable]
+public class Grass
+{
+    public SerializableVector2Int position;
+    public bool isBig;
 }

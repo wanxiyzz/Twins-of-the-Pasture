@@ -18,7 +18,7 @@ public class ItemOnMap : MonoBehaviour
             if (DataManager.Instance.AddItemOnBag(item.item))
             {
                 ItemManager.Instance.currentSceneMapItem.Remove(item);
-                //TODO:音效
+                //AUDIO:拾取音效
                 Destroy(gameObject);
             }
         }
