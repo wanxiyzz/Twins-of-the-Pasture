@@ -1,36 +1,38 @@
-using UnityEngine;
-
-public class WeatherManager : Singleton<WeatherManager>
+using MyGame.GameTime;
+namespace MyGame.WeatherSystem
 {
-    public WeatherType currentWeather;
-    private void OnEnable()
+    public class WeatherManager : Singleton<WeatherManager>
     {
-        EventHandler.DayChange += OnDayChenge;
-    }
-    private void OnDisable()
-    {
-        EventHandler.DayChange += OnDayChenge;
-    }
-
-    private void OnDayChenge(DayShift shift)
-    {
-        switch (TimeManager.Instance.season)
+        public WeatherType currentWeather;
+        private void OnEnable()
         {
-            case Season.春:
-            case Season.秋:
-                //TODO:季节天气反应
-                break;
-            case Season.冬:
-                break;
-            case Season.夏:
-                break;
-
-            default: return;
+            EventHandler.DayChange += OnDayChenge;
         }
-    }
+        private void OnDisable()
+        {
+            EventHandler.DayChange += OnDayChenge;
+        }
 
-    void Update()
-    {
+        private void OnDayChenge(DayShift shift)
+        {
+            switch (TimeManager.Instance.season)
+            {
+                case Season.春:
+                case Season.秋:
+                    //WORKFLOW:季节天气反应
+                    break;
+                case Season.冬:
+                    break;
+                case Season.夏:
+                    break;
 
+                default: return;
+            }
+        }
+
+        void Update()
+        {
+
+        }
     }
 }

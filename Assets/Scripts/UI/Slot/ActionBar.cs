@@ -1,18 +1,23 @@
 using UnityEngine;
-[RequireComponent(typeof(SlotUI))]
-public class ActionBar : MonoBehaviour
+using MyGame.Slot;
+namespace MyGame.UI
 {
-    [SerializeField] KeyCode key;
-    private SlotUI slotUI;
-    private void Awake()
+    [RequireComponent(typeof(SlotUI))]
+    public class ActionBar : MonoBehaviour
     {
-        slotUI = GetComponent<SlotUI>();
-    }
-    void Update()
-    {
-        if (Input.GetKeyDown(key))
+        [SerializeField] KeyCode key;
+        private SlotUI slotUI;
+        private void Awake()
         {
-            slotUI.SelectThis();
+            slotUI = GetComponent<SlotUI>();
+        }
+        void Update()
+        {
+            if (Input.GetKeyDown(key))
+            {
+                slotUI.SelectThis();
+            }
         }
     }
 }
+

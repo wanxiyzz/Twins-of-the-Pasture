@@ -1,9 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using System;
 using UnityEngine.SceneManagement;
+using MyGame.Cursor;
 
 public class TransitionManager : Singleton<TransitionManager>
 {
@@ -94,7 +93,7 @@ public class TransitionManager : Singleton<TransitionManager>
         }
         CursorManager.Instance.cursorEnable = false;
         inFade = true;
-        CursorManager.Instance.checkImage.gameObject.SetActive(false);
+        CursorManager.Instance.checkImage.SetActive(false);
         GameManager.Instance.player.playerInput = false;
         while (true)
         {
@@ -119,7 +118,6 @@ public class TransitionManager : Singleton<TransitionManager>
             yield return new WaitForFixedUpdate();
         }
         GameManager.Instance.player.playerInput = true;
-        CursorManager.Instance.checkImage.gameObject.SetActive(true);
         inFade = false;
     }
     public void GameLoadingAnim(Action a)

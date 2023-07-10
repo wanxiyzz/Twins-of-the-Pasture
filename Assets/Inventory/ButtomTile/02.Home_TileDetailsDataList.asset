@@ -23,6 +23,7 @@ MonoBehaviour:
         x: 0
         y: 0
         z: 0
+      canPlant: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0
@@ -35,6 +36,7 @@ MonoBehaviour:
         x: 0
         y: 0
         z: 0
+      canPlant: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0
@@ -47,6 +49,7 @@ MonoBehaviour:
         x: 0
         y: 0
         z: 0
+      canPlant: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0
@@ -59,6 +62,7 @@ MonoBehaviour:
         x: 0
         y: 0
         z: 0
+      canPlant: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0
@@ -71,67 +75,7 @@ MonoBehaviour:
         x: 0
         y: 0
         z: 0
-      NVaule: 0
-      PVaule: 0
-      KVaule: 0
-      waterVaule: 0
-      bugValue: 0
-      decompose: 0
-  - tiles:
-    - haveTop: 1
-      seedID: -1
-      position:
-        x: 0
-        y: 0
-        z: 0
-      NVaule: 0
-      PVaule: 0
-      KVaule: 0
-      waterVaule: 0
-      bugValue: 0
-      decompose: 0
-    - haveTop: 1
-      seedID: -1
-      position:
-        x: 0
-        y: 0
-        z: 0
-      NVaule: 0
-      PVaule: 0
-      KVaule: 0
-      waterVaule: 0
-      bugValue: 0
-      decompose: 0
-    - haveTop: 1
-      seedID: -1
-      position:
-        x: 0
-        y: 0
-        z: 0
-      NVaule: 0
-      PVaule: 0
-      KVaule: 0
-      waterVaule: 0
-      bugValue: 0
-      decompose: 0
-    - haveTop: 1
-      seedID: -1
-      position:
-        x: 0
-        y: 0
-        z: 0
-      NVaule: 0
-      PVaule: 0
-      KVaule: 0
-      waterVaule: 0
-      bugValue: 0
-      decompose: 0
-    - haveTop: 1
-      seedID: -1
-      position:
-        x: 0
-        y: 0
-        z: 0
+      canPlant: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0
@@ -145,6 +89,7 @@ MonoBehaviour:
         x: 0
         y: 0
         z: 0
+      canPlant: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0
@@ -157,6 +102,7 @@ MonoBehaviour:
         x: 0
         y: 0
         z: 0
+      canPlant: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0
@@ -169,6 +115,7 @@ MonoBehaviour:
         x: 0
         y: 0
         z: 0
+      canPlant: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0
@@ -181,6 +128,7 @@ MonoBehaviour:
         x: 0
         y: 0
         z: 0
+      canPlant: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0
@@ -193,67 +141,7 @@ MonoBehaviour:
         x: 0
         y: 0
         z: 0
-      NVaule: 0
-      PVaule: 0
-      KVaule: 0
-      waterVaule: 0
-      bugValue: 0
-      decompose: 0
-  - tiles:
-    - haveTop: 1
-      seedID: -1
-      position:
-        x: 0
-        y: 0
-        z: 0
-      NVaule: 0
-      PVaule: 0
-      KVaule: 0
-      waterVaule: 0
-      bugValue: 0
-      decompose: 0
-    - haveTop: 1
-      seedID: -1
-      position:
-        x: 0
-        y: 0
-        z: 0
-      NVaule: 0
-      PVaule: 0
-      KVaule: 0
-      waterVaule: 0
-      bugValue: 0
-      decompose: 0
-    - haveTop: 1
-      seedID: -1
-      position:
-        x: 0
-        y: 0
-        z: 0
-      NVaule: 0
-      PVaule: 0
-      KVaule: 0
-      waterVaule: 0
-      bugValue: 0
-      decompose: 0
-    - haveTop: 1
-      seedID: -1
-      position:
-        x: 0
-        y: 0
-        z: 0
-      NVaule: 0
-      PVaule: 0
-      KVaule: 0
-      waterVaule: 0
-      bugValue: 0
-      decompose: 0
-    - haveTop: 1
-      seedID: -1
-      position:
-        x: 0
-        y: 0
-        z: 0
+      canPlant: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0
@@ -267,6 +155,7 @@ MonoBehaviour:
         x: 0
         y: 0
         z: 0
+      canPlant: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0
@@ -279,6 +168,7 @@ MonoBehaviour:
         x: 0
         y: 0
         z: 0
+      canPlant: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0
@@ -291,6 +181,7 @@ MonoBehaviour:
         x: 0
         y: 0
         z: 0
+      canPlant: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0
@@ -303,6 +194,7 @@ MonoBehaviour:
         x: 0
         y: 0
         z: 0
+      canPlant: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0
@@ -315,67 +207,7 @@ MonoBehaviour:
         x: 0
         y: 0
         z: 0
-      NVaule: 0
-      PVaule: 0
-      KVaule: 0
-      waterVaule: 0
-      bugValue: 0
-      decompose: 0
-  - tiles:
-    - haveTop: 1
-      seedID: -1
-      position:
-        x: 0
-        y: 0
-        z: 0
-      NVaule: 0
-      PVaule: 0
-      KVaule: 0
-      waterVaule: 0
-      bugValue: 0
-      decompose: 0
-    - haveTop: 1
-      seedID: -1
-      position:
-        x: 0
-        y: 0
-        z: 0
-      NVaule: 0
-      PVaule: 0
-      KVaule: 0
-      waterVaule: 0
-      bugValue: 0
-      decompose: 0
-    - haveTop: 1
-      seedID: -1
-      position:
-        x: 0
-        y: 0
-        z: 0
-      NVaule: 0
-      PVaule: 0
-      KVaule: 0
-      waterVaule: 0
-      bugValue: 0
-      decompose: 0
-    - haveTop: 1
-      seedID: -1
-      position:
-        x: 0
-        y: 0
-        z: 0
-      NVaule: 0
-      PVaule: 0
-      KVaule: 0
-      waterVaule: 0
-      bugValue: 0
-      decompose: 0
-    - haveTop: 1
-      seedID: -1
-      position:
-        x: 0
-        y: 0
-        z: 0
+      canPlant: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0
@@ -389,6 +221,7 @@ MonoBehaviour:
         x: 0
         y: 0
         z: 0
+      canPlant: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0
@@ -401,6 +234,7 @@ MonoBehaviour:
         x: 0
         y: 0
         z: 0
+      canPlant: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0
@@ -413,6 +247,7 @@ MonoBehaviour:
         x: 0
         y: 0
         z: 0
+      canPlant: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0
@@ -425,6 +260,7 @@ MonoBehaviour:
         x: 0
         y: 0
         z: 0
+      canPlant: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0
@@ -437,67 +273,7 @@ MonoBehaviour:
         x: 0
         y: 0
         z: 0
-      NVaule: 0
-      PVaule: 0
-      KVaule: 0
-      waterVaule: 0
-      bugValue: 0
-      decompose: 0
-  - tiles:
-    - haveTop: 1
-      seedID: -1
-      position:
-        x: 0
-        y: 0
-        z: 0
-      NVaule: 0
-      PVaule: 0
-      KVaule: 0
-      waterVaule: 0
-      bugValue: 0
-      decompose: 0
-    - haveTop: 1
-      seedID: -1
-      position:
-        x: 0
-        y: 0
-        z: 0
-      NVaule: 0
-      PVaule: 0
-      KVaule: 0
-      waterVaule: 0
-      bugValue: 0
-      decompose: 0
-    - haveTop: 1
-      seedID: -1
-      position:
-        x: 0
-        y: 0
-        z: 0
-      NVaule: 0
-      PVaule: 0
-      KVaule: 0
-      waterVaule: 0
-      bugValue: 0
-      decompose: 0
-    - haveTop: 1
-      seedID: -1
-      position:
-        x: 0
-        y: 0
-        z: 0
-      NVaule: 0
-      PVaule: 0
-      KVaule: 0
-      waterVaule: 0
-      bugValue: 0
-      decompose: 0
-    - haveTop: 1
-      seedID: -1
-      position:
-        x: 0
-        y: 0
-        z: 0
+      canPlant: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0
@@ -511,6 +287,7 @@ MonoBehaviour:
         x: 0
         y: 0
         z: 0
+      canPlant: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0
@@ -523,6 +300,7 @@ MonoBehaviour:
         x: 0
         y: 0
         z: 0
+      canPlant: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0
@@ -535,6 +313,7 @@ MonoBehaviour:
         x: 0
         y: 0
         z: 0
+      canPlant: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0
@@ -547,6 +326,7 @@ MonoBehaviour:
         x: 0
         y: 0
         z: 0
+      canPlant: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0
@@ -559,6 +339,271 @@ MonoBehaviour:
         x: 0
         y: 0
         z: 0
+      canPlant: 0
+      NVaule: 0
+      PVaule: 0
+      KVaule: 0
+      waterVaule: 0
+      bugValue: 0
+      decompose: 0
+  - tiles:
+    - haveTop: 1
+      seedID: -1
+      position:
+        x: 0
+        y: 0
+        z: 0
+      canPlant: 0
+      NVaule: 0
+      PVaule: 0
+      KVaule: 0
+      waterVaule: 0
+      bugValue: 0
+      decompose: 0
+    - haveTop: 1
+      seedID: -1
+      position:
+        x: 0
+        y: 0
+        z: 0
+      canPlant: 0
+      NVaule: 0
+      PVaule: 0
+      KVaule: 0
+      waterVaule: 0
+      bugValue: 0
+      decompose: 0
+    - haveTop: 1
+      seedID: -1
+      position:
+        x: 0
+        y: 0
+        z: 0
+      canPlant: 0
+      NVaule: 0
+      PVaule: 0
+      KVaule: 0
+      waterVaule: 0
+      bugValue: 0
+      decompose: 0
+    - haveTop: 1
+      seedID: -1
+      position:
+        x: 0
+        y: 0
+        z: 0
+      canPlant: 0
+      NVaule: 0
+      PVaule: 0
+      KVaule: 0
+      waterVaule: 0
+      bugValue: 0
+      decompose: 0
+    - haveTop: 1
+      seedID: -1
+      position:
+        x: 0
+        y: 0
+        z: 0
+      canPlant: 0
+      NVaule: 0
+      PVaule: 0
+      KVaule: 0
+      waterVaule: 0
+      bugValue: 0
+      decompose: 0
+  - tiles:
+    - haveTop: 1
+      seedID: -1
+      position:
+        x: 0
+        y: 0
+        z: 0
+      canPlant: 0
+      NVaule: 0
+      PVaule: 0
+      KVaule: 0
+      waterVaule: 0
+      bugValue: 0
+      decompose: 0
+    - haveTop: 1
+      seedID: -1
+      position:
+        x: 0
+        y: 0
+        z: 0
+      canPlant: 0
+      NVaule: 0
+      PVaule: 0
+      KVaule: 0
+      waterVaule: 0
+      bugValue: 0
+      decompose: 0
+    - haveTop: 1
+      seedID: -1
+      position:
+        x: 0
+        y: 0
+        z: 0
+      canPlant: 0
+      NVaule: 0
+      PVaule: 0
+      KVaule: 0
+      waterVaule: 0
+      bugValue: 0
+      decompose: 0
+    - haveTop: 1
+      seedID: -1
+      position:
+        x: 0
+        y: 0
+        z: 0
+      canPlant: 0
+      NVaule: 0
+      PVaule: 0
+      KVaule: 0
+      waterVaule: 0
+      bugValue: 0
+      decompose: 0
+    - haveTop: 1
+      seedID: -1
+      position:
+        x: 0
+        y: 0
+        z: 0
+      canPlant: 0
+      NVaule: 0
+      PVaule: 0
+      KVaule: 0
+      waterVaule: 0
+      bugValue: 0
+      decompose: 0
+  - tiles:
+    - haveTop: 1
+      seedID: -1
+      position:
+        x: 0
+        y: 0
+        z: 0
+      canPlant: 0
+      NVaule: 0
+      PVaule: 0
+      KVaule: 0
+      waterVaule: 0
+      bugValue: 0
+      decompose: 0
+    - haveTop: 1
+      seedID: -1
+      position:
+        x: 0
+        y: 0
+        z: 0
+      canPlant: 0
+      NVaule: 0
+      PVaule: 0
+      KVaule: 0
+      waterVaule: 0
+      bugValue: 0
+      decompose: 0
+    - haveTop: 1
+      seedID: -1
+      position:
+        x: 0
+        y: 0
+        z: 0
+      canPlant: 0
+      NVaule: 0
+      PVaule: 0
+      KVaule: 0
+      waterVaule: 0
+      bugValue: 0
+      decompose: 0
+    - haveTop: 1
+      seedID: -1
+      position:
+        x: 0
+        y: 0
+        z: 0
+      canPlant: 0
+      NVaule: 0
+      PVaule: 0
+      KVaule: 0
+      waterVaule: 0
+      bugValue: 0
+      decompose: 0
+    - haveTop: 1
+      seedID: -1
+      position:
+        x: 0
+        y: 0
+        z: 0
+      canPlant: 0
+      NVaule: 0
+      PVaule: 0
+      KVaule: 0
+      waterVaule: 0
+      bugValue: 0
+      decompose: 0
+  - tiles:
+    - haveTop: 1
+      seedID: -1
+      position:
+        x: 0
+        y: 0
+        z: 0
+      canPlant: 0
+      NVaule: 0
+      PVaule: 0
+      KVaule: 0
+      waterVaule: 0
+      bugValue: 0
+      decompose: 0
+    - haveTop: 1
+      seedID: -1
+      position:
+        x: 0
+        y: 0
+        z: 0
+      canPlant: 0
+      NVaule: 0
+      PVaule: 0
+      KVaule: 0
+      waterVaule: 0
+      bugValue: 0
+      decompose: 0
+    - haveTop: 1
+      seedID: -1
+      position:
+        x: 0
+        y: 0
+        z: 0
+      canPlant: 0
+      NVaule: 0
+      PVaule: 0
+      KVaule: 0
+      waterVaule: 0
+      bugValue: 0
+      decompose: 0
+    - haveTop: 1
+      seedID: -1
+      position:
+        x: 0
+        y: 0
+        z: 0
+      canPlant: 0
+      NVaule: 0
+      PVaule: 0
+      KVaule: 0
+      waterVaule: 0
+      bugValue: 0
+      decompose: 0
+    - haveTop: 1
+      seedID: -1
+      position:
+        x: 0
+        y: 0
+        z: 0
+      canPlant: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0

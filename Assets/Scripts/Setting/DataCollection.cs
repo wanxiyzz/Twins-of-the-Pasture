@@ -1,6 +1,4 @@
-using System.Dynamic;
-using System.Collections;
-using System.Collections.Generic;
+using MyGame.GameTime;
 using UnityEngine;
 using System;
 [Serializable]
@@ -24,6 +22,10 @@ public class SerializableVector3
     public Vector3 ToVector3()
     {
         return new Vector3(this.x, this.y, this.z);
+    }
+    public Vector3Int ToVector3Int()
+    {
+        return new Vector3Int((int)this.x, (int)this.y, (int)this.z);
     }
     public Vector2Int ToVector2Int()
     {
@@ -124,7 +126,7 @@ public class PlantState
     public int currentPeriod;
     public int currentHarvestPeriod;
     public int plantingTime;
-
+    public bool isTree;
     public void Init(Vector3 pos, int seedID)
     {
         position = new SerializableVector3(pos);
@@ -139,6 +141,7 @@ public class TileDetails
     public bool haveTop;
     public int seedID = -1;
     public SerializableVector3 position;
+    public bool canPlant;
     public float NVaule;
     public float PVaule;
     public float KVaule;
@@ -185,12 +188,22 @@ public class ItemDetails
     public Sprite itemOnWorldSprite;
     public string itemdDescription;
     public bool canDropped;
-    public bool canCarried;
     public int itemPrice;
     public bool canEat;
     public int addHungry;
     public int addMental;
     public int addPhysical;
+}
+[Serializable]
+public class ToolDetails
+{
+    public int toolID;
+    public string toolName;
+    public ToolType toolType;
+    public Sprite toolIcon;
+    public Sprite toolOnWorldSprite;
+    public string toolDescription;
+    public int toolPrice;
 }
 [Serializable]
 public struct InventoryItem

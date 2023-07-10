@@ -16,7 +16,8 @@ public enum ItemType
 }
 public enum ToolType
 {
-    Hand, Axe, Shvel, Reap, bottle, Kinfe, Hammer
+    //手，斧头，铲子，   镰刀，瓶子，  水壶 ，锤子,   锄头，盒子
+    Hand, Axe, Shovel, Reap, Bottle, Kettle, Hammer, Hoe, Box
 }
 public enum SceneType
 {

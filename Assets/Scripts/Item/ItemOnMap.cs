@@ -27,7 +27,10 @@ public class ItemOnMap : MonoBehaviour
     {
         this.item = item;
         transform.position = new Vector2(pos.x, pos.y + 0.5f);
-        transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = DataManager.Instance.FindItemDetails(item.item.itemID).itemOnWorldSprite;
+        var temp = DataManager.Instance.FindItemDetails(item.item.itemID);
+        if (temp == null)
+            transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = DataManager.Instance.FindToolDetails(item.item.itemID).toolOnWorldSprite;
+        else transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = temp.itemOnWorldSprite;
         StartCoroutine(RealItemThrown());
     }
     IEnumerator RealItemThrown()

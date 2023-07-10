@@ -1,4 +1,3 @@
-using System.Diagnostics.SymbolStore;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +6,7 @@ public class DataManager : Singleton<DataManager>
 {
     //2000以上为工具
     public ItemDataList itemDataList;
+    public ToolDataList toolDataList;
     public InventoryDataList playerBag;
     private void Start()
     {
@@ -15,6 +15,10 @@ public class DataManager : Singleton<DataManager>
     public ItemDetails FindItemDetails(int ID)
     {
         return itemDataList.itemDataList.Find(a => a.itemID == ID);
+    }
+    public ToolDetails FindToolDetails(int ID)
+    {
+        return toolDataList.toolDataList.Find(a => a.toolID == ID);
     }
     /// <summary>
     /// 物品数据的交换
@@ -42,7 +46,21 @@ public class DataManager : Singleton<DataManager>
         else
         {
             var slot = SlotManager.Instance.bagSlot[currentIndex];
-            slot.UpdateSlot(slot.itemDetails, playerBag.inventoryItems[currentIndex].itemAmount);
+            slot.UpdateAmount(playerBag.inventoryItems[currentIndex].itemAmount);
+        }
+    }
+    public void UseItem(int currentIndex, int amount)
+    {
+        playerBag.inventoryItems[currentIndex].itemAmount -= amount;
+        if (playerBag.inventoryItems[currentIndex].itemAmount == 0)
+        {
+            playerBag.inventoryItems[currentIndex].itemID = 0;
+            SlotManager.Instance.bagSlot[currentIndex].UpdateSlotEmpty();
+        }
+        else
+        {
+            var slot = SlotManager.Instance.bagSlot[currentIndex];
+            slot.UpdateAmount(playerBag.inventoryItems[currentIndex].itemAmount);
         }
     }
     /// <summary>
@@ -52,14 +70,22 @@ public class DataManager : Singleton<DataManager>
     {
         if (slotType == SlotType.Bag || slotType == SlotType.Handheld)
         {
-            playerBag.inventoryItems[currenIndex].itemID = 0;
-            playerBag.inventoryItems[currenIndex].itemAmount = 0;
+            if (currenIndex < 0)
+            {
+                playerBag.inventoryItems[5].itemID = 0;
+                playerBag.inventoryItems[5].itemAmount = 0;
+            }
+            else
+            {
+                playerBag.inventoryItems[currenIndex].itemID = 0;
+                playerBag.inventoryItems[currenIndex].itemAmount = 0;
+            }
         }
     }
     /// <summary>
     /// 捡起或者购买东西
     /// </summary>
-    /// <returns></returns>
+    /// <returns>是否捡起  物品消失</returns>
     public bool AddItemOnBag(InventoryItem item)
     {
         //TODO:堆叠上限判定
@@ -89,7 +115,21 @@ public class DataManager : Singleton<DataManager>
 
             }
         }
-        else return false;
+        else
+        {
+            Debug.Log("132123");
+            if (playerBag.inventoryItems[5].itemID == 0)
+            {
+                playerBag.inventoryItems[5] = item;
+                var tool = FindToolDetails(item.itemID);
+                SlotManager.Instance.UpdateHandSlot(item);
+                if (tool == null)
+                {
+                    Debug.LogError("出现未定义物品ID为 " + item.itemID);
+                }
+            }
+            return true;
+        }
     }
     /// <summary>
     /// 物品的叠加
@@ -97,7 +137,6 @@ public class DataManager : Singleton<DataManager>
     public void ItemOverlay(int currentIndex, int targetIndex, SlotType slotType)
     {
         if (slotType == SlotType.Bag)
-
         {
             playerBag.inventoryItems[targetIndex].itemAmount += playerBag.inventoryItems[currentIndex].itemAmount;
             playerBag.inventoryItems[currentIndex].itemAmount = 0;

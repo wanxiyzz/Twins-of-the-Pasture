@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.UI;
+using MyGame.Slot;
+using MyGame.UI;
 /// <summary>
 /// 只处理UI的表现 不处理任何数据 数据在DataManager那里
 /// </summary>
@@ -11,7 +10,7 @@ public class SlotManager : Singleton<SlotManager>
 
     public SlotUI handSlot;
     public SlotUI[] bagSlot;
-    private int currenIndex = 100;
+    public int currenIndex = -1;
     public Image dragItem;
     protected override void Awake()
     {
@@ -40,34 +39,42 @@ public class SlotManager : Singleton<SlotManager>
         {
             bagSlot[i].UpdateSlot(item[i]);
         }
-        handSlot.UpdateSlot(item[item.Length - 1]);
+        UpdateHandSlot(item[5]);
+    }
+    public void UpdateHandSlot(InventoryItem tool)
+    {
+        if (tool.itemAmount > 0)
+        {
+            handSlot.UpdateSlot(tool);
+            EventHandler.CallPickUpTool(DataManager.Instance.FindToolDetails(tool.itemID).toolType);
+        }
     }
     public void UpdateSlotsHighLight(int index)
     {
-        if (index > 10)
+        if (currenIndex >= 0)
         {
-            if (currenIndex > 10) return;
             bagSlot[currenIndex].highLight.gameObject.SetActive(false);
             bagSlot[currenIndex].isSelected = false;
+        }
+        if (index < 0)
+        {
             currenIndex = index;
             return;
         }
         //选中的是工具一栏
-        if (index < 0)
+        if (index >= 5)
         {
             EventHandler.CallSelectItemEvent(null, false);
-            bagSlot[currenIndex].isSelected = false;
             currenIndex = index;
             return;
         }
         if (currenIndex == index) return;
-        if (currenIndex < 10)
+        if (currenIndex < 5)
         {
-            bagSlot[currenIndex].highLight.gameObject.SetActive(false);
-            bagSlot[currenIndex].isSelected = false;
+            bagSlot[index].highLight.gameObject.SetActive(true);
+            currenIndex = index;
         }
-        bagSlot[index].highLight.gameObject.SetActive(true);
-        currenIndex = index;
+
 
     }
     /// <summary>

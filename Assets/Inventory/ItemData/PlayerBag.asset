@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b24a58913c4b02541a0184a890437d60, type: 3}
+  m_Script: {fileID: 11500000, guid: 282f3e74455761b4d8d4c9bfb3f5c6d0, type: 3}
   m_Name: PlayerBag
   m_EditorClassIdentifier: 
   inventoryItems:
@@ -19,9 +19,9 @@ MonoBehaviour:
     itemAmount: 44
   - itemID: 1008
     itemAmount: 5
-  - itemID: 1030
-    itemAmount: 10
   - itemID: 1029
-    itemAmount: 30
-  - itemID: 0
-    itemAmount: 0
+    itemAmount: 20
+  - itemID: 1030
+    itemAmount: 97
+  - itemID: 2002
+    itemAmount: 1

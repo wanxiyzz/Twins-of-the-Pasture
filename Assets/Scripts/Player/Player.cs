@@ -1,4 +1,6 @@
+using System.Collections;
 using System;
+using MyGame.Cursor;
 using UnityEngine;
 public class Player : MonoBehaviour
 {
@@ -44,6 +46,11 @@ public class Player : MonoBehaviour
 
     private int noSleepyTime;
 
+
+    //移动至一个地方
+    private float stopDistance = 0.5f;
+
+    private Action UseItemAction;
     private void Start()
     {
         rigi = GetComponent<Rigidbody2D>();
@@ -65,15 +72,13 @@ public class Player : MonoBehaviour
     }
 
 
-
     private void OnMoveToPosition(Vector3 pos)
     {
         transform.position = pos;
     }
     private void Update()
     {
-        if (playerInput)
-            PlayerInput();
+        PlayerInput();
         SwitchAnimation();
     }
     private void FixedUpdate()
@@ -156,6 +161,73 @@ public class Player : MonoBehaviour
         noSleepyTime = 0;
         currentHungry -= 40;
     }
+    private void OnPlantAPlant()
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            animators[i].SetTrigger("Plant");
+        }
+        StartCoroutine(PlayerInputPause(0.3f));
+    }
 
-
+    private void OnUseTool(ToolType type, Vector3 pos)
+    {
+        StartCoroutine(PlayerInputPause(0.1f));
+        //WORKFLOW:所有工具的动画
+        switch (type)
+        {
+            case ToolType.Axe:
+            case ToolType.Hoe:
+            case ToolType.Reap:
+            case ToolType.Hammer:
+                for (int i = 0; i < 2; i++)
+                {
+                    animators[i].SetTrigger("Brandish");
+                }
+                break;
+            default: break;
+        }
+    }
+    IEnumerator PlayerInputPause(float time)
+    {
+        playerInput = false;
+        yield return new WaitForSeconds(0.4f);
+        UseItemAction?.Invoke();
+        yield return new WaitForSeconds(time);
+        playerInput = true;
+    }
+    public void MoveToPos(bool isItem, Vector3 pos, Action action)
+    {
+        if (playerInput)
+            StartCoroutine(MoveToTargetPosCoroutine(isItem, pos, action));
+    }
+    IEnumerator MoveToTargetPosCoroutine(bool isItem, Vector3 targetPos, Action action)
+    {
+        playerInput = false;
+        while (Vector3.Distance(transform.position, targetPos) > stopDistance)
+        {
+            Vector3 direction = (targetPos - transform.position).normalized * speed;
+            inputX = direction.x;
+            inputY = direction.y;
+            for (int i = 0; i < 2; i++)
+            {
+                animators[i].SetFloat("InputX", inputX);
+                animators[i].SetFloat("InputY", inputY);
+                animators[i].SetBool("Run", true);
+            }
+            isMoving = true;
+            rigi.velocity = direction;
+            yield return null;
+        }
+        for (int i = 0; i < 2; i++)
+        {
+            animators[i].SetBool("Run", false);
+        }
+        playerInput = true;
+        isMoving = false;
+        rigi.velocity = new Vector2(0, 0);
+        UseItemAction = action;
+        if (!isItem) OnUseTool(CursorManager.Instance.currentTool, targetPos);
+        else OnPlantAPlant();
+    }
 }

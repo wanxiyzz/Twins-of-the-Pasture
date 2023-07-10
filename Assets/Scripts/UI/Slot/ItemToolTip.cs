@@ -1,67 +1,87 @@
 using UnityEngine;
 using UnityEngine.UI;
-
-public class ItemToolTip : MonoBehaviour
+namespace MyGame.UI
 {
-    [SerializeField] Text itemName;
-    [SerializeField] Text itemType;
-    [SerializeField] Text description;
-    [SerializeField] Text price;
-    public void SetupToolTip(ItemDetails item, SlotType slotType)
+    public class ItemToolTip : MonoBehaviour
     {
-        itemName.text = item.itemName;
-        if (item.itemType.Length == 1)
+        [SerializeField] Text itemName;
+        [SerializeField] Text itemType;
+        [SerializeField] Text description;
+        [SerializeField] Text price;
+        public void SetupToolTip(ItemDetails item, SlotType slotType)
         {
-            itemType.text = item.itemType[0] switch
+            itemName.text = item.itemName;
+            if (item.itemType.Length == 1)
             {
-                ItemType.Food => "食物",
-                ItemType.Tool => "工具",
-                ItemType.Seed => "种子",
-                ItemType.Material => "材料",
-                ItemType.Buleprint => "蓝图",
-                ItemType.Floor => "地板",
-                ItemType.Lawn => "草坪",
-                ItemType.Commodidy => "商品",
-                _ => "不知道是啥"
-            };
-        }
-        else
-        {
-            itemType.text = item.itemType[0] switch
+                itemType.text = item.itemType[0] switch
+                {
+                    ItemType.Food => "食物",
+                    ItemType.Tool => "工具",
+                    ItemType.Seed => "种子",
+                    ItemType.Material => "材料",
+                    ItemType.Buleprint => "蓝图",
+                    ItemType.Floor => "地板",
+                    ItemType.Lawn => "草坪",
+                    ItemType.Commodidy => "商品",
+                    _ => "不知道是啥"
+                };
+            }
+            else
             {
-                ItemType.Food => "食物",
-                ItemType.Tool => "工具",
-                ItemType.Seed => "种子",
-                ItemType.Material => "材料",
-                ItemType.Buleprint => "蓝图",
-                ItemType.Floor => "地板",
-                ItemType.Lawn => "草坪",
-                ItemType.Commodidy => "商品",
-                _ => "不知道是啥"
-            };
-            itemType.text = item.itemType[1] switch
+                itemType.text = item.itemType[0] switch
+                {
+                    ItemType.Food => "食物",
+                    ItemType.Tool => "工具",
+                    ItemType.Seed => "种子",
+                    ItemType.Material => "材料",
+                    ItemType.Buleprint => "蓝图",
+                    ItemType.Floor => "地板",
+                    ItemType.Lawn => "草坪",
+                    ItemType.Commodidy => "商品",
+                    ItemType.Sign => "标志",
+                    _ => "不知道是啥"
+                };
+                itemType.text = item.itemType[1] switch
+                {
+                    ItemType.Food => itemType.text += ",食物",
+                    ItemType.Tool => itemType.text += ",工具",
+                    ItemType.Seed => itemType.text += ",种子",
+                    ItemType.Material => itemType.text += ",材料",
+                    ItemType.Buleprint => itemType.text += ",蓝图",
+                    ItemType.Floor => itemType.text += ",地板",
+                    ItemType.Lawn => itemType.text += ",草坪",
+                    ItemType.Commodidy => itemType.text += ",商品",
+                    ItemType.Sign => itemType.text += ",标志",
+                    _ => ",不知道是啥"
+                };
+
+            }
+            description.text = item.itemdDescription;
+            if (slotType != SlotType.Store)
             {
-                ItemType.Food => itemType.text += ",食物",
-                ItemType.Tool => itemType.text += ",工具",
-                ItemType.Seed => itemType.text += ",种子",
-                ItemType.Material => itemType.text += ",材料",
-                ItemType.Buleprint => itemType.text += ",蓝图",
-                ItemType.Floor => itemType.text += ",地板",
-                ItemType.Lawn => itemType.text += ",草坪",
-                ItemType.Commodidy => itemType.text += ",商品",
-                _ => ",不知道是啥"
-            };
+                price.text = item.itemPrice.ToString();
+            }
+            else
+            {
+                price.text = ((int)(item.itemPrice * 0.6f)).ToString();
+            }
 
         }
-        description.text = item.itemdDescription;
-        if (slotType != SlotType.Store)
+        public void SetupToolTip(ToolDetails item, SlotType slotType)
         {
-            price.text = item.itemPrice.ToString();
-        }
-        else
-        {
-            price.text = ((int)(item.itemPrice * 0.6f)).ToString();
-        }
+            itemName.text = item.toolName;
+            itemType.text = "工具";
+            description.text = item.toolDescription;
+            if (slotType != SlotType.Store)
+            {
+                price.text = item.toolPrice.ToString();
+            }
+            else
+            {
+                price.text = ((int)(item.toolPrice * 0.6f)).ToString();
+            }
 
+        }
     }
 }
+

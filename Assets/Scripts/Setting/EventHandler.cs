@@ -63,5 +63,16 @@ public class EventHandler
     {
         WeatherChange?.Invoke(weather);
     }
+    public static event Action<ToolType> PickUpTool;
+    public static void CallPickUpTool(ToolType toolType)
+    {
+        PickUpTool?.Invoke(toolType);
+    }
+    public static event Action<ToolType, Vector3> UseTool;
+    public static void CallUseTool(ToolType toolType, Vector3 pos)
+    {
+        UseTool?.Invoke(toolType, pos);
+    }
+
 
 }

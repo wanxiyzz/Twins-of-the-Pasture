@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -11,9 +10,12 @@ public class ButtomTileMap : MonoBehaviour
     public MiddleTileList middleTileList;
     private void OnEnable()
     {
+    }
+
+    private void OnDisable()
+    {
         if (!Application.IsPlaying(this))
         {
-            currentTilemap = GetComponent<Tilemap>();
 
             UpdateTileProperties();
 #if UNITY_EDITOR
@@ -21,10 +23,6 @@ public class ButtomTileMap : MonoBehaviour
                 EditorUtility.SetDirty(dataList);
 #endif
         }
-    }
-
-    private void OnDisable()
-    {
         // if (!Application.IsPlaying(this))
         // {
         //     currentTilemap = GetComponent<Tilemap>();

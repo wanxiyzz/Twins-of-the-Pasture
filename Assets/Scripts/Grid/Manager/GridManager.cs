@@ -1,44 +1,49 @@
-using System.Security.Cryptography.X509Certificates;
-using System.Collections.Generic;
 using UnityEngine;
-
-public class GridManager : Singleton<GridManager>
+using MyGame.GrassSystem;
+namespace MyGame.Tile
 {
-    public GridMap gridMap;
-    public Season currentSeason;
-    public RuleTile[] ruleTiles;
-    SceneType sceneType;
-    private void OnEnable()
+    public class GridManager : Singleton<GridManager>
     {
-        EventHandler.SeasonChange += OnSeasonChange;
-    }
-    private void OnDisable()
-    {
-        EventHandler.SeasonChange -= OnSeasonChange;
-    }
-
-    private void OnSeasonChange(Season season)
-    {
-        currentSeason = season;
-        if (sceneType == SceneType.Field)
+        public GridMap gridMap;
+        public Season currentSeason;
+        public RuleTile[] ruleTiles;
+        public RuleTile digTile;
+        SceneType sceneType;
+        private void OnEnable()
         {
-            TransitionManager.Instance.GameLoadingAnim(() =>
+            EventHandler.SeasonChange += OnSeasonChange;
+        }
+        private void OnDisable()
+        {
+            EventHandler.SeasonChange -= OnSeasonChange;
+        }
+
+        private void OnSeasonChange(Season season)
+        {
+            currentSeason = season;
+            if (sceneType == SceneType.Field)
             {
-                OnAfterSceneLoad(sceneType, TileManager.Instance.currentSceneMiddleTiles);
-            });
+                TransitionManager.Instance.GameLoadingAnim(() =>
+                {
+                    OnAfterSceneLoad(sceneType, TileManager.Instance.currentSceneMiddleTiles);
+                });
+            }
+        }
+        /// <summary>
+        /// 场景切换时调用
+        /// </summary>
+        public void OnAfterSceneLoad(SceneType sceneType, MiddleTileList list)
+        {
+            this.sceneType = sceneType;
+            gridMap = FindObjectOfType<GridMap>();
+            GrassManager.Instance.OnAfterSceneLoad(sceneType, TransitionManager.Instance.currentSceneName, gridMap.top);
+            if (sceneType == SceneType.Field)
+                gridMap.ChangeAllTiles(ruleTiles[(int)currentSeason], list);
+        }
+        public void DigPostion(Vector3Int pos)
+        {
+            gridMap.middle.SetTile(pos, digTile);
         }
     }
-    /// <summary>
-    /// 场景切换时调用
-    /// </summary>
-    public void OnAfterSceneLoad(SceneType sceneType, MiddleTileList list)
-    {
-        currentSeason = TimeManager.Instance.season;
-        this.sceneType = sceneType;
-        gridMap = FindObjectOfType<GridMap>();
-        GrassManager.Instance.OnAfterSceneLoad(sceneType, TransitionManager.Instance.currentSceneName, gridMap.top);
-        if (sceneType == SceneType.Field)
-            gridMap.ChangeAllTiles(ruleTiles[(int)currentSeason], list);
-    }
-}
 
+}

@@ -1,14 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-
+using MyGame.GameTime;
 public class GridMap : MonoBehaviour
 {
     public Tilemap bottom;
     public Tilemap middle;
     public Tilemap top;
     public Tilemap water;
+
+    public MiddleTileList middleTileList;
+    public TileDetailsDataList dataList;
+
     public Vector2Int bottomLeft;
     public Vector2Int topRight;
     int num;

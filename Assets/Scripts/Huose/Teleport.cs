@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Teleport : MonoBehaviour
+namespace MyGame.Huose
 {
-    public string sceneToGo;
-    public Vector3 positionToGo;
-    private void OnTriggerEnter2D(Collider2D other)
+    public class Teleport : MonoBehaviour
     {
-        if (other.CompareTag("Player"))
+        public string sceneToGo;
+        public Vector3 positionToGo;
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            EventHandler.CallTransitionEvent(sceneToGo, positionToGo);
+            if (other.CompareTag("Player"))
+            {
+                EventHandler.CallTransitionEvent(sceneToGo, positionToGo);
+            }
         }
     }
 }
