@@ -8,6 +8,8 @@ public class GridMap : MonoBehaviour
     public Tilemap top;
     public Tilemap water;
 
+    public Tilemap wall;
+
     public MiddleTileList middleTileList;
     public TileDetailsDataList dataList;
 
@@ -17,6 +19,7 @@ public class GridMap : MonoBehaviour
     bool night;
     private void Update()
     {
+        //TEST
         if (Input.GetKeyDown(KeyCode.Q))
         {
             EventHandler.CallSeasonChange((Season)num);

@@ -40,16 +40,10 @@ public class TransitionManager : Singleton<TransitionManager>
     IEnumerator LoadSceneSetActive(string sceneName)
     {
         yield return SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
-        sceneType = sceneName switch
-        {
-            "01.Field" => SceneType.Field,
-            "02.Home" => SceneType.MyHuose,
-            _ => SceneType.Field,
-
-        };
         Scene newScene = SceneManager.GetSceneAt(SceneManager.sceneCount - 1);
         SceneManager.SetActiveScene(newScene);
         currentSceneName = newScene.name;
+        sceneType = SwitchSceneType();
         EventHandler.CallAfterSceneLoadEvent(sceneType, sceneName);
     }
     /// <summary>
@@ -68,13 +62,7 @@ public class TransitionManager : Singleton<TransitionManager>
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName));
         currentSceneName = sceneName;
         //WORKFLOW:添加场景时添加
-        sceneType = sceneName switch
-        {
-            "01.Field" => SceneType.Field,
-            "02.Home" => SceneType.MyHuose,
-            _ => SceneType.Field,
-
-        };
+        sceneType = SwitchSceneType();
         EventHandler.CallAfterSceneLoadEvent(sceneType, sceneName);
         EventHandler.CallMoveToPosition(pos);
         yield return new WaitForSeconds(0.3f);
@@ -133,6 +121,16 @@ public class TransitionManager : Singleton<TransitionManager>
         a();
         yield return new WaitForSeconds(0.3f);
         yield return FadeOut();
+    }
+    private SceneType SwitchSceneType()
+    {
+        return sceneType = currentSceneName switch
+        {
+            "01.Field" => SceneType.Field,
+            "02.Home" => SceneType.MyHuose,
+            "03.Supermarket" => SceneType.PeopleHome,
+            _ => SceneType.Field,
+        };
     }
 
 }

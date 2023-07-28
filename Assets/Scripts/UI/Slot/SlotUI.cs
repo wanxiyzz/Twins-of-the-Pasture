@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using MyGame.Data;
+using MyGame.Item;
 using UnityEngine.EventSystems;
 namespace MyGame.Slot
 {
@@ -15,6 +17,7 @@ namespace MyGame.Slot
         public int itemAmount;
         public bool isSelected;
         public int slotIndex = 5;
+
         private void Awake()
         {
             isSelected = false;
@@ -22,7 +25,8 @@ namespace MyGame.Slot
             {
                 UpdateSlotEmpty();
             }
-            button.onClick.AddListener(SelectThis);
+            if (slotType == SlotType.Bag)
+                button.onClick.AddListener(SelectThis);
         }
         /// <summary>
         /// 更新数量  0为空
@@ -52,7 +56,8 @@ namespace MyGame.Slot
         }
         public void UpdateSlot(InventoryItem inventoryItem)
         {
-            if (inventoryItem.itemID > 2000)
+
+            if (inventoryItem.itemID > 3000)
             {
                 itemAmount = 1;
                 toolDetails = DataManager.Instance.FindToolDetails(inventoryItem.itemID);
@@ -62,7 +67,7 @@ namespace MyGame.Slot
             }
             else
             {
-                var item = DataManager.Instance.FindItemDetails(inventoryItem.itemID);
+                var item = DataManager.Instance.FindInventory(inventoryItem.itemID);
                 int amount = inventoryItem.itemAmount;
                 if (item == null) return;
                 itemImage.enabled = true;
@@ -135,6 +140,7 @@ namespace MyGame.Slot
                 else
                 {
                     TrownItem();
+                    Debug.Log(targetSlot.slotType);
                 }
             }
             else
@@ -145,6 +151,9 @@ namespace MyGame.Slot
 
 
         }
+        /// <summary>
+        /// 丢东西
+        /// </summary>
         public void TrownItem()
         {
             if (itemAmount == 0) return;
@@ -170,6 +179,11 @@ namespace MyGame.Slot
             }
             ItemManager.Instance.ThrownItem(inventoryItem, GameManager.Instance.player.transform.position);
             UpdateSlotEmpty();
+        }
+        public void HoldItem(Sprite sprite)
+        {
+            itemImage.enabled = true;
+            itemImage.sprite = sprite;
         }
     }
 }

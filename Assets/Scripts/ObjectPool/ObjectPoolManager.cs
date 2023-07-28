@@ -3,14 +3,9 @@ using MyGame.WeatherSystem;
 public class ObjectPoolManager : Singleton<ObjectPoolManager>
 {
     public ObjectPool<RainDrop> rainDropEffect;
-    private void Start()
+    protected override void Awake()
     {
-        Initialize();
-    }
-    private void Initialize()
-    {
+        base.Awake();
         rainDropEffect.Initialize(transform);
     }
-
-
 }

@@ -1,61 +1,62 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class ItemManager : Singleton<ItemManager>
+namespace MyGame.Item
 {
-    //STORED 地图掉落物品
-    public Dictionary<string, List<MapItem>> DictMapItem = new Dictionary<string, List<MapItem>>();
-
-    public List<MapItem> currentSceneMapItem;
-
-    public Transform ItemParent;
-    [SerializeField] private GameObject MapItemPrafab;
-
-    private void OnEnable()
+    public class ItemManager : Singleton<ItemManager>
     {
-        EventHandler.AfterSceneLoadEvent += OnAfterSceneLoadEvent;
-    }
+        //STORED 地图掉落物品
+        public Dictionary<string, List<MapItem>> DictMapItem = new Dictionary<string, List<MapItem>>();
 
-    private void OnDisable()
-    {
-        EventHandler.AfterSceneLoadEvent -= OnAfterSceneLoadEvent;
-    }
+        public List<MapItem> currentSceneMapItem;
 
-    protected override void Awake()
-    {
-        base.Awake();
-    }
+        public Transform ItemParent;
+        [SerializeField] private GameObject MapItemPrafab;
 
-    private void OnAfterSceneLoadEvent(SceneType type, string sceneName)
-    {
-        ItemParent = GameObject.FindGameObjectWithTag("ItemParent").transform;
-        if (DictMapItem.ContainsKey(sceneName))
+        private void OnEnable()
         {
-            currentSceneMapItem = DictMapItem[sceneName];
-            for (int i = 0; i < currentSceneMapItem.Count; i++)
+            EventHandler.AfterSceneLoadEvent += OnAfterSceneLoadEvent;
+        }
+
+        private void OnDisable()
+        {
+            EventHandler.AfterSceneLoadEvent -= OnAfterSceneLoadEvent;
+        }
+
+        protected override void Awake()
+        {
+            base.Awake();
+        }
+
+        private void OnAfterSceneLoadEvent(SceneType type, string sceneName)
+        {
+            ItemParent = GameObject.FindGameObjectWithTag("ItemParent").transform;
+            if (DictMapItem.ContainsKey(sceneName))
             {
-                var item = Instantiate(MapItemPrafab, ItemParent);
-                item.GetComponent<ItemOnMap>().Init(currentSceneMapItem[i], currentSceneMapItem[i].position);
+                currentSceneMapItem = DictMapItem[sceneName];
+                for (int i = 0; i < currentSceneMapItem.Count; i++)
+                {
+                    var item = Instantiate(MapItemPrafab, ItemParent);
+                    item.GetComponent<ItemOnMap>().Init(currentSceneMapItem[i], currentSceneMapItem[i].position);
+                }
+            }
+            else
+            {
+                DictMapItem.Add(sceneName, new List<MapItem>());
+                currentSceneMapItem = DictMapItem[sceneName];
             }
         }
-        else
+        public void ThrownItem(InventoryItem inventoryItem, SerializableVector2 pos)
         {
-            DictMapItem.Add(sceneName, new List<MapItem>());
-            currentSceneMapItem = DictMapItem[sceneName];
+            var mapItem = Instantiate(MapItemPrafab, ItemParent);
+            var itemOnMap = mapItem.GetComponent<ItemOnMap>();
+            MapItem currentItem = new MapItem()
+            {
+                item = inventoryItem,
+                position = pos + Vector2.right,
+            };
+            currentSceneMapItem.Add(currentItem);
+            itemOnMap.ItemThrown(currentItem, pos);
+            itemOnMap.indexInCurrentScene = currentSceneMapItem.Count - 1;
         }
-    }
-    public void ThrownItem(InventoryItem inventoryItem, SerializableVector2 pos)
-    {
-        var mapItem = Instantiate(MapItemPrafab, ItemParent);
-        var itemOnMap = mapItem.GetComponent<ItemOnMap>();
-        MapItem currentItem = new MapItem()
-        {
-            item = inventoryItem,
-            position = pos + Vector2.right,
-        };
-        currentSceneMapItem.Add(currentItem);
-        itemOnMap.ItemThrown(currentItem, pos);
-        itemOnMap.indexInCurrentScene = currentSceneMapItem.Count - 1;
     }
 }

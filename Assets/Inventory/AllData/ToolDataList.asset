@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: ToolDataList
   m_EditorClassIdentifier: 
   toolDataList:
-  - toolID: 2001
+  - toolID: 3001
     toolName: "\u65A7\u5B50"
     toolType: 1
     toolIcon: {fileID: -865051734, guid: 2c7ce5c70777e2742a0b11930bb828d8, type: 3}
     toolOnWorldSprite: {fileID: -893578441, guid: 2c7ce5c70777e2742a0b11930bb828d8, type: 3}
     toolDescription: "\u53EF\u4EE5\u780D\u5012\u5927\u6811"
     toolPrice: 0
-  - toolID: 2002
+  - toolID: 3002
     toolName: "\u9504\u5934"
     toolType: 7
     toolIcon: {fileID: 475577338, guid: 2c7ce5c70777e2742a0b11930bb828d8, type: 3}

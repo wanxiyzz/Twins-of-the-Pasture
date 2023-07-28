@@ -5,6 +5,9 @@ namespace MyGame.UI
 {
     public class UIManager : Singleton<UIManager>
     {
+        public Text playerMoney;
+
+
         public Text timeText;
         public Text DayText;
 
@@ -51,15 +54,6 @@ namespace MyGame.UI
         {
             currentWeather = type;
             UpdateWeatherSprite();
-        }
-
-        private void Update()
-        {
-            //TEST
-            if (Input.GetKeyDown(KeyCode.I))
-            {
-                PromptBox("你太饿了  先吃饭再睡觉吧");
-            }
         }
         public void PromptBox(string statement)
         {

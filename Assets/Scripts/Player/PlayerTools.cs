@@ -1,47 +1,64 @@
 using UnityEngine;
-
-public class PlayerTools : MonoBehaviour
+namespace MyGame.Player
 {
-    [SerializeField] ToolAnimator[] toolAnimators;
-    private Animator animator;
-
-    private void Awake()
+    public class PlayerTools : MonoBehaviour
     {
-        animator = GetComponent<Animator>();
-    }
-    private void OnEnable()
-    {
-        EventHandler.PickUpTool += SwitchToolAnimation;
-    }
-    private void OnDisable()
-    {
-        EventHandler.PickUpTool -= SwitchToolAnimation;
-    }
-    private void Update()
-    {
-        //TEST
-        if (Input.GetKeyDown(KeyCode.L))
+        [SerializeField] ToolAnimator[] toolAnimators;
+        private Animator animator;
+        [SerializeField] SpriteRenderer holdItemSprite;
+        private InventoryPlaceable currentPlaceable;
+        private void Awake()
         {
-            SwitchToolAnimation(ToolType.Hoe);
+            animator = GetComponent<Animator>();
         }
-        if (Input.GetKeyDown(KeyCode.K))
+        private void OnEnable()
         {
-            EventHandler.CallUseTool(ToolType.Axe, transform.position);
+            EventHandler.PickUpTool += SwitchToolAnimation;
+        }
+        private void OnDisable()
+        {
+            EventHandler.PickUpTool -= SwitchToolAnimation;
+        }
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                EventHandler.CallUseTool(ToolType.Axe, transform.position);
+            }
+        }
+        public void SwitchToolAnimation(ToolType type)
+        {
+            for (int i = 0; i < toolAnimators.Length; i++)
+            {
+                if (toolAnimators[i].type == type)
+                    animator.runtimeAnimatorController = toolAnimators[i].animator;
+            }
+            if (type != ToolType.HoldItem)
+            {
+                holdItemSprite.enabled = false;
+            }
+        }
+        public void PickUpPlaceable(InventoryPlaceable placeable, Sprite sprite)
+        {
+            if (placeable.boxName != string.Empty)
+            {
+                if (placeable.boxName.Contains("smallBox"))
+                {
+                    EventHandler.CallPickUpTool(ToolType.SmallBox);
+                    EventHandler.CallPickPlaceable(sprite);
+                    holdItemSprite.sprite = sprite;
+                    return;
+                }
+            }
+            EventHandler.CallPickPlaceable(sprite);
+            holdItemSprite.sprite = sprite;
+            holdItemSprite.enabled = true;
         }
     }
-    public void SwitchToolAnimation(ToolType type)
+    [System.Serializable]
+    public class ToolAnimator
     {
-        for (int i = 0; i < toolAnimators.Length; i++)
-        {
-            if (toolAnimators[i].type == type)
-                animator.runtimeAnimatorController = toolAnimators[i].animator;
-        }
+        public ToolType type;
+        public AnimatorOverrideController animator;
     }
-}
-[System.Serializable]
-public class ToolAnimator
-{
-    public ToolType type;
-    public AnimatorOverrideController animator;
-
 }

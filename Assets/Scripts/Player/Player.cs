@@ -2,232 +2,245 @@ using System.Collections;
 using System;
 using MyGame.Cursor;
 using UnityEngine;
-public class Player : MonoBehaviour
+namespace MyGame.Player
 {
-    [Header("常规")]
-    private Rigidbody2D rigi;
-    private Animator[] animators;
-
-    [Header("移动")]
-    public float speed;
-    private float inputX;
-    private float inputY;
-    private Vector2 movementInput;
-    private bool isMoving;
-    public bool playerInput;
-
-
-    [Header("Rest")]
-    private float restTime;
-    private float currentRestTime;
-
-    private float sleepyTime = 4;
-    private float currentSleepyTime;
-
-
-    [Header("三维")]
-    /// <summary>
-    /// 当前饥饿值
-    /// </summary>
-    public float currentHungry;
-    private float hungry;
-
-    /// <summary>
-    /// 当前精神值
-    /// </summary>
-    public float currentMental;//精神值
-    private float mental;
-
-    /// <summary>
-    /// 当前体力
-    /// </summary>
-    public float currentPhysical;
-    private float physical;
-
-    private int noSleepyTime;
-
-
-    //移动至一个地方
-    private float stopDistance = 0.5f;
-
-    private Action UseItemAction;
-    private void Start()
+    public class Player : MonoBehaviour
     {
-        rigi = GetComponent<Rigidbody2D>();
-        animators = GetComponentsInChildren<Animator>();
-        playerInput = true;
-    }
-    private void OnEnable()
-    {
-        EventHandler.MoveToPosition += OnMoveToPosition;
-        EventHandler.BeforeSceneLoadEvent += OnBeforeSceneLoadEvent;
-        EventHandler.HourUpdate += OnhourUpdate;
-    }
+        [Header("常规")]
+        private Rigidbody2D rigi;
+        private Animator[] animators;
 
-    private void OnDisable()
-    {
-        EventHandler.MoveToPosition -= OnMoveToPosition;
-        EventHandler.BeforeSceneLoadEvent -= OnBeforeSceneLoadEvent;
-        EventHandler.HourUpdate -= OnhourUpdate;
-    }
+        [Header("移动")]
+        public float speed;
+        private float inputX;
+        private float inputY;
+        private Vector2 movementInput;
+        private bool isMoving;
+        public bool playerInput;
 
 
-    private void OnMoveToPosition(Vector3 pos)
-    {
-        transform.position = pos;
-    }
-    private void Update()
-    {
-        PlayerInput();
-        SwitchAnimation();
-    }
-    private void FixedUpdate()
-    {
-        if (playerInput)
-            Movement();
-    }
-    private void Movement()
-    {
-        rigi.MovePosition(rigi.position + movementInput * speed * Time.deltaTime);
-    }
-    private void PlayerInput()
-    {
-        inputX = Input.GetAxisRaw("Horizontal");
-        inputY = Input.GetAxisRaw("Vertical");
-        if (inputX != 0 && inputY != 0)
+        [Header("Rest")]
+        private float restTime;
+        private float currentRestTime;
+
+        private float sleepyTime = 4;
+        private float currentSleepyTime;
+
+
+        [Header("三维")]
+        /// <summary>
+        /// 当前饥饿值
+        /// </summary>
+        public float currentHungry;
+        private float hungry;
+
+        /// <summary>
+        /// 当前精神值
+        /// </summary>
+        public float currentMental;//精神值
+        private float mental;
+
+        /// <summary>
+        /// 当前体力
+        /// </summary>
+        public float currentPhysical;
+        private float physical;
+
+        private int noSleepyTime;
+
+
+        //移动至一个地方
+        private float stopDistance = 0.5f;
+
+        private Action UseItemAction;
+        private void Start()
         {
-            inputX = inputX * 0.6f;
-            inputY = inputY * 0.6f;
+            rigi = GetComponent<Rigidbody2D>();
+            animators = GetComponentsInChildren<Animator>();
+            playerInput = true;
         }
-        movementInput = new Vector2(inputX, inputY);
-        isMoving = movementInput != Vector2.zero;
-    }
-    private void SwitchAnimation()
-    {
-        foreach (var animator in animators)
+        private void OnEnable()
         {
-            animator.SetBool("Run", isMoving);
-            if (isMoving)
+            EventHandler.MoveToPosition += OnMoveToPosition;
+            EventHandler.BeforeSceneLoadEvent += OnBeforeSceneLoadEvent;
+            EventHandler.HourUpdate += OnhourUpdate;
+        }
+
+        private void OnDisable()
+        {
+            EventHandler.MoveToPosition -= OnMoveToPosition;
+            EventHandler.BeforeSceneLoadEvent -= OnBeforeSceneLoadEvent;
+            EventHandler.HourUpdate -= OnhourUpdate;
+        }
+
+
+        private void OnMoveToPosition(Vector3 pos)
+        {
+            transform.position = pos;
+        }
+        private void Update()
+        {
+            PlayerInput();
+            SwitchAnimation();
+        }
+        private void FixedUpdate()
+        {
+            if (playerInput)
+                Movement();
+        }
+        private void Movement()
+        {
+            rigi.MovePosition(rigi.position + movementInput * speed * Time.deltaTime);
+        }
+        private void PlayerInput()
+        {
+            inputX = Input.GetAxisRaw("Horizontal");
+            inputY = Input.GetAxisRaw("Vertical");
+            if (inputX != 0 && inputY != 0)
             {
-                animator.SetFloat("InputX", inputX);
-                animator.SetFloat("InputY", inputY);
+                inputX = inputX * 0.6f;
+                inputY = inputY * 0.6f;
             }
+            movementInput = new Vector2(inputX, inputY);
+            isMoving = movementInput != Vector2.zero;
         }
-        if (!isMoving)
+        private void SwitchAnimation()
         {
-            if (currentSleepyTime <= 0)
+            foreach (var animator in animators)
             {
-                currentSleepyTime = sleepyTime;
-                foreach (var animator in animators)
+                animator.SetBool("Run", isMoving);
+                if (isMoving)
                 {
-                    animator.SetTrigger("Sleepy");
+                    animator.SetFloat("InputX", inputX);
+                    animator.SetFloat("InputY", inputY);
                 }
             }
-            else currentSleepyTime -= Time.deltaTime;
-        }
-        else currentSleepyTime = sleepyTime;
-    }
-    private void OnBeforeSceneLoadEvent()
-    {
-        movementInput = new Vector2(0, 0);
-        isMoving = false;
-    }
-    private void OnhourUpdate()
-    {
-        noSleepyTime += 1;
-        if (noSleepyTime < 6)
-        {
-            currentHungry -= 5;
-            currentMental -= 5;
-            currentPhysical -= 5;
-        }
-        else
-        {
-            currentHungry -= 10;
-            currentMental -= 10;
-            currentPhysical -= 10;
-        }
-        //TODO:三维低的时候应该的反馈
-    }
-    /// <summary>
-    /// 角色休息
-    /// </summary>
-    private void Sleepy()
-    {
-        if (currentHungry <= 45)
-        {
-            return;
-        }
-        noSleepyTime = 0;
-        currentHungry -= 40;
-    }
-    private void OnPlantAPlant()
-    {
-        for (int i = 0; i < 2; i++)
-        {
-            animators[i].SetTrigger("Plant");
-        }
-        StartCoroutine(PlayerInputPause(0.3f));
-    }
-
-    private void OnUseTool(ToolType type, Vector3 pos)
-    {
-        StartCoroutine(PlayerInputPause(0.1f));
-        //WORKFLOW:所有工具的动画
-        switch (type)
-        {
-            case ToolType.Axe:
-            case ToolType.Hoe:
-            case ToolType.Reap:
-            case ToolType.Hammer:
-                for (int i = 0; i < 2; i++)
+            if (!isMoving)
+            {
+                if (currentSleepyTime <= 0)
                 {
-                    animators[i].SetTrigger("Brandish");
+                    currentSleepyTime = sleepyTime;
+                    foreach (var animator in animators)
+                    {
+                        animator.SetTrigger("Sleepy");
+                    }
                 }
-                break;
-            default: break;
+                else currentSleepyTime -= Time.deltaTime;
+            }
+            else currentSleepyTime = sleepyTime;
         }
-    }
-    IEnumerator PlayerInputPause(float time)
-    {
-        playerInput = false;
-        yield return new WaitForSeconds(0.4f);
-        UseItemAction?.Invoke();
-        yield return new WaitForSeconds(time);
-        playerInput = true;
-    }
-    public void MoveToPos(bool isItem, Vector3 pos, Action action)
-    {
-        if (playerInput)
-            StartCoroutine(MoveToTargetPosCoroutine(isItem, pos, action));
-    }
-    IEnumerator MoveToTargetPosCoroutine(bool isItem, Vector3 targetPos, Action action)
-    {
-        playerInput = false;
-        while (Vector3.Distance(transform.position, targetPos) > stopDistance)
+        private void OnBeforeSceneLoadEvent()
         {
-            Vector3 direction = (targetPos - transform.position).normalized * speed;
-            inputX = direction.x;
-            inputY = direction.y;
+            movementInput = new Vector2(0, 0);
+            isMoving = false;
+        }
+        private void OnhourUpdate()
+        {
+            noSleepyTime += 1;
+            if (noSleepyTime < 6)
+            {
+                currentHungry -= 5;
+                currentMental -= 5;
+                currentPhysical -= 5;
+            }
+            else
+            {
+                currentHungry -= 10;
+                currentMental -= 10;
+                currentPhysical -= 10;
+            }
+            //TODO:三维低的时候应该的反馈
+        }
+        /// <summary>
+        /// 角色休息
+        /// </summary>
+        private void Sleepy()
+        {
+            if (currentHungry <= 45)
+            {
+                return;
+            }
+            noSleepyTime = 0;
+            currentHungry -= 40;
+        }
+        private void OnPlantAPlant()
+        {
             for (int i = 0; i < 2; i++)
             {
-                animators[i].SetFloat("InputX", inputX);
-                animators[i].SetFloat("InputY", inputY);
-                animators[i].SetBool("Run", true);
+                animators[i].SetTrigger("Plant");
             }
-            isMoving = true;
-            rigi.velocity = direction;
-            yield return null;
+            StartCoroutine(PlayerInputPause(0.3f));
         }
-        for (int i = 0; i < 2; i++)
+
+        private void OnUseTool(ToolType type, Vector3 pos)
         {
-            animators[i].SetBool("Run", false);
+            StartCoroutine(PlayerInputPause(0.1f));
+            //WORKFLOW:所有工具的动画
+            switch (type)
+            {
+                case ToolType.Axe:
+                case ToolType.Hoe:
+                case ToolType.Reap:
+                case ToolType.Hammer:
+                    for (int i = 0; i < 2; i++)
+                    {
+                        animators[i].SetTrigger("Brandish");
+                    }
+                    break;
+                case ToolType.HoldItem:
+                    for (int i = 0; i < 2; i++)
+                    {
+                        animators[i].SetTrigger("Plant");
+                    }
+                    break;
+                default: break;
+            }
         }
-        playerInput = true;
-        isMoving = false;
-        rigi.velocity = new Vector2(0, 0);
-        UseItemAction = action;
-        if (!isItem) OnUseTool(CursorManager.Instance.currentTool, targetPos);
-        else OnPlantAPlant();
+        IEnumerator PlayerInputPause(float time)
+        {
+            playerInput = false;
+            yield return new WaitForSeconds(0.4f);
+            UseItemAction?.Invoke();
+            yield return new WaitForSeconds(time);
+            playerInput = true;
+        }
+        public bool MoveToPos(bool isItem, Vector3 pos, Action action)
+        {
+            if (playerInput)
+            {
+                StartCoroutine(MoveToTargetPosCoroutine(isItem, pos, action));
+                return true;
+            }
+            return false;
+        }
+        IEnumerator MoveToTargetPosCoroutine(bool isItem, Vector3 targetPos, Action action)
+        {
+            playerInput = false;
+            while (Vector3.Distance(transform.position, targetPos) > stopDistance)
+            {
+                Vector3 direction = (targetPos - transform.position).normalized * speed;
+                inputX = direction.x;
+                inputY = direction.y;
+                for (int i = 0; i < 2; i++)
+                {
+                    animators[i].SetFloat("InputX", inputX);
+                    animators[i].SetFloat("InputY", inputY);
+                    animators[i].SetBool("Run", true);
+                }
+                isMoving = true;
+                rigi.velocity = direction;
+                yield return null;
+            }
+            for (int i = 0; i < 2; i++)
+            {
+                animators[i].SetBool("Run", false);
+            }
+            playerInput = true;
+            isMoving = false;
+            rigi.velocity = new Vector2(0, 0);
+            UseItemAction = action;
+            if (!isItem) OnUseTool(CursorManager.Instance.currentTool, targetPos);
+            else OnPlantAPlant();
+        }
     }
 }

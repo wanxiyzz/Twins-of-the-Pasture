@@ -1,10 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
+using MyGame.Player;
+using MyGame.Buleprint;
 using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
     public Player player;
+    public bool playerCanPick = true;
+    public InventoryPlaceable currentPickItem;
+
+    public string currentPickBoxKey;
+
     public bool isWin;
     public int screenHeight;
     public float toolTipHeight;

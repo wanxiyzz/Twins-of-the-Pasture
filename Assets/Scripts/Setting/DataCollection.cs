@@ -41,6 +41,35 @@ public class SerializableVector3
     }
 }
 [Serializable]
+public class SerializableVector3Int
+{
+    public int x;
+    public int y;
+    public int z;
+    public SerializableVector3Int(int x, int y, int z)
+    {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }
+    public SerializableVector3Int(Vector3Int pos)
+    {
+        this.x = pos.x;
+        this.y = pos.y;
+        this.z = pos.z;
+    }
+    public SerializableVector3Int(Vector3 pos)
+    {
+        this.x = (int)pos.x;
+        this.y = (int)pos.y;
+        this.z = (int)pos.z;
+    }
+    public static implicit operator SerializableVector3Int(Vector3Int pos)
+    {
+        return new SerializableVector3Int(pos.x, pos.y, pos.z);
+    }
+}
+[Serializable]
 public class SerializableVector2
 {
     public float x;
@@ -55,6 +84,28 @@ public class SerializableVector2
     {
         this.x = x;
         this.y = y;
+    }
+    public override int GetHashCode()
+    {
+        unchecked
+        {
+            int hash = 17;
+            hash = hash * 23 + x.GetHashCode();
+            hash = hash * 29 + y.GetHashCode();
+            return hash;
+        }
+    }
+    public override bool Equals(object obj)
+    {
+        if (obj is SerializableVector2 other)
+        {
+            return x == other.x && y == other.y;
+        }
+        return false;
+    }
+    public Vector3 ToVector3()
+    {
+        return new Vector3(x, y, 0);
     }
     public static SerializableVector2 operator +(SerializableVector2 vector2, Vector2 pos)
     {
@@ -71,6 +122,10 @@ public class SerializableVector2Int
 {
     public int x;
     public int y;
+    public static SerializableVector2Int ToSerializableVector2Int(Vector3Int pos)
+    {
+        return new SerializableVector2Int(pos);
+    }
     public SerializableVector2Int(Vector3Int pos)
     {
         this.x = pos.x;
@@ -101,7 +156,7 @@ public class SerializableVector2Int
     {
         if (obj == null || GetType() != obj.GetType())
             return false;
-        SerializableVector2Int other = (SerializableVector2Int)obj;
+        SerializableVector2 other = (SerializableVector2)obj;
         return this.x == other.x && this.y == other.y;
     }
     public override int GetHashCode()
@@ -126,7 +181,7 @@ public class PlantState
     public int currentPeriod;
     public int currentHarvestPeriod;
     public int plantingTime;
-    public bool isTree;
+    public string deathCause;
     public void Init(Vector3 pos, int seedID)
     {
         position = new SerializableVector3(pos);
@@ -187,7 +242,6 @@ public class ItemDetails
     public Sprite itemIcon;
     public Sprite itemOnWorldSprite;
     public string itemdDescription;
-    public bool canDropped;
     public int itemPrice;
     public bool canEat;
     public int addHungry;
@@ -222,4 +276,30 @@ public class Grass
 {
     public SerializableVector2Int position;
     public bool isBig;
+}
+[Serializable]
+public class PlaceableDetails
+{
+    public int buleprintID;
+    public bool isBox;
+    public int aboveCell;
+    public int aboutCell;
+    public bool evenCell;
+    public int money;
+    public GameObject prefab;
+}
+[Serializable]
+public class InventoryPlaceable
+{
+    public int placeableID;
+    public string boxName;
+    public SerializableVector2 position;
+}
+[Serializable]
+public class InventoryBox
+{
+    public int ID;
+    public SerializableVector2 position;
+    public ToolType boxType;
+    public int index;
 }

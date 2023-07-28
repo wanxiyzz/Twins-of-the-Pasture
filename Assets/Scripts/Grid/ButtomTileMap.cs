@@ -43,9 +43,9 @@ public class ButtomTileMap : MonoBehaviour
         middleTileList.sceneName = gameObject.scene.name;
         dataList.sceneName = gameObject.scene.name;
         Vector3Int startPos = currentTilemap.cellBounds.min;
-        dataList.startPos = startPos;
+        dataList.startPos = SerializableVector2Int.ToSerializableVector2Int(startPos);
         Vector3Int endPos = currentTilemap.cellBounds.max;
-        dataList.endPos = endPos;
+        dataList.endPos = SerializableVector2Int.ToSerializableVector2Int(endPos);
         dataList.gameTileDataList = new TileList[endPos.x - startPos.x];
         middleTileList.tilePos = new List<SerializableVector2Int>();
         for (int x = startPos.x; x < endPos.x; x++)

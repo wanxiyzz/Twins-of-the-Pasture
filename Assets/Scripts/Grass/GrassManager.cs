@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using MyGame.Tile;
 namespace MyGame.GrassSystem
 {
     public class GrassManager : Singleton<GrassManager>
@@ -68,23 +69,19 @@ namespace MyGame.GrassSystem
                 {
                     int posX = Random.Range(-29, 36);
                     int posY = Random.Range(-19, 19);
+
                     bool isbig = Random.Range(0, 10) < 3;
                     var pos = new SerializableVector2Int(posX, posY);
-                    var item = grassDict[key].Find(a => a.position.Equals(pos));
-                    if (item == null)
+                    Grass grass = new Grass()
                     {
-                        Grass grass = new Grass()
-                        {
-                            position = pos,
-                            isBig = isbig,
-                        };
-                        grassDict[key].Add(grass);
-                        if (key == currentSceneName)
-                        {
-                            InitGrass(grass);
-                        }
+                        position = pos,
+                        isBig = isbig,
+                    };
+                    grassDict[key].Add(grass);
+                    if (key == currentSceneName)
+                    {
+                        InitGrass(grass);
                     }
-
                     yield return new WaitForFixedUpdate();
                 }
             }
@@ -93,8 +90,13 @@ namespace MyGame.GrassSystem
         {
             if (tileMap.GetTile(grass.position.ToVector3Int()) == null)
             {
+                if (!TileManager.Instance.ButtomTile(grass.position).haveTop)
+                {
+                    grassDict[currentSceneName].Remove(grass);
+                }
+                TileManager.Instance.SetTopEmpty(grass.position.ToVector3Int());
                 var item = Instantiate(grassPrefabs, grassParent);
-                item.transform.position = grass.position.ToVector3();
+                item.transform.position = grass.position.ToVector3() + new Vector3(0.5f, 0, 0);
                 item.GetComponent<GrassLogic>().isBig = grass.isBig;
                 if (grass.isBig)
                 {

@@ -68,6 +68,11 @@ public class EventHandler
     {
         PickUpTool?.Invoke(toolType);
     }
+    public static event Action<Sprite> PickPlaceable;
+    public static void CallPickPlaceable(Sprite sprite)
+    {
+        PickPlaceable?.Invoke(sprite);
+    }
     public static event Action<ToolType, Vector3> UseTool;
     public static void CallUseTool(ToolType toolType, Vector3 pos)
     {

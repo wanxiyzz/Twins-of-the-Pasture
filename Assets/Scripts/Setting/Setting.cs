@@ -12,4 +12,7 @@ public static class Setting
     public static int winterDayTime = 7;
     public static int winterNightTime = 18;
 
+
+
+
 }

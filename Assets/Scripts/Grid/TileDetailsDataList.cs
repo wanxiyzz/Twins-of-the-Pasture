@@ -6,8 +6,8 @@ using UnityEngine;
 public class TileDetailsDataList : ScriptableObject
 {
     public string sceneName;
-    public Vector3Int startPos;
-    public Vector3Int endPos;
+    public SerializableVector2Int startPos;
+    public SerializableVector2Int endPos;
     public TileList[] gameTileDataList;
 }
 [Serializable]
