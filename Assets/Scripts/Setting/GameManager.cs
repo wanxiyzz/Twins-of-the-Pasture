@@ -5,10 +5,9 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
     public Player player;
+    public CheckBox playerCheck;
     public bool playerCanPick = true;
     public InventoryPlaceable currentPickItem;
-
-    public string currentPickBoxKey;
 
     public bool isWin;
     public int screenHeight;

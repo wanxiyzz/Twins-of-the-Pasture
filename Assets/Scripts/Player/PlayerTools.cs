@@ -1,8 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 namespace MyGame.Player
 {
     public class PlayerTools : MonoBehaviour
     {
+        [SerializeField] List<HoldItemSprite> AllHoldItemSprite;
         [SerializeField] ToolAnimator[] toolAnimators;
         private Animator animator;
         [SerializeField] SpriteRenderer holdItemSprite;
@@ -38,20 +40,20 @@ namespace MyGame.Player
                 holdItemSprite.enabled = false;
             }
         }
-        public void PickUpPlaceable(InventoryPlaceable placeable, Sprite sprite)
+        public void PickUpPlaceable(InventoryPlaceable placeable)
         {
             if (placeable.boxName != string.Empty)
             {
                 if (placeable.boxName.Contains("smallBox"))
                 {
-                    EventHandler.CallPickUpTool(ToolType.SmallBox);
-                    EventHandler.CallPickPlaceable(sprite);
-                    holdItemSprite.sprite = sprite;
+                    holdItemSprite.enabled = true;
+                    holdItemSprite.sprite = AllHoldItemSprite.Find(a => a.itemID == placeable.placeableID).sprite;
+                    EventHandler.CallPickPlaceable(holdItemSprite.sprite);
                     return;
                 }
             }
-            EventHandler.CallPickPlaceable(sprite);
-            holdItemSprite.sprite = sprite;
+            holdItemSprite.sprite = AllHoldItemSprite.Find(a => a.itemID == placeable.placeableID).sprite;
+            EventHandler.CallPickPlaceable(holdItemSprite.sprite);
             holdItemSprite.enabled = true;
         }
     }
@@ -60,5 +62,11 @@ namespace MyGame.Player
     {
         public ToolType type;
         public AnimatorOverrideController animator;
+    }
+    [System.Serializable]
+    public class HoldItemSprite
+    {
+        public int itemID;
+        public Sprite sprite;
     }
 }

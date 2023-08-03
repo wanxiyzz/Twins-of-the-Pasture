@@ -69,15 +69,14 @@ namespace MyGame.Cursor
                     if (isBuleprint && cursorItemValid)
                     {
                         PlaceableManager.Instance.BuildPlace(currentBuleprint, buildPos);
-                        Debug.Log("建造");
                         return;
                     }
                     if (cursorToolValid)
                     {
                         usePosition = mouseWorldPos;
-                        if (GameManager.Instance.player.MoveToPos(false, mouseWorldPos, () =>
-                         EventHandler.CallUseTool(currentTool, usePosition)))
-                            Debug.Log("使用工具");
+                        GameManager.Instance.player.MoveToPos(false, mouseWorldPos, () =>
+                         EventHandler.CallUseTool(currentTool, usePosition));
+                        GameManager.Instance.playerCheck.takeSmallBox = false;
                         return;
                     }
                     if (cursorItemValid)
@@ -108,6 +107,10 @@ namespace MyGame.Cursor
                 if (details.itemType.HaveTheType(ItemType.Food)) canEat = true;
                 else canEat = false;
                 UpdateCurrenEvent();
+                if (!details.itemType.HaveTheType(ItemType.Buleprint))
+                {
+                    placeableSprite.enabled = false;
+                }
             }
             else
             {
@@ -159,6 +162,10 @@ namespace MyGame.Cursor
                     SetToolInValid();
                     checkImage.SetActive(false);
                 }
+            }
+            else
+            {
+                SetToolInValid();
             }
             if (currentSelectItem == null) return;
             UpdateEvent?.Invoke();

@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c089559c67592f45b6bfc79c3519942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 4093120881114140183}
   inventoryPlaceable:
     placeableID: 0
     boxName: 

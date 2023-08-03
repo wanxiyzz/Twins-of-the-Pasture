@@ -124,6 +124,29 @@ namespace MyGame.Data
                     playerBag.inventoryItems[currenIndex].itemAmount = 0;
                 }
             }
+            else if (slotType == SlotType.BigBox)
+            {
+                if (currenIndex < 0)
+                {
+                    return;
+                }
+                else
+                {
+                    BoxManager.Instance.currentOpenBigBox[currenIndex] = new InventoryItem();
+
+                }
+            }
+            else if (slotType == SlotType.SmallBox)
+            {
+                if (currenIndex < 0)
+                {
+                    return;
+                }
+                else
+                {
+                    BoxManager.Instance.currentPickSmallBox[currenIndex] = new InventoryItem();
+                }
+            }
         }
         /// <summary>
         /// 捡起或者购买东西
@@ -206,6 +229,41 @@ namespace MyGame.Data
         public void LoadPlayerHuose()
         {
             GameObject.Instantiate(playerHuoses[playerHouseLevel - 1], new Vector3(0, 0, 0), Quaternion.identity);
+        }
+        public void MoveToOther(int index, int targetIndex, SlotType slotType)
+        {
+            InventoryItem temp = new InventoryItem();
+            if (slotType == SlotType.BigBox)
+                BoxManager.Instance.MoveToCurrentBigBox(playerBag.inventoryItems[index], targetIndex, ref temp);
+            else if (slotType == SlotType.SmallBox)
+                BoxManager.Instance.MoveToCurrentSmallBox(playerBag.inventoryItems[index], targetIndex, ref temp);
+            playerBag.inventoryItems[index] = temp;
+            SlotManager.Instance.UpdateBagSlot(playerBag.inventoryItems[index], index);
+        }
+        public void BigBoxToPlayerBag(int index, int targetIndex)
+        {
+            InventoryItem temp = new InventoryItem();
+            BoxManager.Instance.MoveToCurrentBigBox(playerBag.inventoryItems[index], targetIndex, ref temp);
+            playerBag.inventoryItems[index] = temp;
+            SlotManager.Instance.UpdateBagSlot(playerBag.inventoryItems[index], index);
+            Debug.Log("我从 " + index + "到" + targetIndex);
+        }
+        public void MoveToPlayerBag(InventoryItem item, int index, ref InventoryItem myInventory)
+        {
+            if (playerBag.inventoryItems[index].itemAmount == 0)
+            {
+                playerBag.inventoryItems[index] = item;
+            }
+            else if (playerBag.inventoryItems[index].itemID == item.itemID)
+            {
+                playerBag.inventoryItems[index].itemAmount += item.itemAmount;
+            }
+            else
+            {
+                myInventory = playerBag.inventoryItems[index];
+                playerBag.inventoryItems[index] = item;
+            }
+            SlotManager.Instance.UpdateBagSlot(playerBag.inventoryItems[index], index);
         }
     }
 }

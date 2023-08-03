@@ -216,7 +216,6 @@ namespace MyGame.Tile
             }
             else
             {
-                Debug.Log("12313213213");
                 Vector3Int topPos;
                 Vector3Int currentbuildPos = Tools.LocalToCell(buildPos);
                 SetTopEmpty(currentbuildPos);
@@ -268,6 +267,7 @@ namespace MyGame.Tile
             {
                 Vector3Int topPos;
                 Vector3Int currentbuildPos = Tools.LocalToCell(buildPos);
+                SetTopNull(currentbuildPos);
                 for (int j = 0; j < currentBuleprint.aboveCell; j++)
                 {
                     topPos = currentbuildPos + new Vector3Int(0, 1, 0);

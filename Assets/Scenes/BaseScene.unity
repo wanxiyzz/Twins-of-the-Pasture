@@ -168,8 +168,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1759464175}
+  playerCheck: {fileID: 1783731981}
   playerCanPick: 1
-  currentPickBoxKey: 
+  currentPickItem:
+    placeableID: 0
+    boxName: 
+    position:
+      x: 0
+      y: 0
+      z: 0
   isWin: 0
   screenHeight: 0
   toolTipHeight: 0
@@ -536,6 +543,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9cd5a303e6e7e843b3c651bb168870c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentPickSmallBox: []
+  currentOpenBigBox: []
 --- !u!1 &420458897
 GameObject:
   m_ObjectHideFlags: 0
@@ -1542,6 +1551,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e0637754be0404baa86a2e6b210b44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AllHoldItemSprite:
+  - itemID: 2002
+    sprite: {fileID: 1288941236, guid: 8c3c36d41b232154ea12424a207db120, type: 3}
+  - itemID: 2003
+    sprite: {fileID: 553479550, guid: 62fbac37ebad87540a8312e4e464a06b, type: 3}
   toolAnimators:
   - type: 0
     animator: {fileID: 22100000, guid: 066072fbda59a97419cd768a8c79fb54, type: 2}
@@ -1933,6 +1947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTools: {fileID: 1630595391}
+  takeSmallBox: 0
 --- !u!1 &1784321221
 GameObject:
   m_ObjectHideFlags: 0

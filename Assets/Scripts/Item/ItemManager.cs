@@ -45,6 +45,9 @@ namespace MyGame.Item
                 currentSceneMapItem = DictMapItem[sceneName];
             }
         }
+        /// <summary>
+        /// 丢弃东西出现
+        /// </summary>
         public void ThrownItem(InventoryItem inventoryItem, SerializableVector2 pos)
         {
             var mapItem = Instantiate(MapItemPrafab, ItemParent);

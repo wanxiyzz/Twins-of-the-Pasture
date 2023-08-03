@@ -1,7 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
+using MyGame.Slot;
 using UnityEngine;
-namespace MyGame.Buleprint
+
+namespace MyGame.Data
 {
     /// <summary>
     /// 只存储Box的内容数据  不存储位置信息
@@ -63,15 +64,66 @@ namespace MyGame.Buleprint
                 return data;
             }
         }
-        public InventoryItem[] OpenBigBox(string boxName)
-        {
-            currentOpenBigBox = GetBigBoxData(ref boxName);
-            return currentOpenBigBox;
-        }
         public InventoryItem[] PickSmallBox(string boxName)
         {
             currentPickSmallBox = GetSmallBoxData(ref boxName);
             return currentPickSmallBox;
+        }
+        public void MoveToCurrentBigBox(InventoryItem item, int index, ref InventoryItem myInventory)
+        {
+            Debug.Log(index);
+            if (currentOpenBigBox[index].itemAmount == 0)
+            {
+                currentOpenBigBox[index] = item;
+            }
+            else if (currentOpenBigBox[index].itemID == item.itemID)
+            {
+                currentOpenBigBox[index].itemAmount += item.itemAmount;
+            }
+            else
+            {
+                myInventory = currentOpenBigBox[index];
+                currentOpenBigBox[index] = item;
+            }
+            SlotManager.Instance.UpdateBigBox(currentOpenBigBox[index], index);
+        }
+        public void MoveToCurrentSmallBox(InventoryItem item, int index, ref InventoryItem myInventory)
+        {
+            Debug.Log(index);
+            if (currentPickSmallBox[index].itemAmount == 0)
+            {
+                currentPickSmallBox[index] = item;
+            }
+            else if (currentPickSmallBox[index].itemID == item.itemID)
+            {
+                currentPickSmallBox[index].itemAmount += item.itemAmount;
+            }
+            else
+            {
+                myInventory = currentPickSmallBox[index];
+                currentPickSmallBox[index] = item;
+            }
+            SlotManager.Instance.UpdateSmallBox(currentPickSmallBox[index], index);
+        }
+        public void BigBoxToOther(int index, int targetIndex, SlotType slotType)
+        {
+            InventoryItem temp = new InventoryItem();
+            if (slotType == SlotType.Bag)
+                DataManager.Instance.MoveToPlayerBag(currentOpenBigBox[index], targetIndex, ref temp);
+            else if (slotType == SlotType.SmallBox)
+                MoveToCurrentSmallBox(currentOpenBigBox[index], targetIndex, ref temp);
+            currentOpenBigBox[index] = temp;
+            SlotManager.Instance.UpdateBigBox(currentOpenBigBox[index], index);
+        }
+        public void SmallBoxToOther(int index, int targetIndex, SlotType slotType)
+        {
+            InventoryItem temp = new InventoryItem();
+            if (slotType == SlotType.Bag)
+                DataManager.Instance.MoveToPlayerBag(currentPickSmallBox[index], targetIndex, ref temp);
+            else if (slotType == SlotType.BigBox)
+                MoveToCurrentBigBox(currentPickSmallBox[index], targetIndex, ref temp);
+            currentPickSmallBox[index] = temp;
+            SlotManager.Instance.UpdateSmallBox(currentPickSmallBox[index], index);
         }
 
     }

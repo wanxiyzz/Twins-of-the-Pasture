@@ -1,18 +1,14 @@
-using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
+using MyGame.Slot;
+using MyGame.Data;
 namespace MyGame.Buleprint
 {
     public class Box : PlaceableItem
     {
-        private Animator animator;
+        [SerializeField] Animator animator;
         public InventoryItem[] boxInventory;
         private bool isOpen;
-        [SerializeField] ToolType toolType;
-        protected override void Awake()
-        {
-            base.Awake();
-            animator = GetComponentInParent<Animator>();
-        }
+        public ToolType toolType;
         /// <summary>
         /// 初始化箱子
         /// </summary>
@@ -30,14 +26,18 @@ namespace MyGame.Buleprint
         }
         public void OpenOrClose()
         {
+            if (toolType == ToolType.SmallBox) return;
             if (isOpen)
             {
                 isOpen = false;
+                SlotManager.Instance.OnCloseBigBox();
                 animator.Play("CloseBox");
             }
             else
             {
                 isOpen = true;
+                SlotManager.Instance.OnOpenBigBox(boxInventory);
+                BoxManager.Instance.currentOpenBigBox = boxInventory;
                 animator.Play("OpenBox");
             }
         }
@@ -46,8 +46,9 @@ namespace MyGame.Buleprint
             InSelectThis();
             if (isOpen)
             {
+                SlotManager.Instance.OnCloseBigBox();
                 isOpen = false;
-                animator.Play("CloseBox");
+                animator?.Play("CloseBox");
             }
         }
 

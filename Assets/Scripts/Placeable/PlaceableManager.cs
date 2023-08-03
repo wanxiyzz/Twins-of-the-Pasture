@@ -28,6 +28,8 @@ namespace MyGame.Buleprint
         {
             EventHandler.AfterSceneLoadEvent += OnAfterSceneLoadEvent;
             EventHandler.UseTool += OnUseTool;
+            //TEST
+            if (currentInMyHome) return;
         }
         private void OnDisable()
         {
@@ -98,7 +100,6 @@ namespace MyGame.Buleprint
             {
                 currentScenePlaceable.Remove(placeable);
             }
-            Debug.Log(currentScenePlaceable.Count);
             TileManager.Instance.RemovePlace(FindPlaceableDetails(placeable.placeableID), placeable.position.ToVector3());
         }
         private void OnUseTool(ToolType type, Vector3 vector)
@@ -114,6 +115,5 @@ namespace MyGame.Buleprint
             }
 
         }
-
     }
 }

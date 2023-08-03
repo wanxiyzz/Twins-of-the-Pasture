@@ -3,17 +3,14 @@ using UnityEngine.UI;
 using MyGame.Data;
 using MyGame.UI;
 using UnityEngine;
-
 namespace MyGame.Slot
 {
-
     /// <summary>
     /// 只处理UI的表现 不处理任何数据 数据在DataManager那里
     /// </summary>
     public class SlotManager : Singleton<SlotManager>
     {
         public ItemToolTip itemToolTip;
-
         public SlotUI handSlot;
         public SlotUI[] bagSlot;
         public int currenIndex = -1;
@@ -23,10 +20,10 @@ namespace MyGame.Slot
         [SerializeField] SlotUI[] smallBoxSlots;
         private CanvasGroup smallBoxCanvasGroup;
         private RectTransform smallBoxTranform;
-        private bool usingSmallBag;
         //大箱子相关
-        [SerializeField] SlotUI[] bigSlots;
+        [SerializeField] SlotUI[] bigBoxSlots;
         [SerializeField] GameObject bigBoxUI;
+        [SerializeField] CanvasGroup bigBoxCanvasGroup;
         protected override void Awake()
         {
             base.Awake();
@@ -41,20 +38,18 @@ namespace MyGame.Slot
         }
         private void OnEnable()
         {
-            EventHandler.PickUpTool += OnPickUpTool;
             EventHandler.BeforeSceneLoadEvent += OnBeforeSceneLoadEvent;
             EventHandler.PickPlaceable += OnHoldItemSprite;
         }
         private void OnDisable()
         {
-            EventHandler.PickUpTool += OnPickUpTool;
             EventHandler.BeforeSceneLoadEvent -= OnBeforeSceneLoadEvent;
             EventHandler.PickPlaceable -= OnHoldItemSprite;
         }
 
         private void OnBeforeSceneLoadEvent()
         {
-            UpdateSlotsHighLight(-1);
+            EventHandler.CallSelectItemEvent(null, false);
         }
 
 
@@ -114,14 +109,7 @@ namespace MyGame.Slot
 
 
         }
-        /// <summary>
-        /// 箱子打开时 更新图片和物品
-        /// </summary>
-        /// <param name="items"></param>
-        public void UpdateBoxSlots(InventoryItem[] items)
-        {
 
-        }
         /// <summary>
         /// 背包间的转换
         /// </summary>
@@ -146,58 +134,21 @@ namespace MyGame.Slot
             int tempAmount = bagSlot[currenIndex].itemAmount;
             bagSlot[currenIndex].UpdateSlot(bagSlot[targetIndex].itemDetails, bagSlot[targetIndex].itemAmount);
             bagSlot[targetIndex].UpdateSlot(tempItemDetils, tempAmount);
+            EventHandler.CallSelectItemEvent(null, false);
             DataManager.Instance.SwapItem(currenIndex, targetIndex);
         }
-        private void OnPickUpTool(ToolType type)
+        public void LoadSmallBox(InventoryItem[] items)
         {
-            if (type == ToolType.SmallBox)
+            BoxManager.Instance.currentPickSmallBox = items;
+            StartCoroutine(Tools.PopUI(smallBoxCanvasGroup, smallBoxTranform));
+            for (int i = 0; i < 3; i++)
             {
-                StartCoroutine(SmallBagValid());
-            }
-            else
-            {
-                if (smallBox.activeSelf == true) StartCoroutine(SmallBagInValid());
+                smallBoxSlots[i].UpdateSlot(items[i]);
             }
         }
-        /// <summary>
-        /// 小背包出现
-        /// </summary>
-        /// <returns></returns>
-        IEnumerator SmallBagValid()
+        public void UnLoadSmallBox()
         {
-            while (usingSmallBag)
-            {
-                yield return new WaitForSeconds(0.01f);
-            }
-            usingSmallBag = true;
-            smallBox.SetActive(true);
-            for (int i = 0; i < 25; i++)
-            {
-                smallBoxTranform.localScale = new Vector3(smallBoxTranform.localScale.x + 0.04f, smallBoxTranform.localScale.y + 0.04f, 1);
-                smallBoxCanvasGroup.alpha += 0.04f;
-                yield return new WaitForSeconds(0.01f);
-            }
-            usingSmallBag = false;
-        }
-        /// <summary>
-        /// 小背包消失
-        /// </summary>
-        /// <returns></returns>
-        IEnumerator SmallBagInValid()
-        {
-            while (usingSmallBag)
-            {
-                yield return new WaitForSeconds(0.01f);
-            }
-            usingSmallBag = true;
-            for (int i = 0; i < 25; i++)
-            {
-                smallBoxTranform.localScale = new Vector3(smallBoxTranform.localScale.x - 0.04f, smallBoxTranform.localScale.y - 0.04f, 1);
-                smallBoxCanvasGroup.alpha -= 0.04f;
-                yield return new WaitForSeconds(0.01f);
-            }
-            smallBox.SetActive(false);
-            usingSmallBag = false;
+            StartCoroutine(Tools.RecycleUI(smallBoxCanvasGroup, smallBoxTranform));
         }
         private void OnHoldItemSprite(Sprite sprite)
         {
@@ -207,6 +158,34 @@ namespace MyGame.Slot
             UpdateSlotsHighLight(-1);
             EventHandler.CallSelectItemEvent(null, false);
         }
+        /// <summary>
+        /// 箱子打开时 更新图片和物品
+        /// </summary>
+        /// <param name="items"></param>
+        public void UpdateBigBox(InventoryItem item, int index)
+        {
+            bigBoxSlots[index].UpdateSlotEmpty();
+            if (item.itemAmount != 0)
+                bigBoxSlots[index].UpdateSlot(item);
+        }
+        public void OnOpenBigBox(InventoryItem[] item)
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                bigBoxSlots[i].UpdateSlot(item[i]);
+            }
+            StartCoroutine(Tools.PopUI(bigBoxCanvasGroup, bigBoxUI.transform));
 
+        }
+        public void OnCloseBigBox()
+        {
+            StartCoroutine(Tools.RecycleUI(bigBoxCanvasGroup, bigBoxUI.transform));
+        }
+        public void UpdateSmallBox(InventoryItem item, int index)
+        {
+            smallBoxSlots[index].UpdateSlotEmpty();
+            if (item.itemAmount != 0)
+                smallBoxSlots[index].UpdateSlot(item);
+        }
     }
 }

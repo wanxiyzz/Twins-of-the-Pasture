@@ -46,7 +46,7 @@ namespace MyGame.Slot
         {
             if (item == null || amount == 0) return;
             itemImage.enabled = true;
-            itemImage.sprite = item.itemIcon != null ? item.itemIcon : item.itemOnWorldSprite;
+            itemImage.sprite = item.itemIcon ?? item.itemOnWorldSprite;
             itemDetails = item;
             itemAmount = amount;
             amountText.enabled = true;
@@ -57,12 +57,17 @@ namespace MyGame.Slot
         public void UpdateSlot(InventoryItem inventoryItem)
         {
 
+            if (inventoryItem.itemAmount == 0)
+            {
+                UpdateSlotEmpty();
+                return;
+            }
             if (inventoryItem.itemID > 3000)
             {
                 itemAmount = 1;
                 toolDetails = DataManager.Instance.FindToolDetails(inventoryItem.itemID);
                 if (toolDetails == null) return;
-                itemImage.sprite = toolDetails.toolIcon != null ? toolDetails.toolIcon : toolDetails.toolOnWorldSprite;
+                itemImage.sprite = toolDetails.toolIcon ?? toolDetails.toolOnWorldSprite;
                 itemImage.enabled = true;
             }
             else
@@ -71,7 +76,7 @@ namespace MyGame.Slot
                 int amount = inventoryItem.itemAmount;
                 if (item == null) return;
                 itemImage.enabled = true;
-                itemImage.sprite = item.itemIcon != null ? item.itemIcon : item.itemOnWorldSprite;
+                itemImage.sprite = item.itemIcon ?? item.itemOnWorldSprite;
                 itemDetails = item;
                 itemAmount = amount;
                 amountText.enabled = true;
@@ -116,7 +121,8 @@ namespace MyGame.Slot
                 SlotManager.Instance.dragItem.sprite = itemImage.sprite;
                 SlotManager.Instance.dragItem.SetNativeSize();
                 isSelected = true;
-                SlotManager.Instance.UpdateSlotsHighLight(slotIndex);
+                if (slotType == SlotType.Bag)
+                    SlotManager.Instance.UpdateSlotsHighLight(slotIndex);
             }
         }
 
@@ -132,16 +138,28 @@ namespace MyGame.Slot
             {
                 var targetSlot = eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<SlotUI>();
                 int targetIndex = targetSlot.slotIndex;
-                if (slotType == SlotType.Bag && targetSlot.slotType == SlotType.Bag)
+                if (slotType == SlotType.Bag)
                 {
-                    SlotManager.Instance.SwapItem(slotIndex, targetIndex);
-                }
-                //WORKFLOW:补全所有的Slot转移情况
-                else
-                {
-                    TrownItem();
                     Debug.Log(targetSlot.slotType);
+                    if (targetSlot.slotType == SlotType.Bag)
+                        SlotManager.Instance.SwapItem(slotIndex, targetIndex);
+                    if (targetSlot.slotType == SlotType.BigBox || targetSlot.slotType == SlotType.SmallBox)
+                        DataManager.Instance.MoveToOther(slotIndex, targetIndex, targetSlot.slotType);
+                    else TrownItem();
                 }
+                else if (slotType == SlotType.BigBox)
+                {
+                    if (targetSlot.slotType == SlotType.Bag || targetSlot.slotType == SlotType.SmallBox)
+                        BoxManager.Instance.BigBoxToOther(slotIndex, targetIndex, targetSlot.slotType);
+                    else TrownItem();
+                }
+                else if (slotType == SlotType.SmallBox)
+                {
+                    if (targetSlot.slotType == SlotType.Bag || targetSlot.slotType == SlotType.BigBox)
+                        BoxManager.Instance.SmallBoxToOther(slotIndex, targetIndex, targetSlot.slotType);
+                    else TrownItem();
+                }
+
             }
             else
             {

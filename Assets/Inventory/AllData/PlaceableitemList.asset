@@ -27,3 +27,10 @@ MonoBehaviour:
     evenCell: 0
     money: 100
     prefab: {fileID: 5346139433067849642, guid: 57bb1f1d7c253e44289ef1c4f64ee85d, type: 3}
+  - buleprintID: 2003
+    isBox: 1
+    aboveCell: 0
+    aboutCell: 0
+    evenCell: 0
+    money: 150
+    prefab: {fileID: 3233143971501913570, guid: f12ae1364b1d81f4f85f5f6f36ecbdcc, type: 3}

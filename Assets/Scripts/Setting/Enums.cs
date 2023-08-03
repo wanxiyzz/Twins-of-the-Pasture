@@ -25,7 +25,7 @@ public enum SceneType
 }
 public enum SlotType
 {
-    Bag, Box, Store, Handheld,
+    Bag, SmallBox, Store, Handheld, BigBox
 }
 public enum WeatherType
 {
