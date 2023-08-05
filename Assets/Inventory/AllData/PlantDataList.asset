@@ -20,7 +20,7 @@ MonoBehaviour:
     - {fileID: 1288941236, guid: fa99babd0e26c6c46adaa8cbaddb349c, type: 3}
     - {fileID: 1288941236, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
     - {fileID: 1521407085, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
-    - {fileID: 677538192, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
+    - {fileID: -181037761, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
     - {fileID: 677538192, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
     deathSpite: {fileID: -1059748352, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
     onceGrothHour: 25
@@ -32,6 +32,7 @@ MonoBehaviour:
         x: 0
         y: 0
         z: 0
+      canPlant: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0
@@ -67,7 +68,7 @@ MonoBehaviour:
     - {fileID: 1288941236, guid: fa99babd0e26c6c46adaa8cbaddb349c, type: 3}
     - {fileID: 1288941236, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
     - {fileID: 1521407085, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
-    - {fileID: 677538192, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
+    - {fileID: -181037761, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
     - {fileID: 677538192, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
     deathSpite: {fileID: -1059748352, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
     onceGrothHour: 25
@@ -79,6 +80,7 @@ MonoBehaviour:
         x: 0
         y: 0
         z: 0
+      canPlant: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0
@@ -114,7 +116,7 @@ MonoBehaviour:
     - {fileID: 1288941236, guid: fa99babd0e26c6c46adaa8cbaddb349c, type: 3}
     - {fileID: 1288941236, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
     - {fileID: 1521407085, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
-    - {fileID: 677538192, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
+    - {fileID: -181037761, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
     - {fileID: 677538192, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
     deathSpite: {fileID: -1059748352, guid: 371c155425b96dd42946a28d5e331a95, type: 3}
     onceGrothHour: 25
@@ -126,6 +128,7 @@ MonoBehaviour:
         x: 0
         y: 0
         z: 0
+      canPlant: 0
       NVaule: 0
       PVaule: 0
       KVaule: 0

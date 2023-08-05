@@ -16,16 +16,11 @@ namespace MyGame.UI
         {
             if (slotUI.itemAmount != 0)
             {
-                if (slotUI.slotType == SlotType.Handheld)
-                {
-                    SlotManager.Instance.itemToolTip.gameObject.SetActive(true);
-                    SlotManager.Instance.itemToolTip.transform.position = new Vector3(transform.position.x, transform.position.y + GameManager.Instance.toolTipHeight, 0);
-                    SlotManager.Instance.itemToolTip.SetupToolTip(slotUI.toolDetails, slotUI.slotType);
-                    return;
-                }
                 SlotManager.Instance.itemToolTip.gameObject.SetActive(true);
                 SlotManager.Instance.itemToolTip.transform.position = new Vector3(transform.position.x, transform.position.y + GameManager.Instance.toolTipHeight, 0);
-                SlotManager.Instance.itemToolTip.SetupToolTip(slotUI.itemDetails, slotUI.slotType);
+                if (slotUI.itemDetails != null)
+                    SlotManager.Instance.itemToolTip.SetupToolTip(slotUI.itemDetails, slotUI.slotType);
+                else SlotManager.Instance.itemToolTip.SetupToolTip(slotUI.toolDetails, slotUI.slotType);
             }
             else
             {

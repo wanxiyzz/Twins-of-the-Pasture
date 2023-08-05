@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MyGame.Tile;
-namespace MyGame.Plant
+namespace MyGame.PlantSystem
 {
     public class PlantManager : Singleton<PlantManager>
     {

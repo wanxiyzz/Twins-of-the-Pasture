@@ -1220,11 +1220,15 @@ MonoBehaviour:
   currentGrid: {fileID: 0}
   mouseWorldPos: {x: 0, y: 0, z: 0}
   mouseGridPos: {x: 0, y: 0, z: 0}
+  worldPosCenter: {x: 0, y: 0, z: 0}
   checkImage: {fileID: 340007716}
   cursorEnable: 0
   usePosition: {x: 0, y: 0, z: 0}
   placeableSprite: {fileID: 1924937256}
   canEat: 0
+  checkLayer:
+    serializedVersion: 2
+    m_Bits: 1536
 --- !u!1 &1447778067
 GameObject:
   m_ObjectHideFlags: 0
@@ -1564,7 +1568,7 @@ MonoBehaviour:
   - type: 2
     animator: {fileID: 0}
   - type: 3
-    animator: {fileID: 0}
+    animator: {fileID: 22100000, guid: 838484149a667b142b4597175333e0ee, type: 2}
   - type: 4
     animator: {fileID: 0}
   - type: 5

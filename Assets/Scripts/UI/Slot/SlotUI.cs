@@ -144,20 +144,25 @@ namespace MyGame.Slot
                     if (targetSlot.slotType == SlotType.Bag)
                         SlotManager.Instance.SwapItem(slotIndex, targetIndex);
                     if (targetSlot.slotType == SlotType.BigBox || targetSlot.slotType == SlotType.SmallBox)
-                        DataManager.Instance.MoveToOther(slotIndex, targetIndex, targetSlot.slotType);
+                        DataManager.Instance.PlayerBagToOther(slotIndex, targetIndex, targetSlot.slotType);
                     else TrownItem();
                 }
                 else if (slotType == SlotType.BigBox)
                 {
-                    if (targetSlot.slotType == SlotType.Bag || targetSlot.slotType == SlotType.SmallBox)
+                    if (targetSlot.slotType == SlotType.Bag || targetSlot.slotType == SlotType.SmallBox || targetSlot.slotType == SlotType.Handheld || targetSlot.slotType == SlotType.BigBox)
                         BoxManager.Instance.BigBoxToOther(slotIndex, targetIndex, targetSlot.slotType);
                     else TrownItem();
                 }
                 else if (slotType == SlotType.SmallBox)
                 {
-                    if (targetSlot.slotType == SlotType.Bag || targetSlot.slotType == SlotType.BigBox)
+                    if (targetSlot.slotType == SlotType.Bag || targetSlot.slotType == SlotType.BigBox || targetSlot.slotType == SlotType.Handheld || targetSlot.slotType == SlotType.SmallBox)
                         BoxManager.Instance.SmallBoxToOther(slotIndex, targetIndex, targetSlot.slotType);
                     else TrownItem();
+                }
+                else if (slotType == SlotType.Handheld)
+                {
+                    if (targetSlot.slotType == SlotType.BigBox || targetSlot.slotType == SlotType.Handheld)
+                        DataManager.Instance.ToolToOther(targetIndex, targetSlot.slotType);
                 }
 
             }

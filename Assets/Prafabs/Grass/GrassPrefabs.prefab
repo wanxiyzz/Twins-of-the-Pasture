@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3571129945599964728}
   - component: {fileID: 3571129945599964727}
   - component: {fileID: 3571129945599964726}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: GrassPrefabs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,3 +145,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81772b9d86b0eb84d97025c5f7b8fb21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBig: 0

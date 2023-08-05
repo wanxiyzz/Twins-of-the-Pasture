@@ -215,9 +215,14 @@ namespace MyGame.Player
         }
         IEnumerator MoveToTargetPosCoroutine(bool isItem, Vector3 targetPos, Action action)
         {
+            float time = 0;
             playerInput = false;
             while (Vector3.Distance(transform.position, targetPos) > stopDistance)
             {
+                if (time > 5)
+                {
+                    yield break;
+                }
                 Vector3 direction = (targetPos - transform.position).normalized * speed;
                 inputX = direction.x;
                 inputY = direction.y;
@@ -230,6 +235,7 @@ namespace MyGame.Player
                 isMoving = true;
                 rigi.velocity = direction;
                 yield return null;
+                time += Time.deltaTime;
             }
             for (int i = 0; i < 2; i++)
             {

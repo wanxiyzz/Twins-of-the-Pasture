@@ -27,3 +27,10 @@ MonoBehaviour:
     toolOnWorldSprite: {fileID: 591677338, guid: 2c7ce5c70777e2742a0b11930bb828d8, type: 3}
     toolDescription: "\u79CD\u690D\u690D\u7269\u524D\u9700\u8981\u8015\u4E00\u4E0B\u5730\u54E6"
     toolPrice: 0
+  - toolID: 3003
+    toolName: "\u9570\u5200"
+    toolType: 3
+    toolIcon: {fileID: 475577338, guid: 2c7ce5c70777e2742a0b11930bb828d8, type: 3}
+    toolOnWorldSprite: {fileID: 591677338, guid: 2c7ce5c70777e2742a0b11930bb828d8, type: 3}
+    toolDescription: "\u53EF\u4EE5\u6536\u5272\u4F5C\u7269"
+    toolPrice: 0

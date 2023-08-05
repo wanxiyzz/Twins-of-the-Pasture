@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryItems:
   - itemID: 2003
-    itemAmount: 80
-  - itemID: 2002
     itemAmount: 20
-  - itemID: 1020
-    itemAmount: 30
+  - itemID: 2001
+    itemAmount: 20
   - itemID: 1002
     itemAmount: 20
   - itemID: 1029
-    itemAmount: 20
+    itemAmount: 30
   - itemID: 0
     itemAmount: 0
+  - itemID: 3003
+    itemAmount: 1

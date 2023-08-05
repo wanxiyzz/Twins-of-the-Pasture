@@ -69,9 +69,8 @@ namespace MyGame.Data
         /// </summary>
         public void SwapItem(int currenIndex, int targetIndex)
         {
-            InventoryItem tempInventoryItem = playerBag.inventoryItems[currenIndex];
-            playerBag.inventoryItems[currenIndex] = playerBag.inventoryItems[targetIndex];
-            playerBag.inventoryItems[targetIndex] = tempInventoryItem;
+            (playerBag.inventoryItems[targetIndex], playerBag.inventoryItems[currenIndex]) =
+             (playerBag.inventoryItems[currenIndex], playerBag.inventoryItems[targetIndex]);
         }
         /// <summary>
         /// 物品使用极其减少
@@ -183,7 +182,6 @@ namespace MyGame.Data
             }
             else
             {
-                Debug.Log("132123");
                 if (playerBag.inventoryItems[5].itemID == 0)
                 {
                     playerBag.inventoryItems[5] = item;
@@ -230,7 +228,7 @@ namespace MyGame.Data
         {
             GameObject.Instantiate(playerHuoses[playerHouseLevel - 1], new Vector3(0, 0, 0), Quaternion.identity);
         }
-        public void MoveToOther(int index, int targetIndex, SlotType slotType)
+        public void PlayerBagToOther(int index, int targetIndex, SlotType slotType)
         {
             InventoryItem temp = new InventoryItem();
             if (slotType == SlotType.BigBox)
@@ -246,7 +244,6 @@ namespace MyGame.Data
             BoxManager.Instance.MoveToCurrentBigBox(playerBag.inventoryItems[index], targetIndex, ref temp);
             playerBag.inventoryItems[index] = temp;
             SlotManager.Instance.UpdateBagSlot(playerBag.inventoryItems[index], index);
-            Debug.Log("我从 " + index + "到" + targetIndex);
         }
         public void MoveToPlayerBag(InventoryItem item, int index, ref InventoryItem myInventory)
         {
@@ -264,6 +261,33 @@ namespace MyGame.Data
                 playerBag.inventoryItems[index] = item;
             }
             SlotManager.Instance.UpdateBagSlot(playerBag.inventoryItems[index], index);
+        }
+        public void MoveToTool(InventoryItem item, int index, ref InventoryItem myInventory)
+        {
+            if (item.itemID < 3000)
+            {
+                myInventory = item;
+                return;
+            }
+            else
+            {
+                if (playerBag.inventoryItems[5].itemAmount != 0)
+                {
+                    myInventory = playerBag.inventoryItems[5];
+                }
+                playerBag.inventoryItems[5] = item;
+                SlotManager.Instance.UpdateHandSlot(item);
+            }
+        }
+        public void ToolToOther(int targetIndex, SlotType slotType)
+        {
+            InventoryItem temp = new InventoryItem();
+            if (slotType == SlotType.BigBox)
+                BoxManager.Instance.MoveToCurrentBigBox(playerBag.inventoryItems[5], targetIndex, ref temp);
+            else if (slotType == SlotType.SmallBox)
+                BoxManager.Instance.MoveToCurrentSmallBox(playerBag.inventoryItems[5], targetIndex, ref temp);
+            playerBag.inventoryItems[5] = temp;
+            SlotManager.Instance.UpdateHandSlot(playerBag.inventoryItems[5]);
         }
     }
 }

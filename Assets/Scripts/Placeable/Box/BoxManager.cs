@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using MyGame.Slot;
+using MyGame.UI;
 using UnityEngine;
 
 namespace MyGame.Data
@@ -71,7 +72,16 @@ namespace MyGame.Data
         }
         public void MoveToCurrentBigBox(InventoryItem item, int index, ref InventoryItem myInventory)
         {
-            Debug.Log(index);
+            if (item.itemID > 3000)
+            {
+                if (currentOpenBigBox[index].itemAmount > 0)
+                {
+                    myInventory = currentOpenBigBox[index];
+                    currentOpenBigBox[index] = item;
+                    SlotManager.Instance.UpdateBigBox(currentOpenBigBox[index], index);
+                    return;
+                }
+            }
             if (currentOpenBigBox[index].itemAmount == 0)
             {
                 currentOpenBigBox[index] = item;
@@ -89,7 +99,16 @@ namespace MyGame.Data
         }
         public void MoveToCurrentSmallBox(InventoryItem item, int index, ref InventoryItem myInventory)
         {
-            Debug.Log(index);
+            if (item.itemID > 3000)
+            {
+                if (currentOpenBigBox[index].itemAmount > 0)
+                {
+                    myInventory = currentOpenBigBox[index];
+                    currentOpenBigBox[index] = item;
+                    SlotManager.Instance.UpdateBigBox(currentOpenBigBox[index], index);
+                    return;
+                }
+            }
             if (currentPickSmallBox[index].itemAmount == 0)
             {
                 currentPickSmallBox[index] = item;
@@ -109,9 +128,20 @@ namespace MyGame.Data
         {
             InventoryItem temp = new InventoryItem();
             if (slotType == SlotType.Bag)
+            {
+                if (currentOpenBigBox[index].itemID > 3000)
+                {
+                    UIManager.Instance.PromptBox("要把工具放在手上哦");
+                    return;
+                }
                 DataManager.Instance.MoveToPlayerBag(currentOpenBigBox[index], targetIndex, ref temp);
+            }
             else if (slotType == SlotType.SmallBox)
                 MoveToCurrentSmallBox(currentOpenBigBox[index], targetIndex, ref temp);
+            else if (slotType == SlotType.Handheld)
+                DataManager.Instance.MoveToTool(currentOpenBigBox[index], targetIndex, ref temp);
+            else if (slotType == SlotType.BigBox)
+                MoveToCurrentBigBox(currentOpenBigBox[index], targetIndex, ref temp);
             currentOpenBigBox[index] = temp;
             SlotManager.Instance.UpdateBigBox(currentOpenBigBox[index], index);
         }
@@ -119,9 +149,20 @@ namespace MyGame.Data
         {
             InventoryItem temp = new InventoryItem();
             if (slotType == SlotType.Bag)
-                DataManager.Instance.MoveToPlayerBag(currentPickSmallBox[index], targetIndex, ref temp);
+            {
+                if (currentOpenBigBox[index].itemID > 3000)
+                {
+                    UIManager.Instance.PromptBox("要把工具放在手上哦");
+                    return;
+                }
+                DataManager.Instance.MoveToPlayerBag(currentOpenBigBox[index], targetIndex, ref temp);
+            }
             else if (slotType == SlotType.BigBox)
                 MoveToCurrentBigBox(currentPickSmallBox[index], targetIndex, ref temp);
+            else if (slotType == SlotType.SmallBox)
+                MoveToCurrentSmallBox(currentPickSmallBox[index], targetIndex, ref temp);
+            else if (slotType == SlotType.Handheld)
+                DataManager.Instance.MoveToTool(currentOpenBigBox[index], targetIndex, ref temp);
             currentPickSmallBox[index] = temp;
             SlotManager.Instance.UpdateSmallBox(currentPickSmallBox[index], index);
         }

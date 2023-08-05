@@ -10,6 +10,11 @@ namespace MyGame.UI
         [SerializeField] Text price;
         public void SetupToolTip(ItemDetails item, SlotType slotType)
         {
+            if (item == null)
+            {
+                Debug.Log("物品不存在");
+                return;
+            }
             itemName.text = item.itemName;
             if (item.itemType.Length == 1)
             {

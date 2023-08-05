@@ -78,6 +78,7 @@ namespace MyGame.Slot
             }
             else
             {
+                handSlot.UpdateSlot(tool);
                 EventHandler.CallPickUpTool(ToolType.Hand);
             }
         }

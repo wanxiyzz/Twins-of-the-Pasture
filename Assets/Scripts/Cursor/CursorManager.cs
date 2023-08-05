@@ -3,6 +3,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using MyGame.Tile;
 using MyGame.Buleprint;
+using MyGame.PlantSystem;
 namespace MyGame.Cursor
 {
     //可以细化为每种物体一个检测函数   根据sceneType写一些事件  加上前面需要检测的相应的的函数  场景切换时  CurrentSceneAction切换为相应的事件再进行每帧检测
@@ -19,6 +20,7 @@ namespace MyGame.Cursor
 
         public Vector3 mouseWorldPos;
         public Vector3Int mouseGridPos;
+        public Vector3 worldPosCenter;
 
         private SceneType currentSceneType;
 
@@ -38,6 +40,11 @@ namespace MyGame.Cursor
 
         //吃
         public bool canEat;
+
+
+        //收获
+        [SerializeField] LayerMask checkLayer;
+        private Collider2D checkRay;
         private void OnEnable()
         {
             EventHandler.AfterSceneLoadEvent += OnAfterSceneLoadEvent;
@@ -82,9 +89,8 @@ namespace MyGame.Cursor
                     if (cursorItemValid)
                     {
                         usePosition = mouseWorldPos;
-                        if (GameManager.Instance.player.MoveToPos(true, mouseWorldPos, () =>
-                         EventHandler.CallUseItemEvent(usePosition, currentSelectItem)))
-                            Debug.Log("使用物品");
+                        GameManager.Instance.player.MoveToPos(true, mouseWorldPos, () =>
+                         EventHandler.CallUseItemEvent(usePosition, currentSelectItem));
                     }
 
                 }
@@ -130,6 +136,8 @@ namespace MyGame.Cursor
             if (currentGrid == null) return;
             mouseGridPos = currentGrid.WorldToCell(mouseWorldPos);
             currentTile = TileManager.Instance.ButtomTile(mouseGridPos);
+            worldPosCenter = mainCamera.WorldToScreenPoint(new Vector3(mouseGridPos.x + 0.5f, mouseGridPos.y + 0.5f, 0));
+
             //先检测工具的鼠标状态  后检测已选择物品的
             //以下为要检测的工具
             if (currentTool == ToolType.Hoe)
@@ -140,7 +148,7 @@ namespace MyGame.Cursor
                     {
                         SetToolValid();
                         checkImage.SetActive(true);
-                        checkImage.transform.position = mainCamera.WorldToScreenPoint(new Vector3(mouseGridPos.x + 0.5f, mouseGridPos.y + 0.5f, 0));
+                        checkImage.transform.position = worldPosCenter;
                     }
                     else
                     {
@@ -154,7 +162,7 @@ namespace MyGame.Cursor
                 if (TileManager.Instance.CheckCanBuild(mouseWorldPos))
                 {
                     checkImage.SetActive(true);
-                    checkImage.transform.position = mainCamera.WorldToScreenPoint(new Vector3(mouseGridPos.x + 0.5f, mouseGridPos.y + 0.5f, 0));
+                    checkImage.transform.position = worldPosCenter;
                     SetToolValid();
                 }
                 else
@@ -163,6 +171,11 @@ namespace MyGame.Cursor
                     checkImage.SetActive(false);
                 }
             }
+            else if (currentTool == ToolType.Reap)
+            {
+                if (CheckPlantCanHavest(mouseWorldPos)) SetToolValid();
+                else SetToolInValid();
+            }
             else
             {
                 SetToolInValid();
@@ -170,6 +183,33 @@ namespace MyGame.Cursor
             if (currentSelectItem == null) return;
             UpdateEvent?.Invoke();
         }
+        /// <summary>
+        /// 检测植物是否可以收割
+        /// </summary>
+        /// <returns></returns>
+        public bool CheckPlantCanHavest(Vector3 pos)
+        {
+            checkRay = Physics2D.OverlapCircle(pos, 0.3f, checkLayer);
+            if (checkRay != null)
+            {
+                if (checkRay.TryGetComponent(out Plant currentPlant))
+                {
+                    if (currentPlant != null)
+                    {
+                        Debug.Log(currentPlant.CanHarvest);
+                        if (currentPlant.CanHarvest)
+                        {
+                            checkImage.SetActive(true);
+                            checkImage.transform.position = worldPosCenter;
+                            return true;
+                        }
+                    }
+                }
+            }
+            checkImage.SetActive(false);
+            return false;
+        }
+
         /// <summary>
         /// 是否和UI交互
         /// </summary>
@@ -225,7 +265,7 @@ namespace MyGame.Cursor
         {
             if (tile == null)
                 return false;
-            return !tile.haveTop && tile.seedID < 1;
+            return !tile.haveTop && tile.seedID < 1 && tile.canPlant;
         }
         private void OnPickUpTool(ToolType type)
         {

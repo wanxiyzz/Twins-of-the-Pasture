@@ -182,6 +182,7 @@ public class PlantState
     public int currentHarvestPeriod;
     public int plantingTime;
     public string deathCause;
+    public bool isDeath;
     public void Init(Vector3 pos, int seedID)
     {
         position = new SerializableVector3(pos);
@@ -202,7 +203,6 @@ public class TileDetails
     public float KVaule;
     public int waterVaule;
     public int bugValue;
-    public int decompose;
     public TileDetails(bool haveTop)
     {
         this.haveTop = haveTop;
