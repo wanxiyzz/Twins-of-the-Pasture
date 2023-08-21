@@ -1,14 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-namespace MyGame.Huose
+using MyGame.GameTime;
+namespace MyGame.HuoseSystem
 {
     public class Door : MonoBehaviour
     {
-        Animator animator;
-        private void Start()
+        [SerializeField] Animator animator;
+        private void Awake()
         {
-            animator = GetComponent<Animator>();
+            OndayChange(TimeManager.Instance.dayShift);
         }
         private void OnEnable()
         {

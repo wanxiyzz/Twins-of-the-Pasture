@@ -57,12 +57,12 @@ public class ButtomTileMap : MonoBehaviour
                 TileBase tile = currentTilemap.GetTile(new Vector3Int(x, y, 0));
                 if (tile == null)
                 {
-                    tileList.tiles[y - startPos.y] = new TileDetails(false);
+                    tileList.tiles[y - startPos.y] = new TileDetails(false, x, y);
                 }
                 else
                 {
                     middleTileList.tilePos.Add(new SerializableVector2Int(x, y));
-                    tileList.tiles[y - startPos.y] = new TileDetails(true);
+                    tileList.tiles[y - startPos.y] = new TileDetails(true, x, y);
 
                 }
             }

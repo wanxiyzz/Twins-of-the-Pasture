@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-namespace MyGame.Huose
+namespace MyGame.HuoseSystem
 {
     public class Teleport : MonoBehaviour
     {

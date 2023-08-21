@@ -74,7 +74,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5d452ee5101bbd438cb8d38392a7134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indexInCurrentScene: 0
+  boxCollider2D: {fileID: 6404801066343331957}
+  spriteRenderer: {fileID: 6404801066808564346}
 --- !u!95 &6404801066343331946
 Animator:
   serializedVersion: 4

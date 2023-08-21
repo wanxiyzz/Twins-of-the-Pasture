@@ -59,7 +59,7 @@ MonoBehaviour:
       amountMax: 3
       amountMin: 4
     canTwiceHavest: 1
-    afterHavest: 4
+    afterHavest: 5
     needPillar: 0
   - seedId: 1030
     growthPeriod: 7
@@ -107,7 +107,7 @@ MonoBehaviour:
       amountMax: 3
       amountMin: 4
     canTwiceHavest: 1
-    afterHavest: 4
+    afterHavest: 5
     needPillar: 0
   - seedId: 1031
     growthPeriod: 7
@@ -155,5 +155,5 @@ MonoBehaviour:
       amountMax: 3
       amountMin: 4
     canTwiceHavest: 1
-    afterHavest: 4
+    afterHavest: 5
     needPillar: 0

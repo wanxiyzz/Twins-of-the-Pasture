@@ -112,7 +112,6 @@ namespace MyGame.GameTime
                         timeTextBuilder.Clear();
                         timeTextBuilder.Append(year).Append("年").Append(day).Append("日");
 
-                        //将构建的字符串设置为UI文本
                         UIManager.Instance.DayText.text = timeTextBuilder.ToString();
                     }
                     EventHandler.CallHuorUpdate();
@@ -120,7 +119,6 @@ namespace MyGame.GameTime
                 timeTextBuilder.Clear();
                 timeTextBuilder.Append(huor).Append(":").Append(minute);
 
-                //将构建的字符串设置为UI文本
                 UIManager.Instance.timeText.text = timeTextBuilder.ToString();
             }
         }

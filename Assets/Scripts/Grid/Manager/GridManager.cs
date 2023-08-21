@@ -1,5 +1,7 @@
 using UnityEngine;
 using MyGame.GrassSystem;
+using UnityEngine.UI;
+
 namespace MyGame.Tile
 {
     public class GridManager : Singleton<GridManager>
@@ -25,14 +27,14 @@ namespace MyGame.Tile
             {
                 TransitionManager.Instance.GameLoadingAnim(() =>
                 {
-                    OnAfterSceneLoad(sceneType, TileManager.Instance.currentSceneMiddleTiles);
+                    OnAfterSceneLoad(sceneType, TileManager.Instance.currentSceneButtomTiles);
                 });
             }
         }
         /// <summary>
         /// 场景切换时调用
         /// </summary>
-        public void OnAfterSceneLoad(SceneType sceneType, MiddleTileList list)
+        public void OnAfterSceneLoad(SceneType sceneType, TileDetailsDataList list)
         {
             this.sceneType = sceneType;
             gridMap = FindObjectOfType<GridMap>();

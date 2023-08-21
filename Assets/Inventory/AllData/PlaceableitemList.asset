@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlaceableitemList
   placeableitemsList:
   - buleprintID: 2001
+    sprite: {fileID: 116100055, guid: 6cd38b2ae47e19c4696b3169f55af600, type: 3}
     isBox: 0
     aboveCell: 1
     aboutCell: 2
@@ -21,6 +22,7 @@ MonoBehaviour:
     money: 300
     prefab: {fileID: 4093120881114140649, guid: d2096e12d6e0c4d43a9d32d35549fcb3, type: 3}
   - buleprintID: 2002
+    sprite: {fileID: 1288941236, guid: 8c3c36d41b232154ea12424a207db120, type: 3}
     isBox: 1
     aboveCell: 0
     aboutCell: 0
@@ -28,6 +30,23 @@ MonoBehaviour:
     money: 100
     prefab: {fileID: 5346139433067849642, guid: 57bb1f1d7c253e44289ef1c4f64ee85d, type: 3}
   - buleprintID: 2003
+    sprite: {fileID: 553479550, guid: 62fbac37ebad87540a8312e4e464a06b, type: 3}
+    isBox: 1
+    aboveCell: 0
+    aboutCell: 0
+    evenCell: 0
+    money: 150
+    prefab: {fileID: 3233143971501913570, guid: f12ae1364b1d81f4f85f5f6f36ecbdcc, type: 3}
+  - buleprintID: 2051
+    sprite: {fileID: 553479550, guid: 62fbac37ebad87540a8312e4e464a06b, type: 3}
+    isBox: 1
+    aboveCell: 0
+    aboutCell: 0
+    evenCell: 0
+    money: 150
+    prefab: {fileID: 3233143971501913570, guid: f12ae1364b1d81f4f85f5f6f36ecbdcc, type: 3}
+  - buleprintID: 2052
+    sprite: {fileID: 553479550, guid: 62fbac37ebad87540a8312e4e464a06b, type: 3}
     isBox: 1
     aboveCell: 0
     aboutCell: 0

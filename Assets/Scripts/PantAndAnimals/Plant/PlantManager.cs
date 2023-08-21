@@ -41,6 +41,7 @@ namespace MyGame.PlantSystem
                 seedID = ID,
                 position = new SerializableVector3(pos.x + 0.45f, pos.y + 0.45f, 0)
             };
+            TileManager.Instance.ButtomTile(pos).seedID = ID;
             plantData[currentSceneName].Add(plant);
             InitOnePlant(plant);
         }
@@ -103,6 +104,11 @@ namespace MyGame.PlantSystem
                 itemPlant.UpdateSprite();
                 currentScenePlant.Add(itemPlant);
             }
+        }
+        public void RemovePlant(PlantState plantState, Plant plant)
+        {
+            currentScenePlantState.Remove(plantState);
+            currentScenePlant.Remove(plant);
         }
     }
 }

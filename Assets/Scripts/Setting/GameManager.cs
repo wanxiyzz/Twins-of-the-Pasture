@@ -12,6 +12,10 @@ public class GameManager : Singleton<GameManager>
     public bool isWin;
     public int screenHeight;
     public float toolTipHeight;
+
+    //动物和植物房间出去的位置
+    public string outSceneName;
+    public Vector3 backPosition;
     protected override void Awake()
     {
         base.Awake();

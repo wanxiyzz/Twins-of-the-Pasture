@@ -32,25 +32,25 @@ namespace MyGame.Player
         /// 当前饥饿值
         /// </summary>
         public float currentHungry;
-        private float hungry;
+        private float hungry = 100;
 
         /// <summary>
         /// 当前精神值
         /// </summary>
         public float currentMental;//精神值
-        private float mental;
+        private float mental = 100;
 
         /// <summary>
         /// 当前体力
         /// </summary>
         public float currentPhysical;
-        private float physical;
+        private float physical = 100;
 
-        private int noSleepyTime;
+        private int noSleepTime;
 
 
         //移动至一个地方
-        private float stopDistance = 0.5f;
+        private float stopDistance;
 
         private Action UseItemAction;
         private void Start()
@@ -136,8 +136,8 @@ namespace MyGame.Player
         }
         private void OnhourUpdate()
         {
-            noSleepyTime += 1;
-            if (noSleepyTime < 6)
+            noSleepTime += 1;
+            if (noSleepTime < 6)
             {
                 currentHungry -= 5;
                 currentMental -= 5;
@@ -160,7 +160,7 @@ namespace MyGame.Player
             {
                 return;
             }
-            noSleepyTime = 0;
+            noSleepTime = 0;
             currentHungry -= 40;
         }
         private void OnPlantAPlant()
@@ -174,32 +174,46 @@ namespace MyGame.Player
 
         private void OnUseTool(ToolType type, Vector3 pos)
         {
-            StartCoroutine(PlayerInputPause(0.1f));
             //WORKFLOW:所有工具的动画
             switch (type)
             {
                 case ToolType.Axe:
                 case ToolType.Hoe:
-                case ToolType.Reap:
                 case ToolType.Hammer:
                     for (int i = 0; i < 2; i++)
                     {
                         animators[i].SetTrigger("Brandish");
                     }
+                    StartCoroutine(PlayerInputPause(0.1f));
                     break;
                 case ToolType.HoldItem:
                     for (int i = 0; i < 2; i++)
                     {
                         animators[i].SetTrigger("Plant");
                     }
+                    StartCoroutine(PlayerInputPause(0.1f));
+                    break;
+                case ToolType.Reap:
+                    for (int i = 0; i < 2; i++)
+                    {
+                        animators[i].SetTrigger("UseReap");
+                    }
+                    StartCoroutine(PlayerInputPause(0.1f));
+                    break;
+                case ToolType.Shovel:
+                    for (int i = 0; i < 2; i++)
+                    {
+                        animators[i].SetTrigger("UseShovel");
+                    }
+                    StartCoroutine(PlayerInputPause(0.1f, 0.2f));
                     break;
                 default: break;
             }
         }
-        IEnumerator PlayerInputPause(float time)
+        IEnumerator PlayerInputPause(float time, float waittime = 0.4f)
         {
             playerInput = false;
-            yield return new WaitForSeconds(0.4f);
+            yield return new WaitForSeconds(waittime);
             UseItemAction?.Invoke();
             yield return new WaitForSeconds(time);
             playerInput = true;
@@ -217,6 +231,8 @@ namespace MyGame.Player
         {
             float time = 0;
             playerInput = false;
+            if (isItem) stopDistance = 0.5f;
+            else stopDistance = 0.9f;
             while (Vector3.Distance(transform.position, targetPos) > stopDistance)
             {
                 if (time > 5)
@@ -233,9 +249,9 @@ namespace MyGame.Player
                     animators[i].SetBool("Run", true);
                 }
                 isMoving = true;
+                time += Time.deltaTime;
                 rigi.velocity = direction;
                 yield return null;
-                time += Time.deltaTime;
             }
             for (int i = 0; i < 2; i++)
             {

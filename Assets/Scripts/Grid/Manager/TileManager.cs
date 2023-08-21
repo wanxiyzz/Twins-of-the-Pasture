@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using MyGame.Data;
 using UnityEngine.Tilemaps;
+using MyGame.Item;
+using MyGame.GameTime;
 
 namespace MyGame.Tile
 {
@@ -13,17 +15,15 @@ namespace MyGame.Tile
         //STORED:游戏中的底部（泥土）Tile存储
 
         public Dictionary<string, TileDetailsDataList> gameAllButtomTiles = new Dictionary<string, TileDetailsDataList>();
-        private TileDetailsDataList currentSceneButtomTiles;
+        public TileDetailsDataList currentSceneButtomTiles;
         //STORED:游戏中的中部（地板）Tile存储
 
-        public Dictionary<string, MiddleTileList> middleTileDict = new Dictionary<string, MiddleTileList>();
-        public MiddleTileList currentSceneMiddleTiles;
 
-        public TileDetails[] seasonTiles;
         public Grid currentGrid;
         private GridMap currentGridmap;
 
-        private bool canPlant;
+        public FloorDetails[] floors;
+
 
         private void OnEnable()
         {
@@ -70,15 +70,35 @@ namespace MyGame.Tile
             if (itemDetails == null) return;
             if (itemDetails.itemType.HaveTheType(ItemType.Seed))
             {
-                if (canPlant)
+                var plantPos = currentGrid.WorldToCell(pos);
+                EventHandler.CallPlantAPlant(plantPos, itemDetails.itemID);
+                var tile = ButtomTile(plantPos);
+                tile.seedID = itemDetails.itemID;
+                tile.canPlant = false;
+                DataManager.Instance.UseItem();
+            }
+            else if (itemDetails.itemType.HaveTheType(ItemType.Floor))
+            {
+                var usePos = currentGrid.WorldToCell(pos);
+                for (int i = 4; i < floors.Length; i++)
                 {
-                    var plantPos = currentGrid.WorldToCell(pos);
-                    EventHandler.CallPlantAPlant(plantPos, itemDetails.itemID);
-                    var tile = ButtomTile(plantPos);
-                    tile.seedID = itemDetails.itemID;
-                    tile.canPlant = false;
-                    DataManager.Instance.UseItem();
+                    if (floors[i].itemID == itemDetails.itemID)
+                    {
+                        currentGridmap.middle.SetTile(usePos, floors[i].tileBase);
+                        var tile = ButtomTile(pos);
+                        tile.haveTop = true;
+                        tile.canPlant = false;
+                    }
                 }
+            }
+            else if (itemDetails.itemType.HaveTheType(ItemType.Lawn))
+            {
+                var usePos = currentGrid.WorldToCell(pos);
+                int a = (int)(TimeManager.Instance.season);
+                currentGridmap.middle.SetTile(usePos, floors[a].tileBase);
+                var tile = ButtomTile(pos);
+                tile.haveTop = true;
+                tile.canPlant = false;
             }
         }
         private void OnBeforeSceneLoadEvent()
@@ -97,21 +117,10 @@ namespace MyGame.Tile
             }
             else
             {
-                canPlant = true;
                 gameAllButtomTiles.Add(sceneName, currentGridmap.dataList);
                 currentSceneButtomTiles = gameAllButtomTiles[sceneName];
             }
-            //中间草坪地板的存储
-            if (middleTileDict.ContainsKey(sceneName))
-            {
-                currentSceneMiddleTiles = middleTileDict[sceneName];
-            }
-            else
-            {
-                middleTileDict.Add(sceneName, currentGridmap.middleTileList);
-                currentSceneMiddleTiles = middleTileDict[sceneName];
-            }
-            GridManager.Instance.OnAfterSceneLoad(sceneType, currentSceneMiddleTiles);
+            GridManager.Instance.OnAfterSceneLoad(sceneType, currentSceneButtomTiles);
         }
         private void OnSeasonChange(Season season)
         {
@@ -291,5 +300,28 @@ namespace MyGame.Tile
                 }
             }
         }
+        public void ShovelOff(Vector3Int pos)
+        {
+            ButtomTile(pos).haveTop = false;
+            //TODO:掉落物
+            for (int i = 0; i < floors.Length; i++)
+            {
+                if (floors[i].tileBase == currentGridmap.middle.GetTile(pos))
+                {
+                    ItemManager.Instance.CreatItemInventoryItem(floors[i].itemID, new SerializableVector2(pos.x, pos.y));
+                }
+            }
+            currentGridmap.middle.SetTile(pos, null);
+
+        }
+        public void HarvestPlant(Vector3Int pos)
+        {
+            TileDetails tileDetails = ButtomTile(pos);
+            tileDetails.canPlant = false;
+            tileDetails.seedID = -1;
+            currentGridmap.middle.SetTile(pos, null);
+        }
+
     }
+
 }

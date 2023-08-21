@@ -1,12 +1,23 @@
 using System.Collections;
 using UnityEngine;
+using MyGame.PlantSystem;
+using MyGame.Item;
+
 namespace MyGame.GrassSystem
 {
-    public class GrassLogic : MonoBehaviour
+    public class GrassLogic : MonoBehaviour, IHavested
     {
-        Animator animator;
-        SpriteRenderer spriteRenderer;
-        public bool isBig;
+        public static InventoryItem grassInvetory = new InventoryItem()
+        {
+            itemID = 1033,
+        };
+        private Animator animator;
+        private SpriteRenderer spriteRenderer;
+        public InventoryGrass inventoryGrass;
+        public bool CanHarvest => true;
+
+        public Vector3 Position => transform.position;
+
         private void Awake()
         {
             animator = GetComponent<Animator>();
@@ -28,7 +39,7 @@ namespace MyGame.GrassSystem
         IEnumerator SpriteChenge(int num)
         {
             yield return new WaitForSeconds(0.35f);
-            spriteRenderer.sprite = isBig ? GrassManager.Instance.bigGarssSprite[num] : GrassManager.Instance.smallGarssSprite[num];
+            spriteRenderer.sprite = inventoryGrass.isBig ? GrassManager.Instance.bigGarssSprite[num] : GrassManager.Instance.smallGarssSprite[num];
         }
         private void OnTriggerEnter2D(Collider2D other)
         {
@@ -39,6 +50,28 @@ namespace MyGame.GrassSystem
         {
             //AUDIO:草丛音效
             animator.Play("GrassShake");
+        }
+
+        public void Harvested()
+        {
+            //TODO:草丛掉落特效和物品掉落
+
+            if (inventoryGrass.isBig)
+            {
+                grassInvetory.itemAmount = Random.Range(2, 3);
+            }
+            else
+            {
+                grassInvetory.itemAmount = Random.Range(1, 2);
+            }
+            ItemManager.Instance.CreatItemInventoryItem(grassInvetory, Position);
+            GrassManager.Instance.RemoveGrass(inventoryGrass);
+            Destroy(gameObject);
+        }
+
+        public void Shoveled()
+        {
+            Harvested();
         }
     }
 }

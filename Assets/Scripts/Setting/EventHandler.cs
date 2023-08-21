@@ -38,11 +38,6 @@ public class EventHandler
     {
         HourUpdate?.Invoke();
     }
-    public static event Action PlanUpdate;
-    public static void CallPlanUpdate()
-    {
-        PlanUpdate?.Invoke();
-    }
     public static event Action<Vector3, ItemDetails> UseItemEvent;
     public static void CallUseItemEvent(Vector3 pos, ItemDetails itemDetails)
     {

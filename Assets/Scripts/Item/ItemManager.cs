@@ -59,7 +59,48 @@ namespace MyGame.Item
             };
             currentSceneMapItem.Add(currentItem);
             itemOnMap.ItemThrown(currentItem, pos);
-            itemOnMap.indexInCurrentScene = currentSceneMapItem.Count - 1;
+        }
+        /// <summary>
+        /// 物品掉落物
+        /// </summary>
+        /// <param name="inventoryItem"></param>
+        /// <param name="pos"></param>
+        public void CreatItemInventoryItem(InventoryItem inventoryItem, SerializableVector2 pos)
+        {
+            for (int i = 0; i < inventoryItem.itemAmount; i++)
+            {
+                var mapItem = Instantiate(MapItemPrafab, ItemParent);
+                var itemOnMap = mapItem.GetComponent<ItemOnMap>();
+                MapItem currentItem = new MapItem()
+                {
+                    item = new InventoryItem()
+                    {
+                        itemAmount = 1,
+                        itemID = inventoryItem.itemID,
+                    },
+                    position = pos + Random.insideUnitCircle,
+                };
+                currentSceneMapItem.Add(currentItem);
+                itemOnMap.ItemCreat(currentItem, pos, currentItem.position.ToVector3());
+            }
+        }
+        public void CreatItemInventoryItem(int itemID, SerializableVector2 pos)
+        {
+
+            var mapItem = Instantiate(MapItemPrafab, ItemParent);
+            var itemOnMap = mapItem.GetComponent<ItemOnMap>();
+            MapItem currentItem = new MapItem()
+            {
+                item = new InventoryItem()
+                {
+                    itemAmount = 1,
+                    itemID = itemID,
+                },
+                position = pos + Random.insideUnitCircle,
+            };
+            currentSceneMapItem.Add(currentItem);
+            itemOnMap.ItemCreat(currentItem, pos, currentItem.position.ToVector3());
+
         }
     }
 }

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MarketDoor
+  m_Controller: {fileID: 9100000, guid: 7cf7114c3d6b3e74aa1b7647fb8d96da, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 3ede326c529ffde4fae8d77cf6e123a4, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3d31dcaad23a3434493cf6c9de145c8a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: deec0d4428b78484fa98a3397181fd46, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 010751f656d57074ab894b05ee30fb0a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 7551bcac8da120e41bc7e6b042816642, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 24c505465e940f34f99fcee95c930249, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 91720bf22f39ecf49a0c85123f188cbe, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c2f8cc4a0bd00d248887bc1ecfdcc62b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ebecc0b2c74ae7d44b4e22c62b7a0c8e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: aa715609f7703bf4ebd6c7afab340273, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: dec4171185333b94790fb554cc5ebf7b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1442dcb9c065e414882e3563b208f899, type: 2}

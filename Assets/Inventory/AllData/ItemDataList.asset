@@ -19,7 +19,6 @@ MonoBehaviour:
     itemIcon: {fileID: 1159720526, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: -1792624802, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u7EA2\u8272\u897F\u7EA2\u67FF "
-    canDropped: 1
     itemPrice: 30
     canEat: 1
     addHungry: 30
@@ -31,7 +30,6 @@ MonoBehaviour:
     itemIcon: {fileID: 1890372939, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: 1534532835, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u7EFF\u8272\u897F\u7EA2\u67FF "
-    canDropped: 1
     itemPrice: 25
     canEat: 1
     addHungry: 30
@@ -43,7 +41,6 @@ MonoBehaviour:
     itemIcon: {fileID: -1186802179, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: -926246565, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u84DD\u8272\u897F\u7EA2\u67FF"
-    canDropped: 1
     itemPrice: 35
     canEat: 1
     addHungry: 30
@@ -55,7 +52,6 @@ MonoBehaviour:
     itemIcon: {fileID: -232972419, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: -1116262299, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u7EFF\u8272\u841D\u535C"
-    canDropped: 1
     itemPrice: 25
     canEat: 1
     addHungry: 25
@@ -67,7 +63,6 @@ MonoBehaviour:
     itemIcon: {fileID: 588661858, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: 167406587, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u7EA2\u8272\u841D\u535C"
-    canDropped: 1
     itemPrice: 30
     canEat: 1
     addHungry: 25
@@ -79,7 +74,6 @@ MonoBehaviour:
     itemIcon: {fileID: 2432995, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: -1643863750, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u7EFF\u8272\u8FA3\u6912"
-    canDropped: 1
     itemPrice: 30
     canEat: 1
     addHungry: 5
@@ -91,7 +85,6 @@ MonoBehaviour:
     itemIcon: {fileID: -1814245255, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: -1435858833, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u7EA2\u8272\u8FA3\u6912"
-    canDropped: 1
     itemPrice: 30
     canEat: 1
     addHungry: 5
@@ -103,7 +96,6 @@ MonoBehaviour:
     itemIcon: {fileID: 1006554630, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: -2103291644, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u767D\u8272\u6D0B\u8471"
-    canDropped: 1
     itemPrice: 30
     canEat: 1
     addHungry: 20
@@ -115,7 +107,6 @@ MonoBehaviour:
     itemIcon: {fileID: -97361961, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: 1139025594, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u7D2B\u8272\u6D0B\u8471"
-    canDropped: 1
     itemPrice: 30
     canEat: 1
     addHungry: 20
@@ -127,7 +118,6 @@ MonoBehaviour:
     itemIcon: {fileID: -1432422298, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: 1152461843, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u5C0F\u5357\u74DC"
-    canDropped: 1
     itemPrice: 20
     canEat: 1
     addHungry: 20
@@ -139,7 +129,6 @@ MonoBehaviour:
     itemIcon: {fileID: -212473364, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: 1938247558, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u7D2B\u8272\u6D0B\u8471"
-    canDropped: 1
     itemPrice: 25
     canEat: 1
     addHungry: 25
@@ -151,7 +140,6 @@ MonoBehaviour:
     itemIcon: {fileID: -722178346, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: -1133850826, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u7D2B\u8272\u6D0B\u8471"
-    canDropped: 1
     itemPrice: 30
     canEat: 1
     addHungry: 30
@@ -163,7 +151,6 @@ MonoBehaviour:
     itemIcon: {fileID: 727485364, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: -1208210712, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u5AE9\u9EA6\u7A57"
-    canDropped: 1
     itemPrice: 30
     canEat: 1
     addHungry: 30
@@ -175,7 +162,6 @@ MonoBehaviour:
     itemIcon: {fileID: 1504980333, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: -768586371, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u6210\u719F\u9EA6\u7A57"
-    canDropped: 1
     itemPrice: 30
     canEat: 1
     addHungry: 15
@@ -187,7 +173,6 @@ MonoBehaviour:
     itemIcon: {fileID: -901859708, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: 2103072976, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u8001\u9EA6\u7A57"
-    canDropped: 1
     itemPrice: 15
     canEat: 1
     addHungry: 30
@@ -199,7 +184,6 @@ MonoBehaviour:
     itemIcon: {fileID: 680948780, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: 722717250, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u5AE9\u7389\u7C73"
-    canDropped: 1
     itemPrice: 15
     canEat: 1
     addHungry: 25
@@ -211,7 +195,6 @@ MonoBehaviour:
     itemIcon: {fileID: 1972718236, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemOnWorldSprite: {fileID: -413336686, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u6210\u719F\u7389\u7C73"
-    canDropped: 1
     itemPrice: 15
     canEat: 1
     addHungry: 30
@@ -223,7 +206,6 @@ MonoBehaviour:
     itemIcon: {fileID: 381856362, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemOnWorldSprite: {fileID: 74759057, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u751C\u83DC\u6839"
-    canDropped: 1
     itemPrice: 15
     canEat: 1
     addHungry: 30
@@ -235,7 +217,6 @@ MonoBehaviour:
     itemIcon: {fileID: 381856362, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemOnWorldSprite: {fileID: 74759057, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemdDescription: "\u6211\u771F\u77E5\u9053\u4ED6\u53EB\u5565\uFF0C\u641C\u4E5F\u641C\u4E0D\u5230"
-    canDropped: 1
     itemPrice: 15
     canEat: 1
     addHungry: 25
@@ -247,7 +228,6 @@ MonoBehaviour:
     itemIcon: {fileID: 450654173, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemOnWorldSprite: {fileID: -1820003221, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u571F\u8C46"
-    canDropped: 1
     itemPrice: 15
     canEat: 1
     addHungry: 25
@@ -259,7 +239,6 @@ MonoBehaviour:
     itemIcon: {fileID: 1850991179, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemOnWorldSprite: {fileID: -1970177232, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u5377\u5FC3\u83DC"
-    canDropped: 1
     itemPrice: 15
     canEat: 1
     addHungry: 25
@@ -271,7 +250,6 @@ MonoBehaviour:
     itemIcon: {fileID: 566225417, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemOnWorldSprite: {fileID: -235498848, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u83DC\u82B1"
-    canDropped: 1
     itemPrice: 15
     canEat: 1
     addHungry: 25
@@ -283,7 +261,6 @@ MonoBehaviour:
     itemIcon: {fileID: 1850991179, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemOnWorldSprite: {fileID: -1970177232, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u83B2\u85D5"
-    canDropped: 1
     itemPrice: 15
     canEat: 1
     addHungry: 25
@@ -295,7 +272,6 @@ MonoBehaviour:
     itemIcon: {fileID: 1583554999, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemOnWorldSprite: {fileID: -654480819, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u628A\u82B9\u83DC"
-    canDropped: 1
     itemPrice: 15
     canEat: 1
     addHungry: 25
@@ -307,7 +283,6 @@ MonoBehaviour:
     itemIcon: {fileID: -1653370260, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemOnWorldSprite: {fileID: 1428152127, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E2A\u5C0F\u756A\u8304"
-    canDropped: 1
     itemPrice: 15
     canEat: 1
     addHungry: 25
@@ -319,7 +294,6 @@ MonoBehaviour:
     itemIcon: {fileID: 1418216478, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemOnWorldSprite: {fileID: -1814606354, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E32\u8461\u8404"
-    canDropped: 1
     itemPrice: 15
     canEat: 1
     addHungry: 25
@@ -331,7 +305,6 @@ MonoBehaviour:
     itemIcon: {fileID: 1892463712, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemOnWorldSprite: {fileID: -1961759894, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E00\u4E32\u8461\u8404"
-    canDropped: 1
     itemPrice: 15
     canEat: 1
     addHungry: 25
@@ -343,7 +316,6 @@ MonoBehaviour:
     itemIcon: {fileID: -471131208, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemOnWorldSprite: {fileID: -1685836335, guid: 84d9c6c16c01e4c48a2a8a1162d000e8, type: 3}
     itemdDescription: "\u8FD9\u662F\u4E2A\u5927\u8471"
-    canDropped: 1
     itemPrice: 15
     canEat: 1
     addHungry: 5
@@ -355,7 +327,6 @@ MonoBehaviour:
     itemIcon: {fileID: 104365643, guid: 8392945e12dd427429959ad7b4890e3f, type: 3}
     itemOnWorldSprite: {fileID: -1560752, guid: 8392945e12dd427429959ad7b4890e3f, type: 3}
     itemdDescription: "\u53EF\u4EE5\u79CD\u51FA\u7EFF\u8272\u7684\u897F\u7EA2\u67FF\u54E6"
-    canDropped: 1
     itemPrice: 15
     canEat: 1
     addHungry: 1
@@ -367,7 +338,6 @@ MonoBehaviour:
     itemIcon: {fileID: 1617014380, guid: 8392945e12dd427429959ad7b4890e3f, type: 3}
     itemOnWorldSprite: {fileID: 1340831175, guid: 8392945e12dd427429959ad7b4890e3f, type: 3}
     itemdDescription: "\u53EF\u4EE5\u79CD\u51FA\u7EA2\u8272\u7684\u897F\u7EA2\u67FF\u54E6"
-    canDropped: 1
     itemPrice: 15
     canEat: 1
     addHungry: 1
@@ -379,7 +349,28 @@ MonoBehaviour:
     itemIcon: {fileID: -431553446, guid: 8392945e12dd427429959ad7b4890e3f, type: 3}
     itemOnWorldSprite: {fileID: 114904016, guid: 8392945e12dd427429959ad7b4890e3f, type: 3}
     itemdDescription: "\u53EF\u4EE5\u79CD\u51FA\u84DD\u8272\u7684\u7684\u897F\u7EA2\u67FF\u54E6"
-    canDropped: 1
+    itemPrice: 15
+    canEat: 1
+    addHungry: 1
+    addMental: 0
+    addPhysical: 0
+  - itemID: 1032
+    itemName: "\u8349\u576A"
+    itemType: 07000000
+    itemIcon: {fileID: 719362002, guid: 58d6fc124dd5c124493690aff1e3b732, type: 3}
+    itemOnWorldSprite: {fileID: 555502975, guid: 58d6fc124dd5c124493690aff1e3b732, type: 3}
+    itemdDescription: "\u53EF\u4EE5\u94FA\u5728\u5730\u4E0A\u54E6"
+    itemPrice: 15
+    canEat: 1
+    addHungry: 1
+    addMental: 0
+    addPhysical: 0
+  - itemID: 1033
+    itemName: "\u4E00\u6346\u8349"
+    itemType: 04000000
+    itemIcon: {fileID: 982464351, guid: 11118fba41475fe4f8b73ec971b7e91f, type: 3}
+    itemOnWorldSprite: {fileID: 516533053, guid: 11118fba41475fe4f8b73ec971b7e91f, type: 3}
+    itemdDescription: "\u53EF\u4EE5\u5582\u4E00\u4E0B\u81EA\u5BB6\u7684\u5C0F\u52A8\u7269\u54E6"
     itemPrice: 15
     canEat: 1
     addHungry: 1

@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using MyGame.Tile;
+using MyGame.GameTime;
+
 namespace MyGame.GrassSystem
 {
     public class GrassManager : Singleton<GrassManager>
     {
         //STORED:草丛信息
-        private Dictionary<string, List<Grass>> grassDict = new Dictionary<string, List<Grass>>();
-        private List<Grass> currentSceneGrasses;
+        private Dictionary<string, List<InventoryGrass>> grassDict = new Dictionary<string, List<InventoryGrass>>();
+        private List<InventoryGrass> currentSceneGrasses;
         private Transform grassParent;
         [SerializeField] GameObject grassPrefabs;
         public Sprite[] smallGarssSprite;
@@ -52,13 +54,14 @@ namespace MyGame.GrassSystem
                 }
                 else
                 {
-                    grassDict.Add(sceneName, new List<Grass>());
+                    grassDict.Add(sceneName, new List<InventoryGrass>());
                     currentSceneGrasses = grassDict[sceneName];
                 }
             }
         }
         private void OnDayChange(DayShift shift)
         {
+            if (TimeManager.Instance.season == Season.冬) return;
             StartCoroutine(GrassGrouth());
         }
         IEnumerator GrassGrouth()
@@ -72,7 +75,7 @@ namespace MyGame.GrassSystem
 
                     bool isbig = Random.Range(0, 10) < 3;
                     var pos = new SerializableVector2Int(posX, posY);
-                    Grass grass = new Grass()
+                    InventoryGrass grass = new InventoryGrass()
                     {
                         position = pos,
                         isBig = isbig,
@@ -86,18 +89,19 @@ namespace MyGame.GrassSystem
                 }
             }
         }
-        private void InitGrass(Grass grass)
+        private void InitGrass(InventoryGrass grass)
         {
             if (tileMap.GetTile(grass.position.ToVector3Int()) == null)
             {
                 if (!TileManager.Instance.ButtomTile(grass.position).haveTop)
                 {
                     grassDict[currentSceneName].Remove(grass);
+                    return;
                 }
                 TileManager.Instance.SetTopEmpty(grass.position.ToVector3Int());
                 var item = Instantiate(grassPrefabs, grassParent);
                 item.transform.position = grass.position.ToVector3() + new Vector3(0.5f, 0, 0);
-                item.GetComponent<GrassLogic>().isBig = grass.isBig;
+                item.GetComponent<GrassLogic>().inventoryGrass = grass;
                 if (grass.isBig)
                 {
                     item.GetComponent<SpriteRenderer>().sprite = bigGarssSprite[spriteNum];
@@ -112,6 +116,10 @@ namespace MyGame.GrassSystem
                 grassDict[currentSceneName].Remove(grass);
             }
 
+        }
+        public void RemoveGrass(InventoryGrass inventoryGrass)
+        {
+            currentSceneGrasses.Remove(inventoryGrass);
         }
     }
 }

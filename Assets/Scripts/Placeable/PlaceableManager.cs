@@ -3,6 +3,8 @@ using UnityEngine;
 using MyGame.Data;
 using MyGame.Tile;
 using MyGame.Slot;
+using MyGame.HouseSystem;
+
 namespace MyGame.Buleprint
 {
     public class PlaceableManager : Singleton<PlaceableManager>
@@ -40,8 +42,9 @@ namespace MyGame.Buleprint
         {
             return placeableData.placeableitemsList.Find(a => a.buleprintID == ID);
         }
-        private void OnAfterSceneLoadEvent(SceneType type, string sceneName)
+        public void OnAfterSceneLoadEvent(SceneType type, string sceneName)
         {
+            if (type == SceneType.AnimalHuose || type == SceneType.PlantHuose) return;
             if (type == SceneType.MyHuose) currentInMyHome = true;
             else currentInMyHome = false;
             if (type != SceneType.PeopleHome)
@@ -67,6 +70,10 @@ namespace MyGame.Buleprint
         }
         public bool BuildPlace(PlaceableDetails placeable, Vector3 pos)
         {
+            if (placeable.isHouse)
+            {
+                HouseManager.Instance.BuildHouse(placeable.houseType, pos);
+            }
             if (DataManager.Instance.SpendMoney(placeable.money))
             {
                 var item = GameObject.Instantiate(placeable.prefab, pos, Quaternion.identity, placeableParent);

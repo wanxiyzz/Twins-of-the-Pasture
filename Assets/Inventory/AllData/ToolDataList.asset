@@ -30,7 +30,14 @@ MonoBehaviour:
   - toolID: 3003
     toolName: "\u9570\u5200"
     toolType: 3
-    toolIcon: {fileID: 475577338, guid: 2c7ce5c70777e2742a0b11930bb828d8, type: 3}
-    toolOnWorldSprite: {fileID: 591677338, guid: 2c7ce5c70777e2742a0b11930bb828d8, type: 3}
+    toolIcon: {fileID: 836723148, guid: 007e88025079e924dac5287a2e92e0fe, type: 3}
+    toolOnWorldSprite: {fileID: -300328618, guid: 007e88025079e924dac5287a2e92e0fe, type: 3}
     toolDescription: "\u53EF\u4EE5\u6536\u5272\u4F5C\u7269"
+    toolPrice: 0
+  - toolID: 3004
+    toolName: "\u94F2\u5B50"
+    toolType: 2
+    toolIcon: {fileID: 406506412, guid: e68d9069108b064438a7889638ed970c, type: 3}
+    toolOnWorldSprite: {fileID: -709550025, guid: e68d9069108b064438a7889638ed970c, type: 3}
+    toolDescription: "\u53EF\u4EE5\u94F2\u6389\u8349\u76AE\u4EE5\u53CA\u690D\u7269\u3001\u6811\u6839"
     toolPrice: 0

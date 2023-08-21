@@ -36,3 +36,11 @@ public enum WeatherType
     HeavyRain,
     Thunderstorm,
 }
+public enum HouseType
+{
+    BigAnimalHuose, SmallAnimalHuose, PlantHuose,
+}
+public enum BoardType
+{
+    Cow, Pig, Sheep_Baby, Sheep, Turker, Chicken, Chicken_Baby, Bunny, None,
+}

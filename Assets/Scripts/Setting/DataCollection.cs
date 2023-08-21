@@ -1,6 +1,8 @@
 using MyGame.GameTime;
 using UnityEngine;
 using System;
+using UnityEngine.Tilemaps;
+
 [Serializable]
 public class SerializableVector3
 {
@@ -64,6 +66,10 @@ public class SerializableVector3Int
         this.y = (int)pos.y;
         this.z = (int)pos.z;
     }
+    public Vector3Int ToVector3Int()
+    {
+        return new Vector3Int(x, y, z);
+    }
     public static implicit operator SerializableVector3Int(Vector3Int pos)
     {
         return new SerializableVector3Int(pos.x, pos.y, pos.z);
@@ -74,7 +80,6 @@ public class SerializableVector2
 {
     public float x;
     public float y;
-    public float z;
     public SerializableVector2(Vector2 pos)
     {
         this.x = pos.x;
@@ -84,6 +89,10 @@ public class SerializableVector2
     {
         this.x = x;
         this.y = y;
+    }
+    public override string ToString()
+    {
+        return "x:" + x + "  y:" + y;
     }
     public override int GetHashCode()
     {
@@ -108,6 +117,10 @@ public class SerializableVector2
         return new Vector3(x, y, 0);
     }
     public static SerializableVector2 operator +(SerializableVector2 vector2, Vector2 pos)
+    {
+        return new SerializableVector2(vector2.x + pos.x, vector2.y + pos.y);
+    }
+    public static SerializableVector2 operator +(SerializableVector2 vector2, Vector3 pos)
     {
         return new SerializableVector2(vector2.x + pos.x, vector2.y + pos.y);
     }
@@ -196,16 +209,17 @@ public class TileDetails
 {
     public bool haveTop;
     public int seedID = -1;
-    public SerializableVector3 position;
+    public SerializableVector3Int position;
     public bool canPlant;
     public float NVaule;
     public float PVaule;
     public float KVaule;
     public int waterVaule;
     public int bugValue;
-    public TileDetails(bool haveTop)
+    public TileDetails(bool haveTop, int x, int y)
     {
         this.haveTop = haveTop;
+        position = new SerializableVector3Int(x, y, 0);
     }
 }
 [Serializable]
@@ -272,7 +286,7 @@ public class MapItem
     public InventoryItem item;
 }
 [Serializable]
-public class Grass
+public class InventoryGrass
 {
     public SerializableVector2Int position;
     public bool isBig;
@@ -281,7 +295,10 @@ public class Grass
 public class PlaceableDetails
 {
     public int buleprintID;
+    public Sprite sprite;
     public bool isBox;
+    public HouseType houseType;
+    public bool isHouse;
     public int aboveCell;
     public int aboutCell;
     public bool evenCell;
@@ -302,4 +319,16 @@ public class InventoryBox
     public SerializableVector2 position;
     public ToolType boxType;
     public int index;
+}
+[Serializable]
+public class FloorDetails
+{
+    public TileBase tileBase;
+    public int itemID;
+}
+[Serializable]
+public class HouseDetails
+{
+    public HouseType houseType;
+    public GameObject prefab;
 }

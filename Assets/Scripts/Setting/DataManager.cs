@@ -21,27 +21,15 @@ namespace MyGame.Data
 
         //STORED：角色其他数据
         private int playerMoney = 2000;
-        private int playerHouseLevel = 1;
 
         [SerializeField] GameObject[] playerHuoses;
-        private void OnEnable()
-        {
-            EventHandler.AfterSceneLoadEvent += OnAfterSceneLoadEvent;
-        }
-        private void OnDisable()
-        {
-            EventHandler.AfterSceneLoadEvent -= OnAfterSceneLoadEvent;
-        }
         private void Start()
         {
             SlotManager.Instance.UpdateBagSlots(playerBag.inventoryItems);
             //TEST
             UIManager.Instance.playerMoney.text = playerMoney.ToString();
         }
-        private void OnAfterSceneLoadEvent(SceneType type, string sceneName)
-        {
-            if (sceneName == "01.Field") LoadPlayerHuose();
-        }
+
         /// <summary>
         /// 除去工具类的物品的全部检索
         /// </summary>
@@ -224,10 +212,7 @@ namespace MyGame.Data
             UIManager.Instance.playerMoney.text = playerMoney.ToString();
 
         }
-        public void LoadPlayerHuose()
-        {
-            GameObject.Instantiate(playerHuoses[playerHouseLevel - 1], new Vector3(0, 0, 0), Quaternion.identity);
-        }
+
         public void PlayerBagToOther(int index, int targetIndex, SlotType slotType)
         {
             InventoryItem temp = new InventoryItem();

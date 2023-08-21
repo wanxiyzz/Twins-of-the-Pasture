@@ -43,12 +43,16 @@ public class GridMap : MonoBehaviour
     /// 切换季节草坪
     /// </summary>
     /// <param name="tile"></param>
-    public void ChangeAllTiles(RuleTile tile, MiddleTileList list)
+    public void ChangeAllTiles(RuleTile tile, TileDetailsDataList list)
     {
         middle.ClearAllTiles();
-        foreach (var item in list.tilePos)
+        foreach (var item in list.gameTileDataList)
         {
-            middle.SetTile(item.ToVector3Int(), tile);
+            foreach (var tileDetails in item.tiles)
+            {
+                if (tileDetails.haveTop)
+                    middle.SetTile(tileDetails.position.ToVector3Int(), tile);
+            }
         }
     }
 

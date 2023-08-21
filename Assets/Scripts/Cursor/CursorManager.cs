@@ -20,7 +20,7 @@ namespace MyGame.Cursor
 
         public Vector3 mouseWorldPos;
         public Vector3Int mouseGridPos;
-        public Vector3 worldPosCenter;
+        public Vector3 screenPosCenter;
 
         private SceneType currentSceneType;
 
@@ -43,8 +43,12 @@ namespace MyGame.Cursor
 
 
         //收获
-        [SerializeField] LayerMask checkLayer;
+        [SerializeField] LayerMask reapCheckLayer;
         private Collider2D checkRay;
+        private IHavested currentHavestedItem;
+
+        //铲子
+        private bool shovelPlant;
         private void OnEnable()
         {
             EventHandler.AfterSceneLoadEvent += OnAfterSceneLoadEvent;
@@ -59,9 +63,6 @@ namespace MyGame.Cursor
             EventHandler.SelectItemEvent -= OnSelectItemEvent;
             EventHandler.PickUpTool -= OnPickUpTool;
         }
-
-
-
         private void Start()
         {
             mainCamera = Camera.main;
@@ -80,6 +81,27 @@ namespace MyGame.Cursor
                     }
                     if (cursorToolValid)
                     {
+                        if (currentTool == ToolType.Reap)
+                        {
+                            GameManager.Instance.player.MoveToPos(false, mouseWorldPos, () =>
+                         currentHavestedItem.Harvested());
+                            return;
+                        }
+                        else if (currentTool == ToolType.Shovel)
+                        {
+                            if (shovelPlant)
+                            {
+                                GameManager.Instance.player.MoveToPos(false, currentHavestedItem.Position, () => currentHavestedItem.Shoveled());
+                            }
+                            else
+                            {
+                                usePosition = mouseGridPos;
+                                var useGridPos = mouseGridPos;
+                                GameManager.Instance.player.MoveToPos(false, usePosition, () => TileManager.Instance.ShovelOff(useGridPos));
+                            }
+                            return;
+                        }
+
                         usePosition = mouseWorldPos;
                         GameManager.Instance.player.MoveToPos(false, mouseWorldPos, () =>
                          EventHandler.CallUseTool(currentTool, usePosition));
@@ -136,50 +158,31 @@ namespace MyGame.Cursor
             if (currentGrid == null) return;
             mouseGridPos = currentGrid.WorldToCell(mouseWorldPos);
             currentTile = TileManager.Instance.ButtomTile(mouseGridPos);
-            worldPosCenter = mainCamera.WorldToScreenPoint(new Vector3(mouseGridPos.x + 0.5f, mouseGridPos.y + 0.5f, 0));
+            screenPosCenter = mainCamera.WorldToScreenPoint(new Vector3(mouseGridPos.x + 0.5f, mouseGridPos.y + 0.5f, 0));
 
             //先检测工具的鼠标状态  后检测已选择物品的
             //以下为要检测的工具
             if (currentTool == ToolType.Hoe)
             {
-                if (currentTile != null)
-                {
-                    if (!currentTile.haveTop && !currentTile.canPlant && currentTile.seedID < 0)
-                    {
-                        SetToolValid();
-                        checkImage.SetActive(true);
-                        checkImage.transform.position = worldPosCenter;
-                    }
-                    else
-                    {
-                        SetToolInValid();
-                        checkImage.SetActive(false);
-                    }
-                }
+                if (CheckHoe(currentTile, screenPosCenter)) { SetToolValid(); return; }
+                else SetToolInValid();
             }
             else if (currentTool == ToolType.HoldItem)
             {
-                if (TileManager.Instance.CheckCanBuild(mouseWorldPos))
-                {
-                    checkImage.SetActive(true);
-                    checkImage.transform.position = worldPosCenter;
-                    SetToolValid();
-                }
-                else
-                {
-                    SetToolInValid();
-                    checkImage.SetActive(false);
-                }
+                if (CheckHoldItem(mouseWorldPos, screenPosCenter)) { SetToolValid(); return; }
+                else SetToolInValid();
             }
             else if (currentTool == ToolType.Reap)
             {
-                if (CheckPlantCanHavest(mouseWorldPos)) SetToolValid();
+                if (CheckReap(mouseWorldPos)) { SetToolValid(); return; }
                 else SetToolInValid();
             }
-            else
+            else if (currentTool == ToolType.Shovel)
             {
-                SetToolInValid();
+                if (CheckShovel(currentTile, screenPosCenter)) { SetToolValid(); return; }
+                else SetToolInValid();
             }
+            else SetToolInValid();
             if (currentSelectItem == null) return;
             UpdateEvent?.Invoke();
         }
@@ -187,20 +190,19 @@ namespace MyGame.Cursor
         /// 检测植物是否可以收割
         /// </summary>
         /// <returns></returns>
-        public bool CheckPlantCanHavest(Vector3 pos)
+        public bool CheckReap(Vector3 pos)
         {
-            checkRay = Physics2D.OverlapCircle(pos, 0.3f, checkLayer);
+            checkRay = Physics2D.OverlapCircle(pos, 0.7f, reapCheckLayer);
             if (checkRay != null)
             {
-                if (checkRay.TryGetComponent(out Plant currentPlant))
+                if (checkRay.TryGetComponent(out currentHavestedItem))
                 {
-                    if (currentPlant != null)
+                    if (currentHavestedItem != null)
                     {
-                        Debug.Log(currentPlant.CanHarvest);
-                        if (currentPlant.CanHarvest)
+                        if (currentHavestedItem.CanHarvest)
                         {
                             checkImage.SetActive(true);
-                            checkImage.transform.position = worldPosCenter;
+                            checkImage.transform.position = mainCamera.WorldToScreenPoint(Tools.LocalToCell(currentHavestedItem.Position) + new Vector3(0.5f, 0.5f, 0));
                             return true;
                         }
                     }
@@ -210,18 +212,68 @@ namespace MyGame.Cursor
             return false;
         }
 
-        /// <summary>
-        /// 是否和UI交互
-        /// </summary>
-        /// <returns></returns>
-        private bool InteractWithUI()
+        public bool CheckHoldItem(Vector3 mouseWorldPos, Vector3 screenPosCenter)
         {
-            if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+            if (TileManager.Instance.CheckCanBuild(mouseWorldPos))
             {
+                checkImage.SetActive(true);
+                checkImage.transform.position = screenPosCenter;
                 return true;
             }
+            else
+            {
+                checkImage.SetActive(false);
+                return false;
+            }
+        }
+
+        public bool CheckHoe(TileDetails tile, Vector3 screenPosCenter)
+        {
+            if (tile != null)
+            {
+                if (!tile.haveTop && !tile.canPlant && tile.seedID < 0)
+                {
+                    checkImage.SetActive(true);
+                    checkImage.transform.position = screenPosCenter;
+                    return true;
+                }
+            }
+            checkImage.SetActive(false);
             return false;
         }
+
+        public bool CheckShovel(TileDetails currentTile, Vector3 posCenter)
+        {
+            checkRay = Physics2D.OverlapCircle(mouseWorldPos, 0.3f, reapCheckLayer);
+            if (checkRay != null)
+            {
+                if (checkRay.TryGetComponent(out currentHavestedItem))
+                {
+                    checkImage.SetActive(true);
+                    checkImage.transform.position = mainCamera.WorldToScreenPoint(Tools.LocalToCell(currentHavestedItem.Position) + new Vector3(0.5f, 0.5f, 0));
+                    shovelPlant = true;
+                    return true;
+                }
+            }
+            if (currentTile == null)
+            {
+                checkImage.SetActive(false);
+                return false;
+            }
+            if (currentTile.haveTop)
+            {
+                {
+                    checkImage.SetActive(true);
+                    checkImage.transform.position = posCenter;
+                    shovelPlant = false;
+                    return true;
+                }
+            }
+            checkImage.SetActive(false);
+            return false;
+        }
+
+
         private void OnBeforeSceneLoadEvent()
         {
             placeableSprite.enabled = false;
@@ -291,6 +343,10 @@ namespace MyGame.Cursor
                 {
                     SelectBulePrint();
                 }
+                else if (currentSelectItem.itemType.HaveTheType(ItemType.Floor))
+                {
+                    UpdateEvent += FloorCheck;
+                }
             }
             else if (currentSceneType == SceneType.AnimalHuose)
             {
@@ -309,6 +365,10 @@ namespace MyGame.Cursor
                 {
                     SelectBulePrint();
                 }
+                else if (currentSelectItem.itemType.HaveTheType(ItemType.Lawn))
+                {
+                    UpdateEvent += FloorCheck;
+                }
             }
             else if (currentSceneType == SceneType.PeopleHome)
             {
@@ -322,12 +382,25 @@ namespace MyGame.Cursor
                 }
             }
         }
+
+        private void FloorCheck()
+        {
+            if (!currentTile.haveTop && currentTile.seedID <= 0)
+            {
+                checkImage.SetActive(true);
+                checkImage.transform.position = mainCamera.WorldToScreenPoint(new Vector3(mouseGridPos.x + 0.5f, mouseGridPos.y + 0.5f, 0));
+                SetItemValid();
+                return;
+            }
+            checkImage.SetActive(false);
+            SetItemInValid();
+        }
+
         /// <summary>
         /// 选中的物体是蓝图的
         /// </summary>
         private void SelectBulePrint()
         {
-            Debug.Log("选中了蓝图");
             UpdateEvent += BuleprintCheck;
             isBuleprint = true;
             currentBuleprint = PlaceableManager.Instance.FindPlaceableDetails(currentSelectItem.itemID);
@@ -491,6 +564,19 @@ namespace MyGame.Cursor
         {
             placeableSprite.color = new Color(1, 1, 1, 0.5f);
             SetItemValid();
+        }
+
+        /// <summary>
+        /// 是否和UI交互
+        /// </summary>
+        /// <returns></returns>
+        private bool InteractWithUI()
+        {
+            if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

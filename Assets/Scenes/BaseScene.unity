@@ -176,10 +176,11 @@ MonoBehaviour:
     position:
       x: 0
       y: 0
-      z: 0
   isWin: 0
   screenHeight: 0
   toolTipHeight: 0
+  outSceneName: 
+  backPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &83668064
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,7 +746,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.72, y: 1.93, z: -10}
+  m_LocalPosition: {x: 1.93, y: -1.18, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -877,8 +878,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emptyTile: {fileID: 11400000, guid: 32f02f25fedaa694fbfd317093cad05d, type: 2}
   currentSceneMiddleTiles: {fileID: 0}
-  seasonTiles: []
   currentGrid: {fileID: 0}
+  floors:
+  - tileBase: {fileID: 11400000, guid: 3d7e940c273a3bc4cac21cd2e7523cb8, type: 2}
+    itemID: 1032
+  - tileBase: {fileID: 11400000, guid: 577e929b90cec764fa1d95d50f7dbf43, type: 2}
+    itemID: 1032
+  - tileBase: {fileID: 11400000, guid: eb5d5696890dfa244b70eae6de0c2729, type: 2}
+    itemID: 1032
+  - tileBase: {fileID: 11400000, guid: 04b311698550bb44bac13520d5efe47a, type: 2}
+    itemID: 1032
 --- !u!1 &659452800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1105,6 +1114,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1146107229}
+  - component: {fileID: 1146107230}
   m_Layer: 0
   m_Name: HuoseManager
   m_TagString: Untagged
@@ -1127,6 +1137,47 @@ Transform:
   m_Father: {fileID: 572084137}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1146107230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146107228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d0f90fcbdbe79d409185430c57a1386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  houseParent: {fileID: 0}
+  playerHouses:
+  - {fileID: 7591419742918121877, guid: 0bb823a4aff9c154d918fc234b04d681, type: 3}
+  houseDetails:
+  - houseType: 0
+    prefab: {fileID: 3443617025841006037, guid: 48130b529fc18454ca5017ee987ca554, type: 3}
+  - houseType: 1
+    prefab: {fileID: 2441379511892943817, guid: 07bc8614c01459942bd51ad267e64d65, type: 3}
+  - houseType: 2
+    prefab: {fileID: 0}
+  currentHouse:
+    insideSceneName: 
+    outSceneName: 
+    position:
+      x: 0
+      y: 0
+    houseType: 0
+    boardType: 0
+  outPosition: {x: 0, y: 0, z: 0}
+  boardSprites:
+  - {fileID: -13189246, guid: d61fa0a9f8f17e14481af7838cd93878, type: 3}
+  - {fileID: 1754246619, guid: d61fa0a9f8f17e14481af7838cd93878, type: 3}
+  - {fileID: 1445532214, guid: d61fa0a9f8f17e14481af7838cd93878, type: 3}
+  - {fileID: 1554115139, guid: d61fa0a9f8f17e14481af7838cd93878, type: 3}
+  - {fileID: 133049298, guid: a737775302382a9428055677adbeb59c, type: 3}
+  - {fileID: -1912554609, guid: a737775302382a9428055677adbeb59c, type: 3}
+  - {fileID: -1491907289, guid: a737775302382a9428055677adbeb59c, type: 3}
+  - {fileID: -1289616083, guid: a737775302382a9428055677adbeb59c, type: 3}
+  - {fileID: 0}
 --- !u!1 &1177952729
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,15 +1271,15 @@ MonoBehaviour:
   currentGrid: {fileID: 0}
   mouseWorldPos: {x: 0, y: 0, z: 0}
   mouseGridPos: {x: 0, y: 0, z: 0}
-  worldPosCenter: {x: 0, y: 0, z: 0}
+  screenPosCenter: {x: 0, y: 0, z: 0}
   checkImage: {fileID: 340007716}
   cursorEnable: 0
   usePosition: {x: 0, y: 0, z: 0}
   placeableSprite: {fileID: 1924937256}
   canEat: 0
-  checkLayer:
+  reapCheckLayer:
     serializedVersion: 2
-    m_Bits: 1536
+    m_Bits: 512
 --- !u!1 &1447778067
 GameObject:
   m_ObjectHideFlags: 0
@@ -1481,7 +1532,7 @@ Animator:
   m_GameObject: {fileID: 1630595387}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 991c5ecf9ec23254587dacf9fb0caac8, type: 2}
+  m_Controller: {fileID: 22100000, guid: c10d03dfdff728144abbe7c94f97f6b4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 2
   m_ApplyRootMotion: 0
@@ -1537,7 +1588,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.3333333, y: 2.2222223}
+  m_Size: {x: 1.4444444, y: 1.1111112}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1566,9 +1617,9 @@ MonoBehaviour:
   - type: 1
     animator: {fileID: 22100000, guid: 838484149a667b142b4597175333e0ee, type: 2}
   - type: 2
-    animator: {fileID: 0}
+    animator: {fileID: 22100000, guid: c10d03dfdff728144abbe7c94f97f6b4, type: 2}
   - type: 3
-    animator: {fileID: 22100000, guid: 838484149a667b142b4597175333e0ee, type: 2}
+    animator: {fileID: 22100000, guid: 32daa57445960fd47a3b9ad60456ba5c, type: 2}
   - type: 4
     animator: {fileID: 0}
   - type: 5
@@ -1719,7 +1770,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759464172}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.72, y: 1.93, z: 0}
+  m_LocalPosition: {x: 1.93, y: -1.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
