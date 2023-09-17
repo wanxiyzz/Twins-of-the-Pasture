@@ -21,24 +21,29 @@ public class PlayerLight : MonoBehaviour
     }
     IEnumerator IELightChange(DayShift shift)
     {
-        Color changeColor = new Color(0.02f, 0.02f, 0.02f);
         if (shift == DayShift.Day)
         {
-            while (playerLight.color.r > 0)
+            float a = 0;
+            while (a < 1)
             {
-                playerLight.color -= changeColor;
-                yield return new WaitForFixedUpdate();
+                playerLight.color = Color.Lerp(Color.white, Color.black, a);
+                a += 0.02f;
+                yield return Setting.waitSecond;
             }
         }
         else
         {
-            while (playerLight.color.r < 1)
+            float a = 0;
+            while (a < 1)
             {
-                playerLight.color += changeColor;
-                yield return new WaitForFixedUpdate();
+                playerLight.color = Color.Lerp(Color.black, Color.white, a);
+                a += 0.02f;
+                yield return Setting.waitSecond;
             }
+            yield return Setting.waitSecond;
         }
     }
+
     private void OnAfterSceneLoadEvent(SceneType sceneType, string sceneName)
     {
         if (sceneType == SceneType.Field)

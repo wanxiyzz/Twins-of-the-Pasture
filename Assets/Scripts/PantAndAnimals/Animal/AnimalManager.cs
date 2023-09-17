@@ -19,7 +19,7 @@ namespace MyGame.Animal
         private Dictionary<string, AnimalHogwash> animalHouseHogwash = new Dictionary<string, AnimalHogwash>();
         private AnimalHogwash currentHogwash;
         //STORED
-        private Dictionary<string, List<InventoryEgg>> AllEggs = new Dictionary<string, List<InventoryEgg>>();
+        private Dictionary<string, List<InventoryEgg>> allEggs = new Dictionary<string, List<InventoryEgg>>();
         private EggInMap eggManager;
 
         public int eggGrowthTime = 360;
@@ -49,14 +49,14 @@ namespace MyGame.Animal
 
             if (sceneName.Contains("Small"))
             {
-                if (AllEggs.ContainsKey(sceneName))
+                if (allEggs.ContainsKey(sceneName))
                 {
                     eggManager = animalParent.GetComponent<EggInMap>();
-                    eggManager.LoadEggNumber(AllEggs[sceneName].Count);
+                    eggManager.LoadEggNumber(allEggs[sceneName].Count);
                 }
                 else
                 {
-                    AllEggs.Add(sceneName, new List<InventoryEgg>());
+                    allEggs.Add(sceneName, new List<InventoryEgg>());
                 }
             }
             if (animalData.ContainsKey(sceneName))

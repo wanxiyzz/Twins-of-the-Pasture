@@ -241,6 +241,7 @@ namespace MyGame.Player
             {
                 if (time > 5)
                 {
+                    playerInput = true;
                     yield break;
                 }
                 Vector3 direction = (targetPos - transform.position).normalized * speed;

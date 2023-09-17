@@ -55,7 +55,6 @@ public class GlobalLight : MonoBehaviour
     }
     private void OnSeasonChange(Season season)
     {
-        Debug.Log(season);
         currentColor = season switch
         {
             Season.春 => springDayColor,
@@ -66,8 +65,6 @@ public class GlobalLight : MonoBehaviour
         };
         if (TimeManager.Instance.dayShift == DayShift.Day)
         {
-            Debug.Log(globalLight.color);
-            Debug.Log(currentColor);
             StartCoroutine(IELightChange(globalLight.color, currentColor));
         }
     }

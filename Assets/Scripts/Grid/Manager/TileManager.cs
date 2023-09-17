@@ -88,6 +88,7 @@ namespace MyGame.Tile
                         var tile = ButtomTile(pos);
                         tile.haveTop = true;
                         tile.canPlant = false;
+                        DataManager.Instance.UseItem();
                     }
                 }
             }
@@ -99,6 +100,7 @@ namespace MyGame.Tile
                 var tile = ButtomTile(pos);
                 tile.haveTop = true;
                 tile.canPlant = false;
+                DataManager.Instance.UseItem();
             }
         }
         private void OnBeforeSceneLoadEvent()

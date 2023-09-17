@@ -16,7 +16,7 @@ public class GridMap : MonoBehaviour
     public Vector2Int bottomLeft;
     public Vector2Int topRight;
     int num;
-    bool night;
+    bool night = true;
     private void Update()
     {
         //TEST
