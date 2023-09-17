@@ -1,6 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.Collections;
+using MyGame.Buleprint;
 using UnityEngine;
+using MyGame.Tile;
+
 namespace MyGame.HouseSystem
 {
     public class HouseManager : Singleton<HouseManager>
@@ -13,13 +16,14 @@ namespace MyGame.HouseSystem
 
         //STORED
         private Dictionary<string, List<InventoryHouse>> allHouse = new Dictionary<string, List<InventoryHouse>>();
-        [SerializeField] List<HouseDetails> houseDetails;
+        [SerializeField] List<GameObject> houseDetails;
         private List<InventoryHouse> currenSceneHouse;
         //STORED
-        public InventoryHouse currentHouse;
+        private string outSceneName;
         //STORED
-        public Vector3 outPosition;
+        private Vector3 outPosition;
         public Sprite[] boardSprites;
+        public string currentSceneName;
         public int HouseCount
         {
             get
@@ -40,15 +44,27 @@ namespace MyGame.HouseSystem
         {
             EventHandler.AfterSceneLoadEvent -= OnAfterSceneLoadEvent;
         }
-        public void EnterHuose(Vector3 backPosition, InventoryHouse inventoryHouse)
+        public void EnterHouse(SceneType sceneType, Vector3 backPosition, InventoryHouse inventoryHouse, string targetSceneName, Vector3 positionToGo)
         {
-            currentHouse = inventoryHouse;
+            outSceneName = inventoryHouse.outSceneName;
             outPosition = backPosition;
-
+            StartCoroutine(IEEnterHouse(sceneType, targetSceneName, positionToGo, inventoryHouse.insideSceneName));
+        }
+        IEnumerator IEEnterHouse(SceneType sceneType, string targetSceneName, Vector3 positionToGo, string insideSceneName)
+        {
+            EventHandler.CallTransitionEvent(targetSceneName, positionToGo);
+            yield return new WaitForSeconds(0.7f);
+            PlaceableManager.Instance.OnAfterSceneLoadEvent(SceneType.MyHuose, insideSceneName);
+            if (sceneType == SceneType.AnimalHuose)
+                Animal.AnimalManager.Instance.LoadSceneAnimal(insideSceneName);
+        }
+        public void OutHuose()
+        {
+            EventHandler.CallTransitionEvent(outSceneName, outPosition);
         }
         private void OnAfterSceneLoadEvent(SceneType sceneType, string sceneName)
         {
-
+            currentSceneName = sceneName;
             if (sceneName == "01.Field")
             {
                 LoadPlayerHouse();
@@ -69,17 +85,33 @@ namespace MyGame.HouseSystem
                 }
                 currenSceneHouse = allHouse[sceneName];
             }
+
         }
         public void InitHouse(InventoryHouse houseData)
         {
-            for (int i = 0; i < houseDetails.Count; i++)
+            if (houseData.houseType == HouseType.BigAnimalHuose)
             {
-                if (houseDetails[i].houseType == houseData.houseType)
-                {
-                    var item = Instantiate(houseDetails[i].prefab);
-                    item.transform.SetParent(houseParent);
-                    item.GetComponent<HouseOnMap>()?.InitHouse(houseData, boardSprites[(int)houseData.boardType]);
-                }
+                var item = PlaceableManager.Instance.FindPlaceableDetails(2004);
+                TileManager.Instance.BuildPlace(item, houseData.position.ToVector3());
+                var obj = Instantiate(houseDetails[0]);
+                obj.transform.SetParent(houseParent);
+                obj.GetComponent<HouseOnMap>()?.InitHouse(houseData, boardSprites[(int)houseData.boardType]);
+            }
+            else if (houseData.houseType == HouseType.SmallAnimalHuose)
+            {
+                var item = PlaceableManager.Instance.FindPlaceableDetails(2005);
+                TileManager.Instance.BuildPlace(item, houseData.position.ToVector3());
+                var obj = Instantiate(houseDetails[1]);
+                obj.transform.SetParent(houseParent);
+                obj.GetComponent<HouseOnMap>()?.InitHouse(houseData, boardSprites[(int)houseData.boardType]);
+            }
+            else
+            {
+                var item = PlaceableManager.Instance.FindPlaceableDetails(2006);
+                TileManager.Instance.BuildPlace(item, houseData.position.ToVector3());
+                var obj = Instantiate(houseDetails[2]);
+                obj.transform.SetParent(houseParent);
+                obj.GetComponent<HouseOnMap>()?.InitHouse(houseData, boardSprites[(int)houseData.boardType]);
             }
         }
         public void BuildHouse(HouseType houseType, Vector3 pos)
@@ -90,7 +122,7 @@ namespace MyGame.HouseSystem
                 houseType = houseType,
                 boardType = BoardType.None,
                 position = pos,
-                outSceneName = TransitionManager.Instance.currentSceneName,
+                outSceneName = currentSceneName,
             };
             InitHouse(item);
             currenSceneHouse.Add(item);
@@ -103,9 +135,8 @@ namespace MyGame.HouseSystem
     [System.Serializable]
     public class InventoryHouse
     {
-        //
-        public string insideSceneName;
         public string outSceneName;
+        public string insideSceneName;
         public SerializableVector2 position;
         public HouseType houseType;
         public BoardType boardType;

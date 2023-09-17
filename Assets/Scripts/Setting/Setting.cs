@@ -1,3 +1,4 @@
+using UnityEngine;
 public static class Setting
 {
     public static float secondThreshold = 0.4f;
@@ -11,7 +12,7 @@ public static class Setting
     public static int summerNightTime = 20;
     public static int winterDayTime = 7;
     public static int winterNightTime = 18;
-
+    public static WaitForFixedUpdate waitSecond = new WaitForFixedUpdate();
 
 
 

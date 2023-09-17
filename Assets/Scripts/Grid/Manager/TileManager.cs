@@ -188,9 +188,18 @@ namespace MyGame.Tile
                 return false;
             return currentSceneButtomTiles.gameTileDataList[width][hight].haveTop && currentGridmap.top.GetTile(new Vector3Int((int)pos.x, (int)pos.y, 0)) == null;
         }
+        public bool CheckCanBuild(Vector3Int pos)
+        {
+            int width = pos.x - currentSceneButtomTiles.startPos.x;
+            int hight = pos.y - currentSceneButtomTiles.startPos.y;
+            if (width < 0 || hight < 0 || width >= currentSceneButtomTiles.gameTileDataList.Length
+            || hight >= currentSceneButtomTiles.gameTileDataList[width].Length)
+                return false;
+            return currentSceneButtomTiles.gameTileDataList[width][hight].haveTop && currentGridmap.top.GetTile(new Vector3Int((int)pos.x, (int)pos.y, 0)) == null;
+        }
         public void SetTopEmpty(Vector3 pos)
         {
-            currentGridmap.top.SetTile(new Vector3Int((int)pos.x, (int)pos.y, 0), emptyTile);
+            currentGridmap.top.SetTile(Tools.LocalToCell(pos), emptyTile);
         }
         public void SetTopEmpty(Vector3Int pos)
         {

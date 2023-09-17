@@ -4,34 +4,25 @@ using MyGame.Data;
 using MyGame.Tile;
 using MyGame.Slot;
 using MyGame.HouseSystem;
+using MyGame.UI;
 
 namespace MyGame.Buleprint
 {
     public class PlaceableManager : Singleton<PlaceableManager>
     {
         private Transform placeableParent;
-
-
         [SerializeField] PlaceableitemList placeableData;
-
 
         //STORED:家具和场景的信息
         private Dictionary<string, List<InventoryPlaceable>> placeableDataDict = new Dictionary<string, List<InventoryPlaceable>>();
         private List<InventoryPlaceable> currentScenePlaceable = new List<InventoryPlaceable>();
 
 
-
-        //STORED:已放置地块
-
-
-        private bool currentInMyHome;
-
         private void OnEnable()
         {
             EventHandler.AfterSceneLoadEvent += OnAfterSceneLoadEvent;
             EventHandler.UseTool += OnUseTool;
             //TEST
-            if (currentInMyHome) return;
         }
         private void OnDisable()
         {
@@ -45,13 +36,11 @@ namespace MyGame.Buleprint
         public void OnAfterSceneLoadEvent(SceneType type, string sceneName)
         {
             if (type == SceneType.AnimalHuose || type == SceneType.PlantHuose) return;
-            if (type == SceneType.MyHuose) currentInMyHome = true;
-            else currentInMyHome = false;
             if (type != SceneType.PeopleHome)
             {
                 placeableParent = GameObject.FindGameObjectWithTag("PlaceableParent").transform;
             }
-
+            Debug.Log(sceneName);
             //放置物品处理
             if (placeableDataDict.ContainsKey(sceneName))
             {
@@ -72,7 +61,20 @@ namespace MyGame.Buleprint
         {
             if (placeable.isHouse)
             {
-                HouseManager.Instance.BuildHouse(placeable.houseType, pos);
+                if (TransitionManager.Instance.sceneType == SceneType.Field)
+                {
+                    if (DataManager.Instance.SpendMoney(placeable.money))
+                    {
+                        HouseManager.Instance.BuildHouse(placeable.houseType, pos);
+                        DataManager.Instance.UseItem();
+                        return true;
+                    }
+                }
+                else
+                {
+                    UIManager.Instance.PromptBox("只能在野外放置房子哦");
+                }
+                return false;
             }
             if (DataManager.Instance.SpendMoney(placeable.money))
             {
@@ -94,7 +96,7 @@ namespace MyGame.Buleprint
         }
         private void InitPlaceable(InventoryPlaceable placeable)
         {
-
+            Debug.Log("加载场景物品");
             var placeableDetails = FindPlaceableDetails(placeable.placeableID);
             var item = GameObject.Instantiate(placeableDetails.prefab, placeable.position.ToVector3(), Quaternion.identity, placeableParent);
             TileManager.Instance.BuildPlace(placeableDetails, placeable.position.ToVector3());

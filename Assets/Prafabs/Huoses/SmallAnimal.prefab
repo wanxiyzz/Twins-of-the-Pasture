@@ -108,7 +108,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1021097533255839170}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: -1.21, z: 0}
+  m_LocalPosition: {x: -0.49, y: -1.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -394,19 +394,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneType: 1
   targetSceneName: SmallAnimalHuose
-  positionToGo: {x: 0, y: 0, z: 0}
-  backPosition: {x: 0, y: 0, z: 0}
+  positionToGo: {x: 2.5, y: 0.2, z: 0}
   backPoint: {fileID: 1021097533255839171}
   houseData:
-    sceneName: 
     outSceneName: 
+    insideSceneName: 
     position:
       x: 0
       y: 0
     houseType: 1
-    boardType: 0
+    boardType: 8
   houseSprite: {fileID: 2441379511272265007}
-  boardSpriteRenderer: {fileID: 1605575083739334808}
+  boardSpritRenderer: {fileID: 0}
 --- !u!210 &2441379511892943819
 SortingGroup:
   m_ObjectHideFlags: 0

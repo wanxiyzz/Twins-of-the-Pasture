@@ -327,8 +327,38 @@ public class FloorDetails
     public int itemID;
 }
 [Serializable]
-public class HouseDetails
+public class InventoryAnimal
 {
-    public HouseType houseType;
-    public GameObject prefab;
+    public AnimalType type;
+    public bool isBaby;
+    public int thirstValue;
+    public int hungerValue;
+    public int ripiTime;
+    public int appetite;
+    public int babyAppetite;
+    public int grouthTime;
+    public bool isDeath;
+    public int havestTime;
+}
+[Serializable]
+public class AnimalDetails
+{
+    public AnimalType type;
+    public RuntimeAnimatorController babyAnimator;
+    public RuntimeAnimatorController ripeAnimator;
+    public int ripeTime;
+    public int deathTime;
+    public bool canHavest;
+    public int canHavestTime;
+    public int havestID;
+    public int appetite;
+    public int babyAppetite;
+    public int price;
+    public GameObject prafab;
+}
+[SerializeField]
+public class InventoryEgg
+{
+    public EggType type;
+    public int grouthTime;
 }

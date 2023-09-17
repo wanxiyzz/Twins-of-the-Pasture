@@ -20,7 +20,7 @@ namespace MyGame.Data
         public InventoryDataList playerBag;
 
         //STORED：角色其他数据
-        private int playerMoney = 2000;
+        private int playerMoney = 10000;
 
         [SerializeField] GameObject[] playerHuoses;
         private void Start()

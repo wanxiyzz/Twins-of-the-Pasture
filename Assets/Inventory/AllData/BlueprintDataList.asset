@@ -46,3 +46,25 @@ MonoBehaviour:
     addHungry: 0
     addMental: 0
     addPhysical: 0
+  - itemID: 2004
+    itemName: "\u5927\u7684\u52A8\u7269\u623F\u5B50"
+    itemType: 02000000
+    itemIcon: {fileID: 722717250, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
+    itemOnWorldSprite: {fileID: -413336686, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
+    itemdDescription: "\u53EA\u97002000\u5143\u5C31\u53EF\u4EE5\u5EFA\u8BBE\u4E00\u4E2A\u5927\u7684\u52A8\u7269\u623F\u5B50"
+    itemPrice: 50
+    canEat: 0
+    addHungry: 0
+    addMental: 0
+    addPhysical: 0
+  - itemID: 2005
+    itemName: "\u5C0F\u7684\u52A8\u7269\u623F\u5B50"
+    itemType: 02000000
+    itemIcon: {fileID: 722717250, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
+    itemOnWorldSprite: {fileID: -413336686, guid: 08e98d82b57a63a4f9d61c9ceb1120b3, type: 3}
+    itemdDescription: "\u53EA\u97001500\u5143\u5C31\u53EF\u4EE5\u5EFA\u8BBE\u4E00\u4E2A\u5C0F\u7684\u52A8\u7269\u623F\u5B50"
+    itemPrice: 50
+    canEat: 0
+    addHungry: 0
+    addMental: 0
+    addPhysical: 0

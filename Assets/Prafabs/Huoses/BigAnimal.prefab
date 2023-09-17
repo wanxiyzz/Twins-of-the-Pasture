@@ -398,20 +398,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneType: 1
-  targetSceneName: BigAnimalHuose
-  positionToGo: {x: 0, y: 0, z: 0}
-  backPosition: {x: 0, y: 0, z: 0}
+  targetSceneName: BigAnimalHouse
+  positionToGo: {x: 2.5, y: 0.2, z: 0}
   backPoint: {fileID: 1363921887}
   houseData:
-    sceneName: 
     outSceneName: 
+    insideSceneName: 
     position:
       x: 0
       y: 0
     houseType: 0
-    boardType: 0
+    boardType: 8
   houseSprite: {fileID: 3443617026193158963}
-  boardSpriteRenderer: {fileID: 1757403051325812356}
+  boardSpritRenderer: {fileID: 1757403051325812356}
 --- !u!210 &3443617025841006039
 SortingGroup:
   m_ObjectHideFlags: 0

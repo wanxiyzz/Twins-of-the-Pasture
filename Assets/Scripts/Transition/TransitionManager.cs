@@ -105,6 +105,7 @@ public class TransitionManager : Singleton<TransitionManager>
             canvasGroup.alpha = canvasGroup.alpha - 0.05f;
             yield return new WaitForFixedUpdate();
         }
+        CursorManager.Instance.cursorEnable = true;
         GameManager.Instance.player.playerInput = true;
         inFade = false;
     }
@@ -129,6 +130,9 @@ public class TransitionManager : Singleton<TransitionManager>
             "01.Field" => SceneType.Field,
             "02.Home" => SceneType.MyHuose,
             "03.Supermarket" => SceneType.PeopleHome,
+            "BigAnimalHouse" => SceneType.AnimalHuose,
+            "SmallAnimalHouse" => SceneType.AnimalHuose,
+            "PlantHouse" => SceneType.PlantHuose,
             _ => SceneType.Field,
         };
     }

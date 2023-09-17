@@ -53,6 +53,7 @@ namespace MyGame.Player
         private float stopDistance;
 
         private Action UseItemAction;
+        private Coroutine moveCoroutine;
         private void Start()
         {
             rigi = GetComponent<Rigidbody2D>();
@@ -131,6 +132,9 @@ namespace MyGame.Player
         }
         private void OnBeforeSceneLoadEvent()
         {
+            if (moveCoroutine != null)
+                StopCoroutine(moveCoroutine);
+            UseItemAction = null;
             movementInput = new Vector2(0, 0);
             isMoving = false;
         }
@@ -222,7 +226,7 @@ namespace MyGame.Player
         {
             if (playerInput)
             {
-                StartCoroutine(MoveToTargetPosCoroutine(isItem, pos, action));
+                moveCoroutine = StartCoroutine(MoveToTargetPosCoroutine(isItem, pos, action));
                 return true;
             }
             return false;

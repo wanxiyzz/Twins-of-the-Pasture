@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 17
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -153,13 +153,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bunny_animations_0
+      name: goat_stripe animation_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
-        width: 16
-        height: 16
+        y: 76
+        width: 19
+        height: 19
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,20 +167,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f52cd3101e3d154b88472c79902e882
-      internalID: 508015433
+      spriteID: c1e81344576f8c04dbe3f57251f320a3
+      internalID: -1947803123
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_1
+      name: goat_stripe animation_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 64
-        width: 16
-        height: 16
+        x: 19
+        y: 76
+        width: 19
+        height: 19
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,20 +188,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83a86882f66ad61428319ad4f79ad731
-      internalID: -1827868086
+      spriteID: 4f21505a6cdfc3c4eb154ee9a3987fa5
+      internalID: -121593714
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_2
+      name: goat_stripe animation_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 64
-        width: 16
-        height: 16
+        x: 38
+        y: 76
+        width: 19
+        height: 19
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,20 +209,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fac051c089e6461468d0b88d3a8f8d57
-      internalID: -1393371834
+      spriteID: f884686b7f3f39c438bad307875c6b6a
+      internalID: -1404397565
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_3
+      name: goat_stripe animation_3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 64
-        width: 16
-        height: 16
+        x: 57
+        y: 76
+        width: 19
+        height: 19
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -230,104 +230,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0411564cc395316459d111a0720f4530
-      internalID: -139102046
+      spriteID: 66e3c188d92aae541bd5e504283cefa1
+      internalID: -694484116
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 48
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: afb7042ee1364154bb985d07ecf440b5
-      internalID: 2108423957
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bunny_animations_5
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 48
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7cfe67b2d45c6f44884671672a6ce637
-      internalID: 835708156
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bunny_animations_6
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 48
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c52bdb650543c8a4fb28b9a7e74ae70d
-      internalID: 1738200617
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bunny_animations_7
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 48
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e037cf13bf4e8cc4395a5be54f045c65
-      internalID: -1373866682
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bunny_animations_8
+      name: goat_stripe animation_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
-        width: 16
-        height: 16
+        y: 57
+        width: 19
+        height: 19
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -335,20 +251,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca9b355b14ac26b4093dff8f3cc942da
-      internalID: -1020480138
+      spriteID: b1e1863a613467f4385c1e74921e416e
+      internalID: -1163448169
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_9
+      name: goat_stripe animation_5
       rect:
         serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
+        x: 19
+        y: 57
+        width: 19
+        height: 19
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -356,20 +272,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: daa67e8a444a4a848982123e0dc0d7c3
-      internalID: 1688040621
+      spriteID: 773bd27e18529164cbe64f7c224aab28
+      internalID: -486222076
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_10
+      name: goat_stripe animation_6
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
+        x: 38
+        y: 57
+        width: 19
+        height: 19
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -377,20 +293,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d35f1c900490dcc4d93a48390224fbad
-      internalID: -56771560
+      spriteID: 5ab0fe43af4437a42aff924c3ea5e764
+      internalID: -1555390662
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_11
+      name: goat_stripe animation_7
       rect:
         serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 16
+        x: 57
+        y: 57
+        width: 19
+        height: 19
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -398,20 +314,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db395e782b52e254db6e15ba57f2f51a
-      internalID: -887298785
+      spriteID: cbc04c1b6e00dcc4381747ee63cfbd2c
+      internalID: 642987739
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_12
+      name: goat_stripe animation_8
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
-        width: 16
-        height: 16
+        y: 38
+        width: 19
+        height: 19
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -419,20 +335,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b00a1cc11cc8d0d4e9e1ef213b5f1add
-      internalID: 1551630459
+      spriteID: d290274972fa0b743a223c7b52ef7546
+      internalID: 193447572
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_13
+      name: goat_stripe animation_9
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
+        x: 19
+        y: 38
+        width: 19
+        height: 19
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -440,20 +356,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2b6abbabcb6df94a8500a82c13377a6
-      internalID: 1978836300
+      spriteID: 4650e066015e80c4c9bf3f05e1f2215f
+      internalID: 812579734
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_14
+      name: goat_stripe animation_10
       rect:
         serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
+        x: 38
+        y: 38
+        width: 19
+        height: 19
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -461,20 +377,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e37199c0ef0824b4db12064fd8f8cbe6
-      internalID: -763447156
+      spriteID: ddfbedf02aa9779469e355a84c4b5621
+      internalID: -560937999
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_15
+      name: goat_stripe animation_11
       rect:
         serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
+        x: 57
+        y: 38
+        width: 19
+        height: 19
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -482,20 +398,104 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a0a8a43c4e31ce439c394932454d4cc
-      internalID: -103890374
+      spriteID: b56e3a481277f604db37e2888d556cdb
+      internalID: 420750983
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_16
+      name: goat_stripe animation_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 19
+        width: 19
+        height: 19
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d61d48edef257c048940b83d532130a9
+      internalID: -966021950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goat_stripe animation_13
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 19
+        width: 19
+        height: 19
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 146634eca901d1f44be0d2ca17c79749
+      internalID: 617846050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goat_stripe animation_14
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 19
+        width: 19
+        height: 19
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1dc1bddad4095a49871c4adff8d0a21
+      internalID: -547017847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goat_stripe animation_15
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 19
+        width: 19
+        height: 19
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a471995d37f952b419b957b7abea9b7f
+      internalID: -1003219386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goat_stripe animation_16
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 16
+        width: 19
+        height: 19
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -503,20 +503,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b28d8c620968bab499df3980b2ff2340
-      internalID: -310907383
+      spriteID: a4812e86cc790a94c9db09b6b28940ce
+      internalID: -1305599991
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_17
+      name: goat_stripe animation_17
       rect:
         serializedVersion: 2
-        x: 16
+        x: 19
         y: 0
-        width: 16
-        height: 16
+        width: 19
+        height: 19
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -524,20 +524,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 243b00c207c1cc340979c62129630848
-      internalID: 987090840
+      spriteID: a7db33af628178b43896cf5a1a925d13
+      internalID: -1229671174
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_18
+      name: goat_stripe animation_18
       rect:
         serializedVersion: 2
-        x: 32
+        x: 38
         y: 0
-        width: 16
-        height: 16
+        width: 19
+        height: 19
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -545,20 +545,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3dc9576152bc48144bee3b4bd1b1c920
-      internalID: 81514971
+      spriteID: 3672ec32bebac1c4384712113890352b
+      internalID: 1575119088
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_19
+      name: goat_stripe animation_19
       rect:
         serializedVersion: 2
-        x: 48
+        x: 57
         y: 0
-        width: 16
-        height: 16
+        width: 19
+        height: 19
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -566,8 +566,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39e27de56a1c81548bed765cadb88e8d
-      internalID: 1330545595
+      spriteID: 991a781c2a8cac84294c1377d3f7d3b4
+      internalID: 218117416
       vertices: []
       indices: 
       edges: []
@@ -584,24 +584,84 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       bunny_animations_0: 508015433
+      cow_baby animation_7: 1406307268
+      cow_baby animation_18: 773777170
+      cow animation_3: -375330388
+      bunny_animations_15: -103890374
+      cow_baby animation_9: 2050697356
+      cow animation_12: 1344946547
+      cow animation_13: 58167551
+      cow_baby animation_1: 1488270564
+      cow_baby animation_12: -102327290
+      cow animation_6: -273171315
+      bunny_animations_7: -1373866682
+      goat_stripe animation_8: 193447572
+      goat_stripe animation_15: -1003219386
+      cow animation_15: -1343467280
+      goat_stripe animation_16: -1305599991
+      cow_baby animation_11: -1128590368
+      cow animation_10: 241975658
+      goat_stripe animation_7: 642987739
+      cow animation_0: 971605910
+      cow animation_17: -881212673
+      bunny_animations_17: 987090840
+      goat_stripe animation_19: 218117416
+      bunny_animations_8: -1020480138
+      goat_stripe animation_18: 1575119088
+      cow animation_7: -1282157652
+      cow_baby animation_15: -2025150214
+      cow_baby animation_16: -2104975832
+      bunny_animations_10: -56771560
+      bunny_animations_14: -763447156
+      cow animation_18: -1178039177
+      bunny_animations_19: 1330545595
+      goat_stripe animation_2: -1404397565
+      cow animation_8: -1588471305
+      cow animation_1: 1435715537
+      bunny_animations_16: -310907383
+      goat_stripe animation_1: -121593714
+      goat_stripe animation_14: -547017847
+      cow_baby animation_0: 659361727
+      cow animation_14: -1166596113
+      goat_stripe animation_12: -966021950
+      cow_baby animation_2: 1138830429
+      cow_baby animation_4: 48673193
+      goat_stripe animation_11: 420750983
+      cow_baby animation_5: -48806426
+      cow animation_19: 1236574968
+      cow animation_4: -1594602893
+      goat_stripe animation_0: -1947803123
+      goat_stripe animation_5: -486222076
       bunny_animations_4: 2108423957
       bunny_animations_11: -887298785
       bunny_animations_2: -1393371834
-      bunny_animations_15: -103890374
       bunny_animations_18: 81514971
       bunny_animations_12: 1551630459
-      bunny_animations_7: -1373866682
+      cow_baby animation_6: -540089268
+      goat_stripe animation_4: -1163448169
+      cow animation_9: -566298401
       bunny_animations_13: 1978836300
+      cow animation_5: 1031178573
+      cow_baby animation_17: 867876248
+      goat_stripe animation_9: 812579734
       bunny_animations_6: 1738200617
-      bunny_animations_17: 987090840
-      bunny_animations_8: -1020480138
-      bunny_animations_10: -56771560
-      bunny_animations_14: -763447156
+      cow animation_16: 2120822997
+      cow_baby animation_19: -2115583237
+      cow animation_2: 1502212759
+      cow_baby animation_8: 1306554671
       bunny_animations_5: 835708156
-      bunny_animations_19: 1330545595
-      bunny_animations_16: -310907383
+      cow_baby animation_10: -1168144434
+      goat_stripe animation_6: -1555390662
+      cow_baby animation_3: -1794011150
+      cow_baby animation_14: 1526871040
+      cow_baby animation_13: -8386668
+      cow animation_11: 69231353
+      goat_stripe animation_17: -1229671174
+      goat_stripe animation_3: -694484116
       bunny_animations_3: -139102046
+      goat_stripe animation_13: 617846050
       bunny_animations_1: -1827868086
+      goat_stripe animation_10: -560937999
       bunny_animations_9: 1688040621
   spritePackingTag: 
   pSDRemoveMatte: 0

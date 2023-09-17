@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -153,13 +153,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bunny_animations_0
+      name: bunny_grey animation_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
-        width: 16
-        height: 16
+        y: 68
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,20 +167,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f52cd3101e3d154b88472c79902e882
-      internalID: 508015433
+      spriteID: 00184ad4b8d10aa4bab7be800861a572
+      internalID: -334400172
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_1
+      name: bunny_grey animation_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 64
-        width: 16
-        height: 16
+        x: 17
+        y: 68
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,20 +188,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83a86882f66ad61428319ad4f79ad731
-      internalID: -1827868086
+      spriteID: 559b22262a8694e4f9d41f3c6ae945cb
+      internalID: 40712078
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_2
+      name: bunny_grey animation_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 64
-        width: 16
-        height: 16
+        x: 34
+        y: 68
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,20 +209,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fac051c089e6461468d0b88d3a8f8d57
-      internalID: -1393371834
+      spriteID: a089067457efd4c4bb590e401a814345
+      internalID: -1182837423
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_3
+      name: bunny_grey animation_3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 64
-        width: 16
-        height: 16
+        x: 51
+        y: 68
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -230,104 +230,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0411564cc395316459d111a0720f4530
-      internalID: -139102046
+      spriteID: 443ca64395ab0474db23ae651a9a0a5a
+      internalID: 428698949
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 48
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: afb7042ee1364154bb985d07ecf440b5
-      internalID: 2108423957
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bunny_animations_5
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 48
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7cfe67b2d45c6f44884671672a6ce637
-      internalID: 835708156
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bunny_animations_6
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 48
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c52bdb650543c8a4fb28b9a7e74ae70d
-      internalID: 1738200617
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bunny_animations_7
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 48
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e037cf13bf4e8cc4395a5be54f045c65
-      internalID: -1373866682
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bunny_animations_8
+      name: bunny_grey animation_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
-        width: 16
-        height: 16
+        y: 51
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -335,20 +251,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca9b355b14ac26b4093dff8f3cc942da
-      internalID: -1020480138
+      spriteID: 861764878b5d14d48b5842b9900f8c0a
+      internalID: -1259024159
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_9
+      name: bunny_grey animation_5
       rect:
         serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
+        x: 17
+        y: 51
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -356,20 +272,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: daa67e8a444a4a848982123e0dc0d7c3
-      internalID: 1688040621
+      spriteID: 060f8a796fdf6d04fa2578cbe5cf128b
+      internalID: 1250271011
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_10
+      name: bunny_grey animation_6
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
+        x: 34
+        y: 51
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -377,20 +293,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d35f1c900490dcc4d93a48390224fbad
-      internalID: -56771560
+      spriteID: 95f161e784ee9b746b05b0c75621c2a9
+      internalID: -1692906058
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_11
+      name: bunny_grey animation_7
       rect:
         serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 16
+        x: 51
+        y: 51
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -398,20 +314,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db395e782b52e254db6e15ba57f2f51a
-      internalID: -887298785
+      spriteID: ab9a0b61c457dee4c8d77af4ace89fbe
+      internalID: -994554264
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_12
+      name: bunny_grey animation_8
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
-        width: 16
-        height: 16
+        y: 34
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -419,20 +335,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b00a1cc11cc8d0d4e9e1ef213b5f1add
-      internalID: 1551630459
+      spriteID: 888f83bc9a27ef541adb6bcc6fe3e0bc
+      internalID: 786426506
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_13
+      name: bunny_grey animation_9
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
+        x: 17
+        y: 34
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -440,20 +356,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2b6abbabcb6df94a8500a82c13377a6
-      internalID: 1978836300
+      spriteID: 746caf5c7a6a47e44925127e883ac848
+      internalID: 2087732144
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_14
+      name: bunny_grey animation_10
       rect:
         serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
+        x: 34
+        y: 34
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -461,20 +377,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e37199c0ef0824b4db12064fd8f8cbe6
-      internalID: -763447156
+      spriteID: 0c5905761e4a6dd41b1cb6d903b6027b
+      internalID: -654187812
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_15
+      name: bunny_grey animation_11
       rect:
         serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
+        x: 51
+        y: 34
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -482,20 +398,104 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a0a8a43c4e31ce439c394932454d4cc
-      internalID: -103890374
+      spriteID: f3066161ab9a3b44b902f7f68d2d2e9e
+      internalID: 1364609358
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_16
+      name: bunny_grey animation_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 17
+        width: 17
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99c48dd0e5d80544c888041b18ccd0a7
+      internalID: -2144740042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny_grey animation_13
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 17
+        width: 17
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2933097a1348834bb20e7716a21bf8c
+      internalID: 552457632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny_grey animation_14
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 17
+        width: 17
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a352b5d199066746b514e34b9401d51
+      internalID: 1359274718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny_grey animation_15
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 17
+        width: 17
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15ccb9e55372e584f95f780bc7a2dfa3
+      internalID: -844030761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny_grey animation_16
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 16
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -503,20 +503,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b28d8c620968bab499df3980b2ff2340
-      internalID: -310907383
+      spriteID: b73cbf35447c8b447b14d883d7bc13ca
+      internalID: -131681387
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_17
+      name: bunny_grey animation_17
       rect:
         serializedVersion: 2
-        x: 16
+        x: 17
         y: 0
-        width: 16
-        height: 16
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -524,20 +524,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 243b00c207c1cc340979c62129630848
-      internalID: 987090840
+      spriteID: 8fc9c9bda484efb4b8884e8afe636ddb
+      internalID: -290642238
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_18
+      name: bunny_grey animation_18
       rect:
         serializedVersion: 2
-        x: 32
+        x: 34
         y: 0
-        width: 16
-        height: 16
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -545,20 +545,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3dc9576152bc48144bee3b4bd1b1c920
-      internalID: 81514971
+      spriteID: 680f4adefe2a27d4ea6e5232c1fa10bc
+      internalID: -2125438405
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_19
+      name: bunny_grey animation_19
       rect:
         serializedVersion: 2
-        x: 48
+        x: 51
         y: 0
-        width: 16
-        height: 16
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -566,8 +566,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39e27de56a1c81548bed765cadb88e8d
-      internalID: 1330545595
+      spriteID: 6338c082de4d7dc4b8833736df0ce756
+      internalID: 187511793
       vertices: []
       indices: 
       edges: []
@@ -584,24 +584,44 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       bunny_animations_0: 508015433
+      bunny_grey animation_4: -1259024159
       bunny_animations_4: 2108423957
       bunny_animations_11: -887298785
       bunny_animations_2: -1393371834
       bunny_animations_15: -103890374
       bunny_animations_18: 81514971
       bunny_animations_12: 1551630459
+      bunny_grey animation_12: -2144740042
+      bunny_grey animation_5: 1250271011
+      bunny_grey animation_6: -1692906058
       bunny_animations_7: -1373866682
+      bunny_grey animation_7: -994554264
+      bunny_grey animation_8: 786426506
       bunny_animations_13: 1978836300
+      bunny_grey animation_15: -844030761
+      bunny_grey animation_9: 2087732144
+      bunny_grey animation_11: 1364609358
+      bunny_grey animation_19: 187511793
+      bunny_grey animation_18: -2125438405
+      bunny_grey animation_17: -290642238
       bunny_animations_6: 1738200617
       bunny_animations_17: 987090840
+      bunny_grey animation_3: 428698949
       bunny_animations_8: -1020480138
+      bunny_grey animation_14: 1359274718
       bunny_animations_10: -56771560
       bunny_animations_14: -763447156
       bunny_animations_5: 835708156
       bunny_animations_19: 1330545595
+      bunny_grey animation_2: -1182837423
+      bunny_grey animation_13: 552457632
+      bunny_grey animation_16: -131681387
       bunny_animations_16: -310907383
+      bunny_grey animation_0: -334400172
+      bunny_grey animation_1: 40712078
       bunny_animations_3: -139102046
       bunny_animations_1: -1827868086
+      bunny_grey animation_10: -654187812
       bunny_animations_9: 1688040621
   spritePackingTag: 
   pSDRemoveMatte: 0

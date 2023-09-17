@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 762ee304c71713a4bafaae3df6b9d4b4, type: 3}
+  m_Name: AnimalDataList
+  m_EditorClassIdentifier: 
+  animalDetailsList:
+  - type: 0
+    babyAnimator: {fileID: 22100000, guid: e9b9f5bcd80195b42b217f1e78244196, type: 2}
+    ripeAnimator: {fileID: 9100000, guid: aa984c98979520945bef268bf60c3c16, type: 2}
+    ripeTime: 168
+    deathTime: 336
+    canHavest: 0
+    canHavestTime: 0
+    havestID: 0
+    appetite: 10
+    babyAppetite: 5
+    price: 200
+    prafab: {fileID: 1322907964668061774, guid: 6b8f61c4457881b469b8976572a7eb7b, type: 3}

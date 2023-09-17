@@ -169,7 +169,7 @@ namespace MyGame.Cursor
             }
             else if (currentTool == ToolType.HoldItem)
             {
-                if (CheckHoldItem(mouseWorldPos, screenPosCenter)) { SetToolValid(); return; }
+                if (CheckHoldItem(mouseGridPos, screenPosCenter)) { SetToolValid(); return; }
                 else SetToolInValid();
             }
             else if (currentTool == ToolType.Reap)
@@ -212,9 +212,9 @@ namespace MyGame.Cursor
             return false;
         }
 
-        public bool CheckHoldItem(Vector3 mouseWorldPos, Vector3 screenPosCenter)
+        public bool CheckHoldItem(Vector3Int mouseGriPos, Vector3 screenPosCenter)
         {
-            if (TileManager.Instance.CheckCanBuild(mouseWorldPos))
+            if (TileManager.Instance.CheckCanBuild(mouseGriPos))
             {
                 checkImage.SetActive(true);
                 checkImage.transform.position = screenPosCenter;
@@ -401,11 +401,12 @@ namespace MyGame.Cursor
         /// </summary>
         private void SelectBulePrint()
         {
-            UpdateEvent += BuleprintCheck;
+            if (UpdateEvent == null)
+                UpdateEvent += BuleprintCheck;
             isBuleprint = true;
             currentBuleprint = PlaceableManager.Instance.FindPlaceableDetails(currentSelectItem.itemID);
             placeableSprite.enabled = true;
-            placeableSprite.sprite = currentBuleprint.prefab.GetComponent<SpriteRenderer>().sprite;
+            placeableSprite.sprite = currentBuleprint.sprite;
         }
         /// <summary>
         /// 种子相应的检测
@@ -489,7 +490,7 @@ namespace MyGame.Cursor
             {
                 buildPos = mouseGridPos + new Vector3(0.5f, 0, 0);
                 placeableSprite.transform.position = buildPos;
-                if (!TileManager.Instance.CheckCanBuild(mouseWorldPos))
+                if (!TileManager.Instance.CheckCanBuild(mouseGridPos))
                 {
                     placeableSprite.color = new Color(1, 0, 0, 0.5f);
                     SetItemInValid();

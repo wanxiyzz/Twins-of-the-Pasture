@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 17
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -153,7 +153,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bunny_animations_0
+      name: goat_baby_stripe animation_0
       rect:
         serializedVersion: 2
         x: 0
@@ -167,14 +167,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f52cd3101e3d154b88472c79902e882
-      internalID: 508015433
+      spriteID: 8652391642e80c8498fe0cbba59c3bb3
+      internalID: 1041268395
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_1
+      name: goat_baby_stripe animation_1
       rect:
         serializedVersion: 2
         x: 16
@@ -188,14 +188,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83a86882f66ad61428319ad4f79ad731
-      internalID: -1827868086
+      spriteID: 008e56fb1da4eee469571a8d2a247821
+      internalID: -485997523
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_2
+      name: goat_baby_stripe animation_2
       rect:
         serializedVersion: 2
         x: 32
@@ -209,14 +209,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fac051c089e6461468d0b88d3a8f8d57
-      internalID: -1393371834
+      spriteID: 27e957115b5d6bf4ebbf7df360bd25c1
+      internalID: 87604335
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_3
+      name: goat_baby_stripe animation_3
       rect:
         serializedVersion: 2
         x: 48
@@ -230,14 +230,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0411564cc395316459d111a0720f4530
-      internalID: -139102046
+      spriteID: 4ffa3325b67677b46a44a16a633592b5
+      internalID: 893918999
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_4
+      name: goat_baby_stripe animation_4
       rect:
         serializedVersion: 2
         x: 0
@@ -251,14 +251,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: afb7042ee1364154bb985d07ecf440b5
-      internalID: 2108423957
+      spriteID: 7f68aa6699a553b41aa48bb69d40197a
+      internalID: -1054420714
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_5
+      name: goat_baby_stripe animation_5
       rect:
         serializedVersion: 2
         x: 16
@@ -272,14 +272,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7cfe67b2d45c6f44884671672a6ce637
-      internalID: 835708156
+      spriteID: 48ce841e2fc7b5946b39980a7c3b8356
+      internalID: 1371622943
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_6
+      name: goat_baby_stripe animation_6
       rect:
         serializedVersion: 2
         x: 32
@@ -293,14 +293,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c52bdb650543c8a4fb28b9a7e74ae70d
-      internalID: 1738200617
+      spriteID: 81727ba81b390f248912a12084232af7
+      internalID: -2032630847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_7
+      name: goat_baby_stripe animation_7
       rect:
         serializedVersion: 2
         x: 48
@@ -314,14 +314,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e037cf13bf4e8cc4395a5be54f045c65
-      internalID: -1373866682
+      spriteID: ed3aac06b5a5a284ab83bc8c05a3b9d0
+      internalID: 1526055607
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_8
+      name: goat_baby_stripe animation_8
       rect:
         serializedVersion: 2
         x: 0
@@ -335,14 +335,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca9b355b14ac26b4093dff8f3cc942da
-      internalID: -1020480138
+      spriteID: bce484af88e1d054d97a4dbc211cc9af
+      internalID: 1998362588
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_9
+      name: goat_baby_stripe animation_9
       rect:
         serializedVersion: 2
         x: 16
@@ -356,14 +356,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: daa67e8a444a4a848982123e0dc0d7c3
-      internalID: 1688040621
+      spriteID: 84ad6bced037ad8489cc3e944e7d0af0
+      internalID: -1997329599
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_10
+      name: goat_baby_stripe animation_10
       rect:
         serializedVersion: 2
         x: 32
@@ -377,14 +377,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d35f1c900490dcc4d93a48390224fbad
-      internalID: -56771560
+      spriteID: 15d8cd17469904342bc455f785c3a469
+      internalID: 229258099
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_11
+      name: goat_baby_stripe animation_11
       rect:
         serializedVersion: 2
         x: 48
@@ -398,14 +398,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db395e782b52e254db6e15ba57f2f51a
-      internalID: -887298785
+      spriteID: 92936075e5db6a2468912e7daa4915ef
+      internalID: 2042071967
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_12
+      name: goat_baby_stripe animation_12
       rect:
         serializedVersion: 2
         x: 0
@@ -419,14 +419,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b00a1cc11cc8d0d4e9e1ef213b5f1add
-      internalID: 1551630459
+      spriteID: 094b81e2c1836794f8acf03f94e3e1f6
+      internalID: -1863280386
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_13
+      name: goat_baby_stripe animation_13
       rect:
         serializedVersion: 2
         x: 16
@@ -440,14 +440,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2b6abbabcb6df94a8500a82c13377a6
-      internalID: 1978836300
+      spriteID: 531a07a0ff1164a4ca2ec3417d2b0591
+      internalID: 1407365061
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_14
+      name: goat_baby_stripe animation_14
       rect:
         serializedVersion: 2
         x: 32
@@ -461,14 +461,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e37199c0ef0824b4db12064fd8f8cbe6
-      internalID: -763447156
+      spriteID: 41013a415b77a6b468ab44aaef50a7c1
+      internalID: 927871169
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_15
+      name: goat_baby_stripe animation_15
       rect:
         serializedVersion: 2
         x: 48
@@ -482,14 +482,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a0a8a43c4e31ce439c394932454d4cc
-      internalID: -103890374
+      spriteID: 48dcf58d437598549bc69e7c506d243a
+      internalID: -1930935712
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_16
+      name: goat_baby_stripe animation_16
       rect:
         serializedVersion: 2
         x: 0
@@ -503,14 +503,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b28d8c620968bab499df3980b2ff2340
-      internalID: -310907383
+      spriteID: b9756a3b5a0164f40a1db9a365a4065b
+      internalID: -636286788
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_17
+      name: goat_baby_stripe animation_17
       rect:
         serializedVersion: 2
         x: 16
@@ -524,14 +524,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 243b00c207c1cc340979c62129630848
-      internalID: 987090840
+      spriteID: 89d484d18815af1469ebbe6824ace1de
+      internalID: 1338630124
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_18
+      name: goat_baby_stripe animation_18
       rect:
         serializedVersion: 2
         x: 32
@@ -545,14 +545,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3dc9576152bc48144bee3b4bd1b1c920
-      internalID: 81514971
+      spriteID: bafeeec9cd81cea4394e92690b644f2b
+      internalID: -1711355964
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_19
+      name: goat_baby_stripe animation_19
       rect:
         serializedVersion: 2
         x: 48
@@ -566,8 +566,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39e27de56a1c81548bed765cadb88e8d
-      internalID: 1330545595
+      spriteID: 0abc7f7c501d0314da01e87789c59ea0
+      internalID: 1051462596
       vertices: []
       indices: 
       edges: []
@@ -584,24 +584,84 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       bunny_animations_0: 508015433
+      cow_baby animation_7: 1406307268
+      cow_baby animation_18: 773777170
+      cow animation_3: -375330388
+      bunny_animations_15: -103890374
+      cow_baby animation_9: 2050697356
+      goat_baby_stripe animation_19: 1051462596
+      goat_baby_stripe animation_4: -1054420714
+      goat_baby_stripe animation_8: 1998362588
+      cow animation_12: 1344946547
+      cow animation_13: 58167551
+      cow_baby animation_1: 1488270564
+      cow_baby animation_12: -102327290
+      cow animation_6: -273171315
+      bunny_animations_7: -1373866682
+      cow animation_15: -1343467280
+      cow_baby animation_11: -1128590368
+      cow animation_10: 241975658
+      cow animation_0: 971605910
+      cow animation_17: -881212673
+      goat_baby_stripe animation_10: 229258099
+      goat_baby_stripe animation_16: -636286788
+      bunny_animations_17: 987090840
+      bunny_animations_8: -1020480138
+      cow animation_7: -1282157652
+      cow_baby animation_15: -2025150214
+      cow_baby animation_16: -2104975832
+      bunny_animations_10: -56771560
+      bunny_animations_14: -763447156
+      goat_baby_stripe animation_15: -1930935712
+      cow animation_18: -1178039177
+      bunny_animations_19: 1330545595
+      cow animation_8: -1588471305
+      cow animation_1: 1435715537
+      bunny_animations_16: -310907383
+      cow_baby animation_0: 659361727
+      cow animation_14: -1166596113
+      cow_baby animation_2: 1138830429
+      cow_baby animation_4: 48673193
+      goat_baby_stripe animation_1: -485997523
+      cow_baby animation_5: -48806426
+      cow animation_19: 1236574968
+      cow animation_4: -1594602893
+      goat_baby_stripe animation_2: 87604335
       bunny_animations_4: 2108423957
       bunny_animations_11: -887298785
       bunny_animations_2: -1393371834
-      bunny_animations_15: -103890374
+      goat_baby_stripe animation_12: -1863280386
       bunny_animations_18: 81514971
       bunny_animations_12: 1551630459
-      bunny_animations_7: -1373866682
+      cow_baby animation_6: -540089268
+      goat_baby_stripe animation_6: -2032630847
+      cow animation_9: -566298401
       bunny_animations_13: 1978836300
+      cow animation_5: 1031178573
+      cow_baby animation_17: 867876248
+      goat_baby_stripe animation_3: 893918999
+      goat_baby_stripe animation_14: 927871169
+      goat_baby_stripe animation_17: 1338630124
       bunny_animations_6: 1738200617
-      bunny_animations_17: 987090840
-      bunny_animations_8: -1020480138
-      bunny_animations_10: -56771560
-      bunny_animations_14: -763447156
+      cow animation_16: 2120822997
+      cow_baby animation_19: -2115583237
+      goat_baby_stripe animation_5: 1371622943
+      goat_baby_stripe animation_11: 2042071967
+      cow animation_2: 1502212759
+      goat_baby_stripe animation_9: -1997329599
+      cow_baby animation_8: 1306554671
       bunny_animations_5: 835708156
-      bunny_animations_19: 1330545595
-      bunny_animations_16: -310907383
+      cow_baby animation_10: -1168144434
+      goat_baby_stripe animation_13: 1407365061
+      cow_baby animation_3: -1794011150
+      cow_baby animation_14: 1526871040
+      cow_baby animation_13: -8386668
+      cow animation_11: 69231353
+      goat_baby_stripe animation_7: 1526055607
       bunny_animations_3: -139102046
+      goat_baby_stripe animation_18: -1711355964
       bunny_animations_1: -1827868086
+      goat_baby_stripe animation_0: 1041268395
       bunny_animations_9: 1688040621
   spritePackingTag: 
   pSDRemoveMatte: 0

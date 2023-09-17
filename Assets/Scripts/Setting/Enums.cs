@@ -12,11 +12,11 @@ public enum DayShift
 }
 public enum ItemType
 {
-    Tool, Seed, Buleprint, Floor, Material, Food, Commodidy, Lawn, Sign
+    Tool, Seed, Buleprint, Floor, Material, Food, Commodidy, Lawn, Sign, Foffer,
 }
 public enum ToolType
 {
-    //手，斧头，铲子，   镰刀，瓶子，  水壶 ，锤子,   锄头，盒子
+    //手，斧头，铲子，   镰刀，瓶子，  水壶 ， 锤子,     锄头， 盒子
     Hand, Axe, Shovel, Reap, Bottle, Kettle, Hammer, Hoe, SmallBox, BigBox, HoldItem
 }
 public enum SceneType
@@ -43,4 +43,12 @@ public enum HouseType
 public enum BoardType
 {
     Cow, Pig, Sheep_Baby, Sheep, Turker, Chicken, Chicken_Baby, Bunny, None,
+}
+public enum AnimalType
+{
+    Bunny, BlackBunny, Chicken, BrownChicken, Cow, BlackCow, BrownCow, Goat, StripeGoat, Pig, StripePig, Sheep, Turkey
+}
+public enum EggType
+{
+    Chicken,
 }

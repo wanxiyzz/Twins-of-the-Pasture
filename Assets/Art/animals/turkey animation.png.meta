@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -153,13 +153,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bunny_animations_0
+      name: turkey animation_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
-        width: 16
-        height: 16
+        y: 68
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,20 +167,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f52cd3101e3d154b88472c79902e882
-      internalID: 508015433
+      spriteID: 81c9266c55afbd3409789be1e4a3c92a
+      internalID: 1964554763
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_1
+      name: turkey animation_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 64
-        width: 16
-        height: 16
+        x: 17
+        y: 68
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,20 +188,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83a86882f66ad61428319ad4f79ad731
-      internalID: -1827868086
+      spriteID: 346db1446ea8d3e4884d41567e002ffe
+      internalID: 962828070
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_2
+      name: turkey animation_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 64
-        width: 16
-        height: 16
+        x: 34
+        y: 68
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,20 +209,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fac051c089e6461468d0b88d3a8f8d57
-      internalID: -1393371834
+      spriteID: 1cb0faf05ec9b69458cbbb33eb157b62
+      internalID: -807281769
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_3
+      name: turkey animation_3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 64
-        width: 16
-        height: 16
+        x: 51
+        y: 68
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -230,104 +230,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0411564cc395316459d111a0720f4530
-      internalID: -139102046
+      spriteID: 13e894db370eb4449b3001384fffd6cc
+      internalID: 951410743
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 48
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: afb7042ee1364154bb985d07ecf440b5
-      internalID: 2108423957
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bunny_animations_5
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 48
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7cfe67b2d45c6f44884671672a6ce637
-      internalID: 835708156
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bunny_animations_6
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 48
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c52bdb650543c8a4fb28b9a7e74ae70d
-      internalID: 1738200617
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bunny_animations_7
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 48
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e037cf13bf4e8cc4395a5be54f045c65
-      internalID: -1373866682
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bunny_animations_8
+      name: turkey animation_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
-        width: 16
-        height: 16
+        y: 51
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -335,20 +251,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca9b355b14ac26b4093dff8f3cc942da
-      internalID: -1020480138
+      spriteID: 76f491421578dc74ab453e15c5a24c17
+      internalID: 1587654948
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_9
+      name: turkey animation_5
       rect:
         serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
+        x: 17
+        y: 51
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -356,20 +272,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: daa67e8a444a4a848982123e0dc0d7c3
-      internalID: 1688040621
+      spriteID: 8ddf788c80efeef46a4a97de85cd7a4b
+      internalID: 1167883718
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_10
+      name: turkey animation_6
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
+        x: 34
+        y: 51
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -377,20 +293,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d35f1c900490dcc4d93a48390224fbad
-      internalID: -56771560
+      spriteID: f813b8c0e21e6b942b31317e057fefb1
+      internalID: 527975215
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_11
+      name: turkey animation_7
       rect:
         serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 16
+        x: 51
+        y: 51
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -398,20 +314,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db395e782b52e254db6e15ba57f2f51a
-      internalID: -887298785
+      spriteID: 922a48c498e16184ebad2c23cfa19e65
+      internalID: -1006285994
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_12
+      name: turkey animation_8
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
-        width: 16
-        height: 16
+        y: 34
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -419,20 +335,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b00a1cc11cc8d0d4e9e1ef213b5f1add
-      internalID: 1551630459
+      spriteID: d7911843056f82a41b798064a61677f3
+      internalID: -142620770
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_13
+      name: turkey animation_9
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
+        x: 17
+        y: 34
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -440,20 +356,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2b6abbabcb6df94a8500a82c13377a6
-      internalID: 1978836300
+      spriteID: f3b23c897ff28244898a8a200d9c47e2
+      internalID: 1042831404
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_14
+      name: turkey animation_10
       rect:
         serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
+        x: 34
+        y: 34
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -461,20 +377,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e37199c0ef0824b4db12064fd8f8cbe6
-      internalID: -763447156
+      spriteID: c6b2c160151403e40a06a96e7e3cbd59
+      internalID: -708824782
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_15
+      name: turkey animation_11
       rect:
         serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
+        x: 51
+        y: 34
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -482,20 +398,104 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a0a8a43c4e31ce439c394932454d4cc
-      internalID: -103890374
+      spriteID: 6e1c461a5134750468c6bf81a032d184
+      internalID: 555660719
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_16
+      name: turkey animation_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 17
+        width: 17
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57035251194bde94abdc2b24cb152d3b
+      internalID: 396628654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: turkey animation_13
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 17
+        width: 17
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4087d7f4ee30373458d8608bb65a2b89
+      internalID: -1448518336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: turkey animation_14
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 17
+        width: 17
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4aae69f5f97f3e4f8334940a910ef1f
+      internalID: 2099233447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: turkey animation_15
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 17
+        width: 17
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7055b7eebc5b6148a78926b85c6628d
+      internalID: -346728135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: turkey animation_16
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 16
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -503,20 +503,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b28d8c620968bab499df3980b2ff2340
-      internalID: -310907383
+      spriteID: d95381ba9c0d62244a36ca99b8321c02
+      internalID: -1951592753
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_17
+      name: turkey animation_17
       rect:
         serializedVersion: 2
-        x: 16
+        x: 17
         y: 0
-        width: 16
-        height: 16
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -524,20 +524,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 243b00c207c1cc340979c62129630848
-      internalID: 987090840
+      spriteID: ccbcc1980c25b1744beab254fe2142eb
+      internalID: -1557196137
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_18
+      name: turkey animation_18
       rect:
         serializedVersion: 2
-        x: 32
+        x: 34
         y: 0
-        width: 16
-        height: 16
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -545,20 +545,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3dc9576152bc48144bee3b4bd1b1c920
-      internalID: 81514971
+      spriteID: ffc2f853ebae27146bd47966a3dec30a
+      internalID: 1656098665
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bunny_animations_19
+      name: turkey animation_19
       rect:
         serializedVersion: 2
-        x: 48
+        x: 51
         y: 0
-        width: 16
-        height: 16
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -566,8 +566,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39e27de56a1c81548bed765cadb88e8d
-      internalID: 1330545595
+      spriteID: 248b3702ee1279944baa86cf346f3972
+      internalID: -116578029
       vertices: []
       indices: 
       edges: []
@@ -583,25 +583,45 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      turkey animation_18: 1656098665
       bunny_animations_0: 508015433
+      turkey animation_16: -1951592753
       bunny_animations_4: 2108423957
       bunny_animations_11: -887298785
       bunny_animations_2: -1393371834
       bunny_animations_15: -103890374
+      turkey animation_5: 1167883718
       bunny_animations_18: 81514971
       bunny_animations_12: 1551630459
+      turkey animation_7: -1006285994
+      turkey animation_8: -142620770
+      turkey animation_10: -708824782
       bunny_animations_7: -1373866682
+      turkey animation_14: 2099233447
       bunny_animations_13: 1978836300
+      turkey animation_17: -1557196137
+      turkey animation_12: 396628654
+      turkey animation_6: 527975215
+      turkey animation_4: 1587654948
       bunny_animations_6: 1738200617
+      turkey animation_1: 962828070
       bunny_animations_17: 987090840
+      turkey animation_3: 951410743
+      turkey animation_0: 1964554763
       bunny_animations_8: -1020480138
       bunny_animations_10: -56771560
       bunny_animations_14: -763447156
+      turkey animation_15: -346728135
       bunny_animations_5: 835708156
       bunny_animations_19: 1330545595
+      turkey animation_9: 1042831404
       bunny_animations_16: -310907383
+      turkey animation_13: -1448518336
       bunny_animations_3: -139102046
+      turkey animation_11: 555660719
       bunny_animations_1: -1827868086
+      turkey animation_2: -807281769
+      turkey animation_19: -116578029
       bunny_animations_9: 1688040621
   spritePackingTag: 
   pSDRemoveMatte: 0

@@ -16,7 +16,9 @@ MonoBehaviour:
   - buleprintID: 2001
     sprite: {fileID: 116100055, guid: 6cd38b2ae47e19c4696b3169f55af600, type: 3}
     isBox: 0
-    aboveCell: 1
+    houseType: 0
+    isHouse: 0
+    aboveCell: 0
     aboutCell: 2
     evenCell: 1
     money: 300
@@ -24,7 +26,9 @@ MonoBehaviour:
   - buleprintID: 2002
     sprite: {fileID: 1288941236, guid: 8c3c36d41b232154ea12424a207db120, type: 3}
     isBox: 1
-    aboveCell: 0
+    houseType: 0
+    isHouse: 0
+    aboveCell: 1
     aboutCell: 0
     evenCell: 0
     money: 100
@@ -32,24 +36,40 @@ MonoBehaviour:
   - buleprintID: 2003
     sprite: {fileID: 553479550, guid: 62fbac37ebad87540a8312e4e464a06b, type: 3}
     isBox: 1
-    aboveCell: 0
+    houseType: 0
+    isHouse: 0
+    aboveCell: 1
     aboutCell: 0
     evenCell: 0
     money: 150
     prefab: {fileID: 3233143971501913570, guid: f12ae1364b1d81f4f85f5f6f36ecbdcc, type: 3}
-  - buleprintID: 2051
-    sprite: {fileID: 553479550, guid: 62fbac37ebad87540a8312e4e464a06b, type: 3}
-    isBox: 1
-    aboveCell: 0
-    aboutCell: 0
-    evenCell: 0
-    money: 150
-    prefab: {fileID: 3233143971501913570, guid: f12ae1364b1d81f4f85f5f6f36ecbdcc, type: 3}
-  - buleprintID: 2052
-    sprite: {fileID: 553479550, guid: 62fbac37ebad87540a8312e4e464a06b, type: 3}
-    isBox: 1
-    aboveCell: 0
-    aboutCell: 0
-    evenCell: 0
-    money: 150
-    prefab: {fileID: 3233143971501913570, guid: f12ae1364b1d81f4f85f5f6f36ecbdcc, type: 3}
+  - buleprintID: 2004
+    sprite: {fileID: 2067953303, guid: d61fa0a9f8f17e14481af7838cd93878, type: 3}
+    isBox: 0
+    houseType: 0
+    isHouse: 1
+    aboveCell: 1
+    aboutCell: 2
+    evenCell: 1
+    money: 2000
+    prefab: {fileID: 3443617025841006037, guid: 48130b529fc18454ca5017ee987ca554, type: 3}
+  - buleprintID: 2005
+    sprite: {fileID: -595381539, guid: a737775302382a9428055677adbeb59c, type: 3}
+    isBox: 0
+    houseType: 1
+    isHouse: 1
+    aboveCell: 1
+    aboutCell: 2
+    evenCell: 1
+    money: 1500
+    prefab: {fileID: 2441379511892943817, guid: 07bc8614c01459942bd51ad267e64d65, type: 3}
+  - buleprintID: 2006
+    sprite: {fileID: -595381539, guid: a737775302382a9428055677adbeb59c, type: 3}
+    isBox: 0
+    houseType: 2
+    isHouse: 1
+    aboveCell: 1
+    aboutCell: 2
+    evenCell: 1
+    money: 1500
+    prefab: {fileID: 2441379511892943817, guid: 07bc8614c01459942bd51ad267e64d65, type: 3}
